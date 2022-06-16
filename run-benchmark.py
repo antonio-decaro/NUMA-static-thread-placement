@@ -162,7 +162,7 @@ def run_papi_benchmark(bench_exec, bench_name):
                     subprocess.run([bench_exec])
                     bar()
 
-        with open(f'{args.out_folder}/results/{bench_name}.csv', 'r') as t:
+        with open(f'{args.out_folder}/results/temp/{bench_name}.csv', 'r') as t:
             t.readline()  # remove headers
             for i in range(args.iterations):
                 writer.writerow(['x', 'x'] + t.readline().split()[2:])
