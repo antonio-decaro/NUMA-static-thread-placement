@@ -1,0 +1,2991 @@
+Event Chooser: Available events which can be added with given events.
+--------------------------------------------------------------------------------
+PAPI version             : 6.0.0.1
+Operating system         : Linux 5.4.0-104-generic
+Vendor string and code   : GenuineIntel (1, 0x1)
+Model string and code    : Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz (85, 0x55)
+CPU revision             : 7.000000
+CPUID                    : Family/Model/Stepping 6/85/7, 0x06/0x55/0x07
+CPU Max MHz              : 1000
+CPU Min MHz              : 1000
+Total cores              : 64
+SMT threads per core     : 2
+Cores per socket         : 16
+Sockets                  : 2
+Cores per NUMA region    : 32
+NUMA regions             : 2
+Running in a VM          : no
+Number Hardware Counters : 10
+Max Multiplex Counters   : 384
+Fast counter read (rdpmc): yes
+--------------------------------------------------------------------------------
+
+ix86arch::UNHALTED_CORE_CYCLES	0x4000002f
+ |count core clock cycles whenever the clock signal on the specific core is running (not halted)|
+    0x40000030::UNHALTED_CORE_CYCLES:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000031::UNHALTED_CORE_CYCLES:i=0  |invert|
+    0x40000032::UNHALTED_CORE_CYCLES:c=0  |counter-mask in range [0-255]|
+    0x40000033::UNHALTED_CORE_CYCLES:t=0  |measure any thread|
+    0x40000034::UNHALTED_CORE_CYCLES:intx=0  |monitor only inside transactional memory region|
+    0x40000035::UNHALTED_CORE_CYCLES:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000036::UNHALTED_CORE_CYCLES:u=0  |monitor at user level|
+    0x40000037::UNHALTED_CORE_CYCLES:k=0  |monitor at kernel level|
+    0x40000038::UNHALTED_CORE_CYCLES:period=0  |sampling period|
+    0x40000039::UNHALTED_CORE_CYCLES:freq=0  |sampling frequency (Hz)|
+    0x4000003a::UNHALTED_CORE_CYCLES:excl=0  |exclusive access|
+    0x4000003b::UNHALTED_CORE_CYCLES:mg=0  |monitor guest execution|
+    0x4000003c::UNHALTED_CORE_CYCLES:mh=0  |monitor host execution|
+    0x4000003d::UNHALTED_CORE_CYCLES:cpu=0  |CPU to program|
+    0x4000003e::UNHALTED_CORE_CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::INSTRUCTION_RETIRED	0x4000003f
+ |count the number of instructions at retirement. For instructions that consists of multiple micro-ops, this event counts the retirement of the last micro-op of the instruction|
+    0x40000040::INSTRUCTION_RETIRED:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000041::INSTRUCTION_RETIRED:i=0  |invert|
+    0x40000042::INSTRUCTION_RETIRED:c=0  |counter-mask in range [0-255]|
+    0x40000043::INSTRUCTION_RETIRED:t=0  |measure any thread|
+    0x40000044::INSTRUCTION_RETIRED:intx=0  |monitor only inside transactional memory region|
+    0x40000045::INSTRUCTION_RETIRED:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000046::INSTRUCTION_RETIRED:u=0  |monitor at user level|
+    0x40000047::INSTRUCTION_RETIRED:k=0  |monitor at kernel level|
+    0x40000048::INSTRUCTION_RETIRED:period=0  |sampling period|
+    0x40000049::INSTRUCTION_RETIRED:freq=0  |sampling frequency (Hz)|
+    0x4000004a::INSTRUCTION_RETIRED:excl=0  |exclusive access|
+    0x4000004b::INSTRUCTION_RETIRED:mg=0  |monitor guest execution|
+    0x4000004c::INSTRUCTION_RETIRED:mh=0  |monitor host execution|
+    0x4000004d::INSTRUCTION_RETIRED:cpu=0  |CPU to program|
+    0x4000004e::INSTRUCTION_RETIRED:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::UNHALTED_REFERENCE_CYCLES	0x4000004f
+ |count reference clock cycles while the clock signal on the specific core is running. The reference clock operates at a fixed frequency, irrespective of core frequency changes due to performance state transitions|
+    0x40000050::UNHALTED_REFERENCE_CYCLES:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000051::UNHALTED_REFERENCE_CYCLES:i=0  |invert|
+    0x40000052::UNHALTED_REFERENCE_CYCLES:c=0  |counter-mask in range [0-255]|
+    0x40000053::UNHALTED_REFERENCE_CYCLES:t=0  |measure any thread|
+    0x40000054::UNHALTED_REFERENCE_CYCLES:intx=0  |monitor only inside transactional memory region|
+    0x40000055::UNHALTED_REFERENCE_CYCLES:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000056::UNHALTED_REFERENCE_CYCLES:u=0  |monitor at user level|
+    0x40000057::UNHALTED_REFERENCE_CYCLES:k=0  |monitor at kernel level|
+    0x40000058::UNHALTED_REFERENCE_CYCLES:period=0  |sampling period|
+    0x40000059::UNHALTED_REFERENCE_CYCLES:freq=0  |sampling frequency (Hz)|
+    0x4000005a::UNHALTED_REFERENCE_CYCLES:excl=0  |exclusive access|
+    0x4000005b::UNHALTED_REFERENCE_CYCLES:mg=0  |monitor guest execution|
+    0x4000005c::UNHALTED_REFERENCE_CYCLES:mh=0  |monitor host execution|
+    0x4000005d::UNHALTED_REFERENCE_CYCLES:cpu=0  |CPU to program|
+    0x4000005e::UNHALTED_REFERENCE_CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::LLC_REFERENCES	0x4000005f
+ |count each request originating from the core to reference a cache line in the last level cache. The count may include speculation, but excludes cache line fills due to hardware prefetch|
+    0x40000060::LLC_REFERENCES:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000061::LLC_REFERENCES:i=0  |invert|
+    0x40000062::LLC_REFERENCES:c=0  |counter-mask in range [0-255]|
+    0x40000063::LLC_REFERENCES:t=0  |measure any thread|
+    0x40000064::LLC_REFERENCES:intx=0  |monitor only inside transactional memory region|
+    0x40000065::LLC_REFERENCES:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000066::LLC_REFERENCES:u=0  |monitor at user level|
+    0x40000067::LLC_REFERENCES:k=0  |monitor at kernel level|
+    0x40000068::LLC_REFERENCES:period=0  |sampling period|
+    0x40000069::LLC_REFERENCES:freq=0  |sampling frequency (Hz)|
+    0x4000006a::LLC_REFERENCES:excl=0  |exclusive access|
+    0x4000006b::LLC_REFERENCES:mg=0  |monitor guest execution|
+    0x4000006c::LLC_REFERENCES:mh=0  |monitor host execution|
+    0x4000006d::LLC_REFERENCES:cpu=0  |CPU to program|
+    0x4000006e::LLC_REFERENCES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::LLC_MISSES	0x4000006f
+ |count each cache miss condition for references to the last level cache. The event count may include speculation, but excludes cache line fills due to hardware prefetch|
+    0x40000070::LLC_MISSES:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000071::LLC_MISSES:i=0  |invert|
+    0x40000072::LLC_MISSES:c=0  |counter-mask in range [0-255]|
+    0x40000073::LLC_MISSES:t=0  |measure any thread|
+    0x40000074::LLC_MISSES:intx=0  |monitor only inside transactional memory region|
+    0x40000075::LLC_MISSES:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000076::LLC_MISSES:u=0  |monitor at user level|
+    0x40000077::LLC_MISSES:k=0  |monitor at kernel level|
+    0x40000078::LLC_MISSES:period=0  |sampling period|
+    0x40000079::LLC_MISSES:freq=0  |sampling frequency (Hz)|
+    0x4000007a::LLC_MISSES:excl=0  |exclusive access|
+    0x4000007b::LLC_MISSES:mg=0  |monitor guest execution|
+    0x4000007c::LLC_MISSES:mh=0  |monitor host execution|
+    0x4000007d::LLC_MISSES:cpu=0  |CPU to program|
+    0x4000007e::LLC_MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::BRANCH_INSTRUCTIONS_RETIRED	0x4000007f
+ |count branch instructions at retirement. Specifically, this event counts the retirement of the last micro-op of a branch instruction|
+    0x40000080::BRANCH_INSTRUCTIONS_RETIRED:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000081::BRANCH_INSTRUCTIONS_RETIRED:i=0  |invert|
+    0x40000082::BRANCH_INSTRUCTIONS_RETIRED:c=0  |counter-mask in range [0-255]|
+    0x40000083::BRANCH_INSTRUCTIONS_RETIRED:t=0  |measure any thread|
+    0x40000084::BRANCH_INSTRUCTIONS_RETIRED:intx=0  |monitor only inside transactional memory region|
+    0x40000085::BRANCH_INSTRUCTIONS_RETIRED:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000086::BRANCH_INSTRUCTIONS_RETIRED:u=0  |monitor at user level|
+    0x40000087::BRANCH_INSTRUCTIONS_RETIRED:k=0  |monitor at kernel level|
+    0x40000088::BRANCH_INSTRUCTIONS_RETIRED:period=0  |sampling period|
+    0x40000089::BRANCH_INSTRUCTIONS_RETIRED:freq=0  |sampling frequency (Hz)|
+    0x4000008a::BRANCH_INSTRUCTIONS_RETIRED:excl=0  |exclusive access|
+    0x4000008b::BRANCH_INSTRUCTIONS_RETIRED:mg=0  |monitor guest execution|
+    0x4000008c::BRANCH_INSTRUCTIONS_RETIRED:mh=0  |monitor host execution|
+    0x4000008d::BRANCH_INSTRUCTIONS_RETIRED:cpu=0  |CPU to program|
+    0x4000008e::BRANCH_INSTRUCTIONS_RETIRED:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ix86arch::MISPREDICTED_BRANCH_RETIRED	0x4000008f
+ |count mispredicted branch instructions at retirement. Specifically, this event counts at retirement of the last micro-op of a branch instruction in the architectural path of the execution and experienced misprediction in the branch prediction hardware|
+    0x40000090::MISPREDICTED_BRANCH_RETIRED:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000091::MISPREDICTED_BRANCH_RETIRED:i=0  |invert|
+    0x40000092::MISPREDICTED_BRANCH_RETIRED:c=0  |counter-mask in range [0-255]|
+    0x40000093::MISPREDICTED_BRANCH_RETIRED:t=0  |measure any thread|
+    0x40000094::MISPREDICTED_BRANCH_RETIRED:intx=0  |monitor only inside transactional memory region|
+    0x40000095::MISPREDICTED_BRANCH_RETIRED:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000096::MISPREDICTED_BRANCH_RETIRED:u=0  |monitor at user level|
+    0x40000097::MISPREDICTED_BRANCH_RETIRED:k=0  |monitor at kernel level|
+    0x40000098::MISPREDICTED_BRANCH_RETIRED:period=0  |sampling period|
+    0x40000099::MISPREDICTED_BRANCH_RETIRED:freq=0  |sampling frequency (Hz)|
+    0x4000009a::MISPREDICTED_BRANCH_RETIRED:excl=0  |exclusive access|
+    0x4000009b::MISPREDICTED_BRANCH_RETIRED:mg=0  |monitor guest execution|
+    0x4000009c::MISPREDICTED_BRANCH_RETIRED:mh=0  |monitor host execution|
+    0x4000009d::MISPREDICTED_BRANCH_RETIRED:cpu=0  |CPU to program|
+    0x4000009e::MISPREDICTED_BRANCH_RETIRED:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CPU_CYCLES	0x4000009f
+ |PERF_COUNT_HW_CPU_CYCLES|
+    0x400000a0::PERF_COUNT_HW_CPU_CYCLES:u=0  |monitor at user level|
+    0x400000a1::PERF_COUNT_HW_CPU_CYCLES:k=0  |monitor at kernel level|
+    0x400000a2::PERF_COUNT_HW_CPU_CYCLES:period=0  |sampling period|
+    0x400000a3::PERF_COUNT_HW_CPU_CYCLES:freq=0  |sampling frequency (Hz)|
+    0x400000a4::PERF_COUNT_HW_CPU_CYCLES:precise=0  |precise event sampling|
+    0x400000a5::PERF_COUNT_HW_CPU_CYCLES:excl=0  |exclusive access|
+    0x400000a6::PERF_COUNT_HW_CPU_CYCLES:mg=0  |monitor guest execution|
+    0x400000a7::PERF_COUNT_HW_CPU_CYCLES:mh=0  |monitor host execution|
+    0x400000a8::PERF_COUNT_HW_CPU_CYCLES:cpu=0  |CPU to program|
+    0x400000a9::PERF_COUNT_HW_CPU_CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CYCLES	0x400000aa
+ |PERF_COUNT_HW_CPU_CYCLES|
+    0x400000ab::CYCLES:u=0  |monitor at user level|
+    0x400000ac::CYCLES:k=0  |monitor at kernel level|
+    0x400000ad::CYCLES:period=0  |sampling period|
+    0x400000ae::CYCLES:freq=0  |sampling frequency (Hz)|
+    0x400000af::CYCLES:precise=0  |precise event sampling|
+    0x400000b0::CYCLES:excl=0  |exclusive access|
+    0x400000b1::CYCLES:mg=0  |monitor guest execution|
+    0x400000b2::CYCLES:mh=0  |monitor host execution|
+    0x400000b3::CYCLES:cpu=0  |CPU to program|
+    0x400000b4::CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CPU-CYCLES	0x400000b5
+ |PERF_COUNT_HW_CPU_CYCLES|
+    0x400000b6::CPU-CYCLES:u=0  |monitor at user level|
+    0x400000b7::CPU-CYCLES:k=0  |monitor at kernel level|
+    0x400000b8::CPU-CYCLES:period=0  |sampling period|
+    0x400000b9::CPU-CYCLES:freq=0  |sampling frequency (Hz)|
+    0x400000ba::CPU-CYCLES:precise=0  |precise event sampling|
+    0x400000bb::CPU-CYCLES:excl=0  |exclusive access|
+    0x400000bc::CPU-CYCLES:mg=0  |monitor guest execution|
+    0x400000bd::CPU-CYCLES:mh=0  |monitor host execution|
+    0x400000be::CPU-CYCLES:cpu=0  |CPU to program|
+    0x400000bf::CPU-CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_INSTRUCTIONS	0x400000c0
+ |PERF_COUNT_HW_INSTRUCTIONS|
+    0x400000c1::PERF_COUNT_HW_INSTRUCTIONS:u=0  |monitor at user level|
+    0x400000c2::PERF_COUNT_HW_INSTRUCTIONS:k=0  |monitor at kernel level|
+    0x400000c3::PERF_COUNT_HW_INSTRUCTIONS:period=0  |sampling period|
+    0x400000c4::PERF_COUNT_HW_INSTRUCTIONS:freq=0  |sampling frequency (Hz)|
+    0x400000c5::PERF_COUNT_HW_INSTRUCTIONS:precise=0  |precise event sampling|
+    0x400000c6::PERF_COUNT_HW_INSTRUCTIONS:excl=0  |exclusive access|
+    0x400000c7::PERF_COUNT_HW_INSTRUCTIONS:mg=0  |monitor guest execution|
+    0x400000c8::PERF_COUNT_HW_INSTRUCTIONS:mh=0  |monitor host execution|
+    0x400000c9::PERF_COUNT_HW_INSTRUCTIONS:cpu=0  |CPU to program|
+    0x400000ca::PERF_COUNT_HW_INSTRUCTIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::INSTRUCTIONS	0x400000cb
+ |PERF_COUNT_HW_INSTRUCTIONS|
+    0x400000cc::INSTRUCTIONS:u=0  |monitor at user level|
+    0x400000cd::INSTRUCTIONS:k=0  |monitor at kernel level|
+    0x400000ce::INSTRUCTIONS:period=0  |sampling period|
+    0x400000cf::INSTRUCTIONS:freq=0  |sampling frequency (Hz)|
+    0x400000d0::INSTRUCTIONS:precise=0  |precise event sampling|
+    0x400000d1::INSTRUCTIONS:excl=0  |exclusive access|
+    0x400000d2::INSTRUCTIONS:mg=0  |monitor guest execution|
+    0x400000d3::INSTRUCTIONS:mh=0  |monitor host execution|
+    0x400000d4::INSTRUCTIONS:cpu=0  |CPU to program|
+    0x400000d5::INSTRUCTIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_REFERENCES	0x400000d6
+ |PERF_COUNT_HW_CACHE_REFERENCES|
+    0x400000d7::PERF_COUNT_HW_CACHE_REFERENCES:u=0  |monitor at user level|
+    0x400000d8::PERF_COUNT_HW_CACHE_REFERENCES:k=0  |monitor at kernel level|
+    0x400000d9::PERF_COUNT_HW_CACHE_REFERENCES:period=0  |sampling period|
+    0x400000da::PERF_COUNT_HW_CACHE_REFERENCES:freq=0  |sampling frequency (Hz)|
+    0x400000db::PERF_COUNT_HW_CACHE_REFERENCES:precise=0  |precise event sampling|
+    0x400000dc::PERF_COUNT_HW_CACHE_REFERENCES:excl=0  |exclusive access|
+    0x400000dd::PERF_COUNT_HW_CACHE_REFERENCES:mg=0  |monitor guest execution|
+    0x400000de::PERF_COUNT_HW_CACHE_REFERENCES:mh=0  |monitor host execution|
+    0x400000df::PERF_COUNT_HW_CACHE_REFERENCES:cpu=0  |CPU to program|
+    0x400000e0::PERF_COUNT_HW_CACHE_REFERENCES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CACHE-REFERENCES	0x400000e1
+ |PERF_COUNT_HW_CACHE_REFERENCES|
+    0x400000e2::CACHE-REFERENCES:u=0  |monitor at user level|
+    0x400000e3::CACHE-REFERENCES:k=0  |monitor at kernel level|
+    0x400000e4::CACHE-REFERENCES:period=0  |sampling period|
+    0x400000e5::CACHE-REFERENCES:freq=0  |sampling frequency (Hz)|
+    0x400000e6::CACHE-REFERENCES:precise=0  |precise event sampling|
+    0x400000e7::CACHE-REFERENCES:excl=0  |exclusive access|
+    0x400000e8::CACHE-REFERENCES:mg=0  |monitor guest execution|
+    0x400000e9::CACHE-REFERENCES:mh=0  |monitor host execution|
+    0x400000ea::CACHE-REFERENCES:cpu=0  |CPU to program|
+    0x400000eb::CACHE-REFERENCES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_MISSES	0x400000ec
+ |PERF_COUNT_HW_CACHE_MISSES|
+    0x400000ed::PERF_COUNT_HW_CACHE_MISSES:u=0  |monitor at user level|
+    0x400000ee::PERF_COUNT_HW_CACHE_MISSES:k=0  |monitor at kernel level|
+    0x400000ef::PERF_COUNT_HW_CACHE_MISSES:period=0  |sampling period|
+    0x400000f0::PERF_COUNT_HW_CACHE_MISSES:freq=0  |sampling frequency (Hz)|
+    0x400000f1::PERF_COUNT_HW_CACHE_MISSES:precise=0  |precise event sampling|
+    0x400000f2::PERF_COUNT_HW_CACHE_MISSES:excl=0  |exclusive access|
+    0x400000f3::PERF_COUNT_HW_CACHE_MISSES:mg=0  |monitor guest execution|
+    0x400000f4::PERF_COUNT_HW_CACHE_MISSES:mh=0  |monitor host execution|
+    0x400000f5::PERF_COUNT_HW_CACHE_MISSES:cpu=0  |CPU to program|
+    0x400000f6::PERF_COUNT_HW_CACHE_MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CACHE-MISSES	0x400000f7
+ |PERF_COUNT_HW_CACHE_MISSES|
+    0x400000f8::CACHE-MISSES:u=0  |monitor at user level|
+    0x400000f9::CACHE-MISSES:k=0  |monitor at kernel level|
+    0x400000fa::CACHE-MISSES:period=0  |sampling period|
+    0x400000fb::CACHE-MISSES:freq=0  |sampling frequency (Hz)|
+    0x400000fc::CACHE-MISSES:precise=0  |precise event sampling|
+    0x400000fd::CACHE-MISSES:excl=0  |exclusive access|
+    0x400000fe::CACHE-MISSES:mg=0  |monitor guest execution|
+    0x400000ff::CACHE-MISSES:mh=0  |monitor host execution|
+    0x40000100::CACHE-MISSES:cpu=0  |CPU to program|
+    0x40000101::CACHE-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_BRANCH_INSTRUCTIONS	0x40000102
+ |PERF_COUNT_HW_BRANCH_INSTRUCTIONS|
+    0x40000103::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:u=0  |monitor at user level|
+    0x40000104::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:k=0  |monitor at kernel level|
+    0x40000105::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:period=0  |sampling period|
+    0x40000106::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:freq=0  |sampling frequency (Hz)|
+    0x40000107::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:precise=0  |precise event sampling|
+    0x40000108::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:excl=0  |exclusive access|
+    0x40000109::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:mg=0  |monitor guest execution|
+    0x4000010a::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:mh=0  |monitor host execution|
+    0x4000010b::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:cpu=0  |CPU to program|
+    0x4000010c::PERF_COUNT_HW_BRANCH_INSTRUCTIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BRANCH-INSTRUCTIONS	0x4000010d
+ |PERF_COUNT_HW_BRANCH_INSTRUCTIONS|
+    0x4000010e::BRANCH-INSTRUCTIONS:u=0  |monitor at user level|
+    0x4000010f::BRANCH-INSTRUCTIONS:k=0  |monitor at kernel level|
+    0x40000110::BRANCH-INSTRUCTIONS:period=0  |sampling period|
+    0x40000111::BRANCH-INSTRUCTIONS:freq=0  |sampling frequency (Hz)|
+    0x40000112::BRANCH-INSTRUCTIONS:precise=0  |precise event sampling|
+    0x40000113::BRANCH-INSTRUCTIONS:excl=0  |exclusive access|
+    0x40000114::BRANCH-INSTRUCTIONS:mg=0  |monitor guest execution|
+    0x40000115::BRANCH-INSTRUCTIONS:mh=0  |monitor host execution|
+    0x40000116::BRANCH-INSTRUCTIONS:cpu=0  |CPU to program|
+    0x40000117::BRANCH-INSTRUCTIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BRANCHES	0x40000118
+ |PERF_COUNT_HW_BRANCH_INSTRUCTIONS|
+    0x40000119::BRANCHES:u=0  |monitor at user level|
+    0x4000011a::BRANCHES:k=0  |monitor at kernel level|
+    0x4000011b::BRANCHES:period=0  |sampling period|
+    0x4000011c::BRANCHES:freq=0  |sampling frequency (Hz)|
+    0x4000011d::BRANCHES:precise=0  |precise event sampling|
+    0x4000011e::BRANCHES:excl=0  |exclusive access|
+    0x4000011f::BRANCHES:mg=0  |monitor guest execution|
+    0x40000120::BRANCHES:mh=0  |monitor host execution|
+    0x40000121::BRANCHES:cpu=0  |CPU to program|
+    0x40000122::BRANCHES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_BRANCH_MISSES	0x40000123
+ |PERF_COUNT_HW_BRANCH_MISSES|
+    0x40000124::PERF_COUNT_HW_BRANCH_MISSES:u=0  |monitor at user level|
+    0x40000125::PERF_COUNT_HW_BRANCH_MISSES:k=0  |monitor at kernel level|
+    0x40000126::PERF_COUNT_HW_BRANCH_MISSES:period=0  |sampling period|
+    0x40000127::PERF_COUNT_HW_BRANCH_MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000128::PERF_COUNT_HW_BRANCH_MISSES:precise=0  |precise event sampling|
+    0x40000129::PERF_COUNT_HW_BRANCH_MISSES:excl=0  |exclusive access|
+    0x4000012a::PERF_COUNT_HW_BRANCH_MISSES:mg=0  |monitor guest execution|
+    0x4000012b::PERF_COUNT_HW_BRANCH_MISSES:mh=0  |monitor host execution|
+    0x4000012c::PERF_COUNT_HW_BRANCH_MISSES:cpu=0  |CPU to program|
+    0x4000012d::PERF_COUNT_HW_BRANCH_MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BRANCH-MISSES	0x4000012e
+ |PERF_COUNT_HW_BRANCH_MISSES|
+    0x4000012f::BRANCH-MISSES:u=0  |monitor at user level|
+    0x40000130::BRANCH-MISSES:k=0  |monitor at kernel level|
+    0x40000131::BRANCH-MISSES:period=0  |sampling period|
+    0x40000132::BRANCH-MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000133::BRANCH-MISSES:precise=0  |precise event sampling|
+    0x40000134::BRANCH-MISSES:excl=0  |exclusive access|
+    0x40000135::BRANCH-MISSES:mg=0  |monitor guest execution|
+    0x40000136::BRANCH-MISSES:mh=0  |monitor host execution|
+    0x40000137::BRANCH-MISSES:cpu=0  |CPU to program|
+    0x40000138::BRANCH-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_BUS_CYCLES	0x40000139
+ |PERF_COUNT_HW_BUS_CYCLES|
+    0x4000013a::PERF_COUNT_HW_BUS_CYCLES:u=0  |monitor at user level|
+    0x4000013b::PERF_COUNT_HW_BUS_CYCLES:k=0  |monitor at kernel level|
+    0x4000013c::PERF_COUNT_HW_BUS_CYCLES:period=0  |sampling period|
+    0x4000013d::PERF_COUNT_HW_BUS_CYCLES:freq=0  |sampling frequency (Hz)|
+    0x4000013e::PERF_COUNT_HW_BUS_CYCLES:precise=0  |precise event sampling|
+    0x4000013f::PERF_COUNT_HW_BUS_CYCLES:excl=0  |exclusive access|
+    0x40000140::PERF_COUNT_HW_BUS_CYCLES:mg=0  |monitor guest execution|
+    0x40000141::PERF_COUNT_HW_BUS_CYCLES:mh=0  |monitor host execution|
+    0x40000142::PERF_COUNT_HW_BUS_CYCLES:cpu=0  |CPU to program|
+    0x40000143::PERF_COUNT_HW_BUS_CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BUS-CYCLES	0x40000144
+ |PERF_COUNT_HW_BUS_CYCLES|
+    0x40000145::BUS-CYCLES:u=0  |monitor at user level|
+    0x40000146::BUS-CYCLES:k=0  |monitor at kernel level|
+    0x40000147::BUS-CYCLES:period=0  |sampling period|
+    0x40000148::BUS-CYCLES:freq=0  |sampling frequency (Hz)|
+    0x40000149::BUS-CYCLES:precise=0  |precise event sampling|
+    0x4000014a::BUS-CYCLES:excl=0  |exclusive access|
+    0x4000014b::BUS-CYCLES:mg=0  |monitor guest execution|
+    0x4000014c::BUS-CYCLES:mh=0  |monitor host execution|
+    0x4000014d::BUS-CYCLES:cpu=0  |CPU to program|
+    0x4000014e::BUS-CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_REF_CPU_CYCLES	0x4000015b
+ |PERF_COUNT_HW_REF_CPU_CYCLES|
+    0x4000015c::PERF_COUNT_HW_REF_CPU_CYCLES:u=0  |monitor at user level|
+    0x4000015d::PERF_COUNT_HW_REF_CPU_CYCLES:k=0  |monitor at kernel level|
+    0x4000015e::PERF_COUNT_HW_REF_CPU_CYCLES:period=0  |sampling period|
+    0x4000015f::PERF_COUNT_HW_REF_CPU_CYCLES:freq=0  |sampling frequency (Hz)|
+    0x40000160::PERF_COUNT_HW_REF_CPU_CYCLES:precise=0  |precise event sampling|
+    0x40000161::PERF_COUNT_HW_REF_CPU_CYCLES:excl=0  |exclusive access|
+    0x40000162::PERF_COUNT_HW_REF_CPU_CYCLES:mg=0  |monitor guest execution|
+    0x40000163::PERF_COUNT_HW_REF_CPU_CYCLES:mh=0  |monitor host execution|
+    0x40000164::PERF_COUNT_HW_REF_CPU_CYCLES:cpu=0  |CPU to program|
+    0x40000165::PERF_COUNT_HW_REF_CPU_CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::REF-CYCLES	0x40000166
+ |PERF_COUNT_HW_REF_CPU_CYCLES|
+    0x40000167::REF-CYCLES:u=0  |monitor at user level|
+    0x40000168::REF-CYCLES:k=0  |monitor at kernel level|
+    0x40000169::REF-CYCLES:period=0  |sampling period|
+    0x4000016a::REF-CYCLES:freq=0  |sampling frequency (Hz)|
+    0x4000016b::REF-CYCLES:precise=0  |precise event sampling|
+    0x4000016c::REF-CYCLES:excl=0  |exclusive access|
+    0x4000016d::REF-CYCLES:mg=0  |monitor guest execution|
+    0x4000016e::REF-CYCLES:mh=0  |monitor host execution|
+    0x4000016f::REF-CYCLES:cpu=0  |CPU to program|
+    0x40000170::REF-CYCLES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_CPU_CLOCK	0x40000171
+ |PERF_COUNT_SW_CPU_CLOCK|
+    0x40000172::PERF_COUNT_SW_CPU_CLOCK:u=0  |monitor at user level|
+    0x40000173::PERF_COUNT_SW_CPU_CLOCK:k=0  |monitor at kernel level|
+    0x40000174::PERF_COUNT_SW_CPU_CLOCK:period=0  |sampling period|
+    0x40000175::PERF_COUNT_SW_CPU_CLOCK:freq=0  |sampling frequency (Hz)|
+    0x40000176::PERF_COUNT_SW_CPU_CLOCK:excl=0  |exclusive access|
+    0x40000177::PERF_COUNT_SW_CPU_CLOCK:mg=0  |monitor guest execution|
+    0x40000178::PERF_COUNT_SW_CPU_CLOCK:mh=0  |monitor host execution|
+    0x40000179::PERF_COUNT_SW_CPU_CLOCK:cpu=0  |CPU to program|
+    0x4000017a::PERF_COUNT_SW_CPU_CLOCK:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CPU-CLOCK	0x4000017b
+ |PERF_COUNT_SW_CPU_CLOCK|
+    0x4000017c::CPU-CLOCK:u=0  |monitor at user level|
+    0x4000017d::CPU-CLOCK:k=0  |monitor at kernel level|
+    0x4000017e::CPU-CLOCK:period=0  |sampling period|
+    0x4000017f::CPU-CLOCK:freq=0  |sampling frequency (Hz)|
+    0x40000180::CPU-CLOCK:excl=0  |exclusive access|
+    0x40000181::CPU-CLOCK:mg=0  |monitor guest execution|
+    0x40000182::CPU-CLOCK:mh=0  |monitor host execution|
+    0x40000183::CPU-CLOCK:cpu=0  |CPU to program|
+    0x40000184::CPU-CLOCK:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_TASK_CLOCK	0x40000185
+ |PERF_COUNT_SW_TASK_CLOCK|
+    0x40000186::PERF_COUNT_SW_TASK_CLOCK:u=0  |monitor at user level|
+    0x40000187::PERF_COUNT_SW_TASK_CLOCK:k=0  |monitor at kernel level|
+    0x40000188::PERF_COUNT_SW_TASK_CLOCK:period=0  |sampling period|
+    0x40000189::PERF_COUNT_SW_TASK_CLOCK:freq=0  |sampling frequency (Hz)|
+    0x4000018a::PERF_COUNT_SW_TASK_CLOCK:excl=0  |exclusive access|
+    0x4000018b::PERF_COUNT_SW_TASK_CLOCK:mg=0  |monitor guest execution|
+    0x4000018c::PERF_COUNT_SW_TASK_CLOCK:mh=0  |monitor host execution|
+    0x4000018d::PERF_COUNT_SW_TASK_CLOCK:cpu=0  |CPU to program|
+    0x4000018e::PERF_COUNT_SW_TASK_CLOCK:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::TASK-CLOCK	0x4000018f
+ |PERF_COUNT_SW_TASK_CLOCK|
+    0x40000190::TASK-CLOCK:u=0  |monitor at user level|
+    0x40000191::TASK-CLOCK:k=0  |monitor at kernel level|
+    0x40000192::TASK-CLOCK:period=0  |sampling period|
+    0x40000193::TASK-CLOCK:freq=0  |sampling frequency (Hz)|
+    0x40000194::TASK-CLOCK:excl=0  |exclusive access|
+    0x40000195::TASK-CLOCK:mg=0  |monitor guest execution|
+    0x40000196::TASK-CLOCK:mh=0  |monitor host execution|
+    0x40000197::TASK-CLOCK:cpu=0  |CPU to program|
+    0x40000198::TASK-CLOCK:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_PAGE_FAULTS	0x40000199
+ |PERF_COUNT_SW_PAGE_FAULTS|
+    0x4000019a::PERF_COUNT_SW_PAGE_FAULTS:u=0  |monitor at user level|
+    0x4000019b::PERF_COUNT_SW_PAGE_FAULTS:k=0  |monitor at kernel level|
+    0x4000019c::PERF_COUNT_SW_PAGE_FAULTS:period=0  |sampling period|
+    0x4000019d::PERF_COUNT_SW_PAGE_FAULTS:freq=0  |sampling frequency (Hz)|
+    0x4000019e::PERF_COUNT_SW_PAGE_FAULTS:excl=0  |exclusive access|
+    0x4000019f::PERF_COUNT_SW_PAGE_FAULTS:mg=0  |monitor guest execution|
+    0x400001a0::PERF_COUNT_SW_PAGE_FAULTS:mh=0  |monitor host execution|
+    0x400001a1::PERF_COUNT_SW_PAGE_FAULTS:cpu=0  |CPU to program|
+    0x400001a2::PERF_COUNT_SW_PAGE_FAULTS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PAGE-FAULTS	0x400001a3
+ |PERF_COUNT_SW_PAGE_FAULTS|
+    0x400001a4::PAGE-FAULTS:u=0  |monitor at user level|
+    0x400001a5::PAGE-FAULTS:k=0  |monitor at kernel level|
+    0x400001a6::PAGE-FAULTS:period=0  |sampling period|
+    0x400001a7::PAGE-FAULTS:freq=0  |sampling frequency (Hz)|
+    0x400001a8::PAGE-FAULTS:excl=0  |exclusive access|
+    0x400001a9::PAGE-FAULTS:mg=0  |monitor guest execution|
+    0x400001aa::PAGE-FAULTS:mh=0  |monitor host execution|
+    0x400001ab::PAGE-FAULTS:cpu=0  |CPU to program|
+    0x400001ac::PAGE-FAULTS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::FAULTS	0x400001ad
+ |PERF_COUNT_SW_PAGE_FAULTS|
+    0x400001ae::FAULTS:u=0  |monitor at user level|
+    0x400001af::FAULTS:k=0  |monitor at kernel level|
+    0x400001b0::FAULTS:period=0  |sampling period|
+    0x400001b1::FAULTS:freq=0  |sampling frequency (Hz)|
+    0x400001b2::FAULTS:excl=0  |exclusive access|
+    0x400001b3::FAULTS:mg=0  |monitor guest execution|
+    0x400001b4::FAULTS:mh=0  |monitor host execution|
+    0x400001b5::FAULTS:cpu=0  |CPU to program|
+    0x400001b6::FAULTS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_CONTEXT_SWITCHES	0x400001b7
+ |PERF_COUNT_SW_CONTEXT_SWITCHES|
+    0x400001b8::PERF_COUNT_SW_CONTEXT_SWITCHES:u=0  |monitor at user level|
+    0x400001b9::PERF_COUNT_SW_CONTEXT_SWITCHES:k=0  |monitor at kernel level|
+    0x400001ba::PERF_COUNT_SW_CONTEXT_SWITCHES:period=0  |sampling period|
+    0x400001bb::PERF_COUNT_SW_CONTEXT_SWITCHES:freq=0  |sampling frequency (Hz)|
+    0x400001bc::PERF_COUNT_SW_CONTEXT_SWITCHES:excl=0  |exclusive access|
+    0x400001bd::PERF_COUNT_SW_CONTEXT_SWITCHES:mg=0  |monitor guest execution|
+    0x400001be::PERF_COUNT_SW_CONTEXT_SWITCHES:mh=0  |monitor host execution|
+    0x400001bf::PERF_COUNT_SW_CONTEXT_SWITCHES:cpu=0  |CPU to program|
+    0x400001c0::PERF_COUNT_SW_CONTEXT_SWITCHES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CONTEXT-SWITCHES	0x400001c1
+ |PERF_COUNT_SW_CONTEXT_SWITCHES|
+    0x400001c2::CONTEXT-SWITCHES:u=0  |monitor at user level|
+    0x400001c3::CONTEXT-SWITCHES:k=0  |monitor at kernel level|
+    0x400001c4::CONTEXT-SWITCHES:period=0  |sampling period|
+    0x400001c5::CONTEXT-SWITCHES:freq=0  |sampling frequency (Hz)|
+    0x400001c6::CONTEXT-SWITCHES:excl=0  |exclusive access|
+    0x400001c7::CONTEXT-SWITCHES:mg=0  |monitor guest execution|
+    0x400001c8::CONTEXT-SWITCHES:mh=0  |monitor host execution|
+    0x400001c9::CONTEXT-SWITCHES:cpu=0  |CPU to program|
+    0x400001ca::CONTEXT-SWITCHES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CS	0x400001cb
+ |PERF_COUNT_SW_CONTEXT_SWITCHES|
+    0x400001cc::CS:u=0  |monitor at user level|
+    0x400001cd::CS:k=0  |monitor at kernel level|
+    0x400001ce::CS:period=0  |sampling period|
+    0x400001cf::CS:freq=0  |sampling frequency (Hz)|
+    0x400001d0::CS:excl=0  |exclusive access|
+    0x400001d1::CS:mg=0  |monitor guest execution|
+    0x400001d2::CS:mh=0  |monitor host execution|
+    0x400001d3::CS:cpu=0  |CPU to program|
+    0x400001d4::CS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_CPU_MIGRATIONS	0x400001d5
+ |PERF_COUNT_SW_CPU_MIGRATIONS|
+    0x400001d6::PERF_COUNT_SW_CPU_MIGRATIONS:u=0  |monitor at user level|
+    0x400001d7::PERF_COUNT_SW_CPU_MIGRATIONS:k=0  |monitor at kernel level|
+    0x400001d8::PERF_COUNT_SW_CPU_MIGRATIONS:period=0  |sampling period|
+    0x400001d9::PERF_COUNT_SW_CPU_MIGRATIONS:freq=0  |sampling frequency (Hz)|
+    0x400001da::PERF_COUNT_SW_CPU_MIGRATIONS:excl=0  |exclusive access|
+    0x400001db::PERF_COUNT_SW_CPU_MIGRATIONS:mg=0  |monitor guest execution|
+    0x400001dc::PERF_COUNT_SW_CPU_MIGRATIONS:mh=0  |monitor host execution|
+    0x400001dd::PERF_COUNT_SW_CPU_MIGRATIONS:cpu=0  |CPU to program|
+    0x400001de::PERF_COUNT_SW_CPU_MIGRATIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::CPU-MIGRATIONS	0x400001df
+ |PERF_COUNT_SW_CPU_MIGRATIONS|
+    0x400001e0::CPU-MIGRATIONS:u=0  |monitor at user level|
+    0x400001e1::CPU-MIGRATIONS:k=0  |monitor at kernel level|
+    0x400001e2::CPU-MIGRATIONS:period=0  |sampling period|
+    0x400001e3::CPU-MIGRATIONS:freq=0  |sampling frequency (Hz)|
+    0x400001e4::CPU-MIGRATIONS:excl=0  |exclusive access|
+    0x400001e5::CPU-MIGRATIONS:mg=0  |monitor guest execution|
+    0x400001e6::CPU-MIGRATIONS:mh=0  |monitor host execution|
+    0x400001e7::CPU-MIGRATIONS:cpu=0  |CPU to program|
+    0x400001e8::CPU-MIGRATIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::MIGRATIONS	0x400001e9
+ |PERF_COUNT_SW_CPU_MIGRATIONS|
+    0x400001ea::MIGRATIONS:u=0  |monitor at user level|
+    0x400001eb::MIGRATIONS:k=0  |monitor at kernel level|
+    0x400001ec::MIGRATIONS:period=0  |sampling period|
+    0x400001ed::MIGRATIONS:freq=0  |sampling frequency (Hz)|
+    0x400001ee::MIGRATIONS:excl=0  |exclusive access|
+    0x400001ef::MIGRATIONS:mg=0  |monitor guest execution|
+    0x400001f0::MIGRATIONS:mh=0  |monitor host execution|
+    0x400001f1::MIGRATIONS:cpu=0  |CPU to program|
+    0x400001f2::MIGRATIONS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_PAGE_FAULTS_MIN	0x400001f3
+ |PERF_COUNT_SW_PAGE_FAULTS_MIN|
+    0x400001f4::PERF_COUNT_SW_PAGE_FAULTS_MIN:u=0  |monitor at user level|
+    0x400001f5::PERF_COUNT_SW_PAGE_FAULTS_MIN:k=0  |monitor at kernel level|
+    0x400001f6::PERF_COUNT_SW_PAGE_FAULTS_MIN:period=0  |sampling period|
+    0x400001f7::PERF_COUNT_SW_PAGE_FAULTS_MIN:freq=0  |sampling frequency (Hz)|
+    0x400001f8::PERF_COUNT_SW_PAGE_FAULTS_MIN:excl=0  |exclusive access|
+    0x400001f9::PERF_COUNT_SW_PAGE_FAULTS_MIN:mg=0  |monitor guest execution|
+    0x400001fa::PERF_COUNT_SW_PAGE_FAULTS_MIN:mh=0  |monitor host execution|
+    0x400001fb::PERF_COUNT_SW_PAGE_FAULTS_MIN:cpu=0  |CPU to program|
+    0x400001fc::PERF_COUNT_SW_PAGE_FAULTS_MIN:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::MINOR-FAULTS	0x400001fd
+ |PERF_COUNT_SW_PAGE_FAULTS_MIN|
+    0x400001fe::MINOR-FAULTS:u=0  |monitor at user level|
+    0x400001ff::MINOR-FAULTS:k=0  |monitor at kernel level|
+    0x40000200::MINOR-FAULTS:period=0  |sampling period|
+    0x40000201::MINOR-FAULTS:freq=0  |sampling frequency (Hz)|
+    0x40000202::MINOR-FAULTS:excl=0  |exclusive access|
+    0x40000203::MINOR-FAULTS:mg=0  |monitor guest execution|
+    0x40000204::MINOR-FAULTS:mh=0  |monitor host execution|
+    0x40000205::MINOR-FAULTS:cpu=0  |CPU to program|
+    0x40000206::MINOR-FAULTS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_SW_PAGE_FAULTS_MAJ	0x40000207
+ |PERF_COUNT_SW_PAGE_FAULTS_MAJ|
+    0x40000208::PERF_COUNT_SW_PAGE_FAULTS_MAJ:u=0  |monitor at user level|
+    0x40000209::PERF_COUNT_SW_PAGE_FAULTS_MAJ:k=0  |monitor at kernel level|
+    0x4000020a::PERF_COUNT_SW_PAGE_FAULTS_MAJ:period=0  |sampling period|
+    0x4000020b::PERF_COUNT_SW_PAGE_FAULTS_MAJ:freq=0  |sampling frequency (Hz)|
+    0x4000020c::PERF_COUNT_SW_PAGE_FAULTS_MAJ:excl=0  |exclusive access|
+    0x4000020d::PERF_COUNT_SW_PAGE_FAULTS_MAJ:mg=0  |monitor guest execution|
+    0x4000020e::PERF_COUNT_SW_PAGE_FAULTS_MAJ:mh=0  |monitor host execution|
+    0x4000020f::PERF_COUNT_SW_PAGE_FAULTS_MAJ:cpu=0  |CPU to program|
+    0x40000210::PERF_COUNT_SW_PAGE_FAULTS_MAJ:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::MAJOR-FAULTS	0x40000211
+ |PERF_COUNT_SW_PAGE_FAULTS_MAJ|
+    0x40000212::MAJOR-FAULTS:u=0  |monitor at user level|
+    0x40000213::MAJOR-FAULTS:k=0  |monitor at kernel level|
+    0x40000214::MAJOR-FAULTS:period=0  |sampling period|
+    0x40000215::MAJOR-FAULTS:freq=0  |sampling frequency (Hz)|
+    0x40000216::MAJOR-FAULTS:excl=0  |exclusive access|
+    0x40000217::MAJOR-FAULTS:mg=0  |monitor guest execution|
+    0x40000218::MAJOR-FAULTS:mh=0  |monitor host execution|
+    0x40000219::MAJOR-FAULTS:cpu=0  |CPU to program|
+    0x4000021a::MAJOR-FAULTS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_L1D	0x4000021f
+ |L1 data cache|
+    0x40000220::PERF_COUNT_HW_CACHE_L1D:READ  |read access|
+    0x40000221::PERF_COUNT_HW_CACHE_L1D:WRITE  |write access|
+    0x40000222::PERF_COUNT_HW_CACHE_L1D:PREFETCH  |prefetch access|
+    0x40000223::PERF_COUNT_HW_CACHE_L1D:ACCESS  |hit access|
+    0x40000224::PERF_COUNT_HW_CACHE_L1D:MISS  |miss access|
+    0x40000225::PERF_COUNT_HW_CACHE_L1D:u=0  |monitor at user level|
+    0x40000226::PERF_COUNT_HW_CACHE_L1D:k=0  |monitor at kernel level|
+    0x40000227::PERF_COUNT_HW_CACHE_L1D:period=0  |sampling period|
+    0x40000228::PERF_COUNT_HW_CACHE_L1D:freq=0  |sampling frequency (Hz)|
+    0x40000229::PERF_COUNT_HW_CACHE_L1D:precise=0  |precise event sampling|
+    0x4000022a::PERF_COUNT_HW_CACHE_L1D:excl=0  |exclusive access|
+    0x4000022b::PERF_COUNT_HW_CACHE_L1D:mg=0  |monitor guest execution|
+    0x4000022c::PERF_COUNT_HW_CACHE_L1D:mh=0  |monitor host execution|
+    0x4000022d::PERF_COUNT_HW_CACHE_L1D:cpu=0  |CPU to program|
+    0x4000022e::PERF_COUNT_HW_CACHE_L1D:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::L1-DCACHE-LOADS	0x4000022f
+ |L1 cache load accesses|
+    0x40000230::L1-DCACHE-LOADS:u=0  |monitor at user level|
+    0x40000231::L1-DCACHE-LOADS:k=0  |monitor at kernel level|
+    0x40000232::L1-DCACHE-LOADS:period=0  |sampling period|
+    0x40000233::L1-DCACHE-LOADS:freq=0  |sampling frequency (Hz)|
+    0x40000234::L1-DCACHE-LOADS:precise=0  |precise event sampling|
+    0x40000235::L1-DCACHE-LOADS:excl=0  |exclusive access|
+    0x40000236::L1-DCACHE-LOADS:mg=0  |monitor guest execution|
+    0x40000237::L1-DCACHE-LOADS:mh=0  |monitor host execution|
+    0x40000238::L1-DCACHE-LOADS:cpu=0  |CPU to program|
+    0x40000239::L1-DCACHE-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::L1-DCACHE-LOAD-MISSES	0x4000023a
+ |L1 cache load misses|
+    0x4000023b::L1-DCACHE-LOAD-MISSES:u=0  |monitor at user level|
+    0x4000023c::L1-DCACHE-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x4000023d::L1-DCACHE-LOAD-MISSES:period=0  |sampling period|
+    0x4000023e::L1-DCACHE-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x4000023f::L1-DCACHE-LOAD-MISSES:precise=0  |precise event sampling|
+    0x40000240::L1-DCACHE-LOAD-MISSES:excl=0  |exclusive access|
+    0x40000241::L1-DCACHE-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x40000242::L1-DCACHE-LOAD-MISSES:mh=0  |monitor host execution|
+    0x40000243::L1-DCACHE-LOAD-MISSES:cpu=0  |CPU to program|
+    0x40000244::L1-DCACHE-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::L1-DCACHE-STORES	0x40000245
+ |L1 cache store accesses|
+    0x40000246::L1-DCACHE-STORES:u=0  |monitor at user level|
+    0x40000247::L1-DCACHE-STORES:k=0  |monitor at kernel level|
+    0x40000248::L1-DCACHE-STORES:period=0  |sampling period|
+    0x40000249::L1-DCACHE-STORES:freq=0  |sampling frequency (Hz)|
+    0x4000024a::L1-DCACHE-STORES:precise=0  |precise event sampling|
+    0x4000024b::L1-DCACHE-STORES:excl=0  |exclusive access|
+    0x4000024c::L1-DCACHE-STORES:mg=0  |monitor guest execution|
+    0x4000024d::L1-DCACHE-STORES:mh=0  |monitor host execution|
+    0x4000024e::L1-DCACHE-STORES:cpu=0  |CPU to program|
+    0x4000024f::L1-DCACHE-STORES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_L1I	0x40000256
+ |L1 instruction cache|
+    0x40000257::PERF_COUNT_HW_CACHE_L1I:READ  |read access|
+    0x40000258::PERF_COUNT_HW_CACHE_L1I:PREFETCH  |prefetch access|
+    0x40000259::PERF_COUNT_HW_CACHE_L1I:ACCESS  |hit access|
+    0x4000025a::PERF_COUNT_HW_CACHE_L1I:MISS  |miss access|
+    0x4000025b::PERF_COUNT_HW_CACHE_L1I:u=0  |monitor at user level|
+    0x4000025c::PERF_COUNT_HW_CACHE_L1I:k=0  |monitor at kernel level|
+    0x4000025d::PERF_COUNT_HW_CACHE_L1I:period=0  |sampling period|
+    0x4000025e::PERF_COUNT_HW_CACHE_L1I:freq=0  |sampling frequency (Hz)|
+    0x4000025f::PERF_COUNT_HW_CACHE_L1I:precise=0  |precise event sampling|
+    0x40000260::PERF_COUNT_HW_CACHE_L1I:excl=0  |exclusive access|
+    0x40000261::PERF_COUNT_HW_CACHE_L1I:mg=0  |monitor guest execution|
+    0x40000262::PERF_COUNT_HW_CACHE_L1I:mh=0  |monitor host execution|
+    0x40000263::PERF_COUNT_HW_CACHE_L1I:cpu=0  |CPU to program|
+    0x40000264::PERF_COUNT_HW_CACHE_L1I:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::L1-ICACHE-LOAD-MISSES	0x40000267
+ |L1I cache load misses|
+    0x40000268::L1-ICACHE-LOAD-MISSES:u=0  |monitor at user level|
+    0x40000269::L1-ICACHE-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x4000026a::L1-ICACHE-LOAD-MISSES:period=0  |sampling period|
+    0x4000026b::L1-ICACHE-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x4000026c::L1-ICACHE-LOAD-MISSES:precise=0  |precise event sampling|
+    0x4000026d::L1-ICACHE-LOAD-MISSES:excl=0  |exclusive access|
+    0x4000026e::L1-ICACHE-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x4000026f::L1-ICACHE-LOAD-MISSES:mh=0  |monitor host execution|
+    0x40000270::L1-ICACHE-LOAD-MISSES:cpu=0  |CPU to program|
+    0x40000271::L1-ICACHE-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_LL	0x40000276
+ |Last level cache|
+    0x40000277::PERF_COUNT_HW_CACHE_LL:READ  |read access|
+    0x40000278::PERF_COUNT_HW_CACHE_LL:WRITE  |write access|
+    0x40000279::PERF_COUNT_HW_CACHE_LL:PREFETCH  |prefetch access|
+    0x4000027a::PERF_COUNT_HW_CACHE_LL:ACCESS  |hit access|
+    0x4000027b::PERF_COUNT_HW_CACHE_LL:MISS  |miss access|
+    0x4000027c::PERF_COUNT_HW_CACHE_LL:u=0  |monitor at user level|
+    0x4000027d::PERF_COUNT_HW_CACHE_LL:k=0  |monitor at kernel level|
+    0x4000027e::PERF_COUNT_HW_CACHE_LL:period=0  |sampling period|
+    0x4000027f::PERF_COUNT_HW_CACHE_LL:freq=0  |sampling frequency (Hz)|
+    0x40000280::PERF_COUNT_HW_CACHE_LL:precise=0  |precise event sampling|
+    0x40000281::PERF_COUNT_HW_CACHE_LL:excl=0  |exclusive access|
+    0x40000282::PERF_COUNT_HW_CACHE_LL:mg=0  |monitor guest execution|
+    0x40000283::PERF_COUNT_HW_CACHE_LL:mh=0  |monitor host execution|
+    0x40000284::PERF_COUNT_HW_CACHE_LL:cpu=0  |CPU to program|
+    0x40000285::PERF_COUNT_HW_CACHE_LL:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::LLC-LOADS	0x40000286
+ |Last level cache load accesses|
+    0x40000287::LLC-LOADS:u=0  |monitor at user level|
+    0x40000288::LLC-LOADS:k=0  |monitor at kernel level|
+    0x40000289::LLC-LOADS:period=0  |sampling period|
+    0x4000028a::LLC-LOADS:freq=0  |sampling frequency (Hz)|
+    0x4000028b::LLC-LOADS:precise=0  |precise event sampling|
+    0x4000028c::LLC-LOADS:excl=0  |exclusive access|
+    0x4000028d::LLC-LOADS:mg=0  |monitor guest execution|
+    0x4000028e::LLC-LOADS:mh=0  |monitor host execution|
+    0x4000028f::LLC-LOADS:cpu=0  |CPU to program|
+    0x40000290::LLC-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::LLC-LOAD-MISSES	0x40000291
+ |Last level cache load misses|
+    0x40000292::LLC-LOAD-MISSES:u=0  |monitor at user level|
+    0x40000293::LLC-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x40000294::LLC-LOAD-MISSES:period=0  |sampling period|
+    0x40000295::LLC-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000296::LLC-LOAD-MISSES:precise=0  |precise event sampling|
+    0x40000297::LLC-LOAD-MISSES:excl=0  |exclusive access|
+    0x40000298::LLC-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x40000299::LLC-LOAD-MISSES:mh=0  |monitor host execution|
+    0x4000029a::LLC-LOAD-MISSES:cpu=0  |CPU to program|
+    0x4000029b::LLC-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::LLC-STORES	0x4000029c
+ |Last level cache store accesses|
+    0x4000029d::LLC-STORES:u=0  |monitor at user level|
+    0x4000029e::LLC-STORES:k=0  |monitor at kernel level|
+    0x4000029f::LLC-STORES:period=0  |sampling period|
+    0x400002a0::LLC-STORES:freq=0  |sampling frequency (Hz)|
+    0x400002a1::LLC-STORES:precise=0  |precise event sampling|
+    0x400002a2::LLC-STORES:excl=0  |exclusive access|
+    0x400002a3::LLC-STORES:mg=0  |monitor guest execution|
+    0x400002a4::LLC-STORES:mh=0  |monitor host execution|
+    0x400002a5::LLC-STORES:cpu=0  |CPU to program|
+    0x400002a6::LLC-STORES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::LLC-STORE-MISSES	0x400002a7
+ |Last level cache store misses|
+    0x400002a8::LLC-STORE-MISSES:u=0  |monitor at user level|
+    0x400002a9::LLC-STORE-MISSES:k=0  |monitor at kernel level|
+    0x400002aa::LLC-STORE-MISSES:period=0  |sampling period|
+    0x400002ab::LLC-STORE-MISSES:freq=0  |sampling frequency (Hz)|
+    0x400002ac::LLC-STORE-MISSES:precise=0  |precise event sampling|
+    0x400002ad::LLC-STORE-MISSES:excl=0  |exclusive access|
+    0x400002ae::LLC-STORE-MISSES:mg=0  |monitor guest execution|
+    0x400002af::LLC-STORE-MISSES:mh=0  |monitor host execution|
+    0x400002b0::LLC-STORE-MISSES:cpu=0  |CPU to program|
+    0x400002b1::LLC-STORE-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_DTLB	0x400002b6
+ |Data Translation Lookaside Buffer|
+    0x400002b7::PERF_COUNT_HW_CACHE_DTLB:READ  |read access|
+    0x400002b8::PERF_COUNT_HW_CACHE_DTLB:WRITE  |write access|
+    0x400002b9::PERF_COUNT_HW_CACHE_DTLB:PREFETCH  |prefetch access|
+    0x400002ba::PERF_COUNT_HW_CACHE_DTLB:ACCESS  |hit access|
+    0x400002bb::PERF_COUNT_HW_CACHE_DTLB:MISS  |miss access|
+    0x400002bc::PERF_COUNT_HW_CACHE_DTLB:u=0  |monitor at user level|
+    0x400002bd::PERF_COUNT_HW_CACHE_DTLB:k=0  |monitor at kernel level|
+    0x400002be::PERF_COUNT_HW_CACHE_DTLB:period=0  |sampling period|
+    0x400002bf::PERF_COUNT_HW_CACHE_DTLB:freq=0  |sampling frequency (Hz)|
+    0x400002c0::PERF_COUNT_HW_CACHE_DTLB:precise=0  |precise event sampling|
+    0x400002c1::PERF_COUNT_HW_CACHE_DTLB:excl=0  |exclusive access|
+    0x400002c2::PERF_COUNT_HW_CACHE_DTLB:mg=0  |monitor guest execution|
+    0x400002c3::PERF_COUNT_HW_CACHE_DTLB:mh=0  |monitor host execution|
+    0x400002c4::PERF_COUNT_HW_CACHE_DTLB:cpu=0  |CPU to program|
+    0x400002c5::PERF_COUNT_HW_CACHE_DTLB:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::DTLB-LOADS	0x400002c6
+ |Data TLB load accesses|
+    0x400002c7::DTLB-LOADS:u=0  |monitor at user level|
+    0x400002c8::DTLB-LOADS:k=0  |monitor at kernel level|
+    0x400002c9::DTLB-LOADS:period=0  |sampling period|
+    0x400002ca::DTLB-LOADS:freq=0  |sampling frequency (Hz)|
+    0x400002cb::DTLB-LOADS:precise=0  |precise event sampling|
+    0x400002cc::DTLB-LOADS:excl=0  |exclusive access|
+    0x400002cd::DTLB-LOADS:mg=0  |monitor guest execution|
+    0x400002ce::DTLB-LOADS:mh=0  |monitor host execution|
+    0x400002cf::DTLB-LOADS:cpu=0  |CPU to program|
+    0x400002d0::DTLB-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::DTLB-LOAD-MISSES	0x400002d1
+ |Data TLB load misses|
+    0x400002d2::DTLB-LOAD-MISSES:u=0  |monitor at user level|
+    0x400002d3::DTLB-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x400002d4::DTLB-LOAD-MISSES:period=0  |sampling period|
+    0x400002d5::DTLB-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x400002d6::DTLB-LOAD-MISSES:precise=0  |precise event sampling|
+    0x400002d7::DTLB-LOAD-MISSES:excl=0  |exclusive access|
+    0x400002d8::DTLB-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x400002d9::DTLB-LOAD-MISSES:mh=0  |monitor host execution|
+    0x400002da::DTLB-LOAD-MISSES:cpu=0  |CPU to program|
+    0x400002db::DTLB-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::DTLB-STORES	0x400002dc
+ |Data TLB store accesses|
+    0x400002dd::DTLB-STORES:u=0  |monitor at user level|
+    0x400002de::DTLB-STORES:k=0  |monitor at kernel level|
+    0x400002df::DTLB-STORES:period=0  |sampling period|
+    0x400002e0::DTLB-STORES:freq=0  |sampling frequency (Hz)|
+    0x400002e1::DTLB-STORES:precise=0  |precise event sampling|
+    0x400002e2::DTLB-STORES:excl=0  |exclusive access|
+    0x400002e3::DTLB-STORES:mg=0  |monitor guest execution|
+    0x400002e4::DTLB-STORES:mh=0  |monitor host execution|
+    0x400002e5::DTLB-STORES:cpu=0  |CPU to program|
+    0x400002e6::DTLB-STORES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::DTLB-STORE-MISSES	0x400002e7
+ |Data TLB store misses|
+    0x400002e8::DTLB-STORE-MISSES:u=0  |monitor at user level|
+    0x400002e9::DTLB-STORE-MISSES:k=0  |monitor at kernel level|
+    0x400002ea::DTLB-STORE-MISSES:period=0  |sampling period|
+    0x400002eb::DTLB-STORE-MISSES:freq=0  |sampling frequency (Hz)|
+    0x400002ec::DTLB-STORE-MISSES:precise=0  |precise event sampling|
+    0x400002ed::DTLB-STORE-MISSES:excl=0  |exclusive access|
+    0x400002ee::DTLB-STORE-MISSES:mg=0  |monitor guest execution|
+    0x400002ef::DTLB-STORE-MISSES:mh=0  |monitor host execution|
+    0x400002f0::DTLB-STORE-MISSES:cpu=0  |CPU to program|
+    0x400002f1::DTLB-STORE-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_ITLB	0x400002f6
+ |Instruction Translation Lookaside Buffer|
+    0x400002f7::PERF_COUNT_HW_CACHE_ITLB:READ  |read access|
+    0x400002f8::PERF_COUNT_HW_CACHE_ITLB:ACCESS  |hit access|
+    0x400002f9::PERF_COUNT_HW_CACHE_ITLB:MISS  |miss access|
+    0x400002fa::PERF_COUNT_HW_CACHE_ITLB:u=0  |monitor at user level|
+    0x400002fb::PERF_COUNT_HW_CACHE_ITLB:k=0  |monitor at kernel level|
+    0x400002fc::PERF_COUNT_HW_CACHE_ITLB:period=0  |sampling period|
+    0x400002fd::PERF_COUNT_HW_CACHE_ITLB:freq=0  |sampling frequency (Hz)|
+    0x400002fe::PERF_COUNT_HW_CACHE_ITLB:precise=0  |precise event sampling|
+    0x400002ff::PERF_COUNT_HW_CACHE_ITLB:excl=0  |exclusive access|
+    0x40000300::PERF_COUNT_HW_CACHE_ITLB:mg=0  |monitor guest execution|
+    0x40000301::PERF_COUNT_HW_CACHE_ITLB:mh=0  |monitor host execution|
+    0x40000302::PERF_COUNT_HW_CACHE_ITLB:cpu=0  |CPU to program|
+    0x40000303::PERF_COUNT_HW_CACHE_ITLB:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::ITLB-LOADS	0x40000304
+ |Instruction TLB load accesses|
+    0x40000305::ITLB-LOADS:u=0  |monitor at user level|
+    0x40000306::ITLB-LOADS:k=0  |monitor at kernel level|
+    0x40000307::ITLB-LOADS:period=0  |sampling period|
+    0x40000308::ITLB-LOADS:freq=0  |sampling frequency (Hz)|
+    0x40000309::ITLB-LOADS:precise=0  |precise event sampling|
+    0x4000030a::ITLB-LOADS:excl=0  |exclusive access|
+    0x4000030b::ITLB-LOADS:mg=0  |monitor guest execution|
+    0x4000030c::ITLB-LOADS:mh=0  |monitor host execution|
+    0x4000030d::ITLB-LOADS:cpu=0  |CPU to program|
+    0x4000030e::ITLB-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::ITLB-LOAD-MISSES	0x4000030f
+ |Instruction TLB load misses|
+    0x40000310::ITLB-LOAD-MISSES:u=0  |monitor at user level|
+    0x40000311::ITLB-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x40000312::ITLB-LOAD-MISSES:period=0  |sampling period|
+    0x40000313::ITLB-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000314::ITLB-LOAD-MISSES:precise=0  |precise event sampling|
+    0x40000315::ITLB-LOAD-MISSES:excl=0  |exclusive access|
+    0x40000316::ITLB-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x40000317::ITLB-LOAD-MISSES:mh=0  |monitor host execution|
+    0x40000318::ITLB-LOAD-MISSES:cpu=0  |CPU to program|
+    0x40000319::ITLB-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_BPU	0x4000031a
+ |Branch Prediction Unit|
+    0x4000031b::PERF_COUNT_HW_CACHE_BPU:READ  |read access|
+    0x4000031c::PERF_COUNT_HW_CACHE_BPU:ACCESS  |hit access|
+    0x4000031d::PERF_COUNT_HW_CACHE_BPU:MISS  |miss access|
+    0x4000031e::PERF_COUNT_HW_CACHE_BPU:u=0  |monitor at user level|
+    0x4000031f::PERF_COUNT_HW_CACHE_BPU:k=0  |monitor at kernel level|
+    0x40000320::PERF_COUNT_HW_CACHE_BPU:period=0  |sampling period|
+    0x40000321::PERF_COUNT_HW_CACHE_BPU:freq=0  |sampling frequency (Hz)|
+    0x40000322::PERF_COUNT_HW_CACHE_BPU:precise=0  |precise event sampling|
+    0x40000323::PERF_COUNT_HW_CACHE_BPU:excl=0  |exclusive access|
+    0x40000324::PERF_COUNT_HW_CACHE_BPU:mg=0  |monitor guest execution|
+    0x40000325::PERF_COUNT_HW_CACHE_BPU:mh=0  |monitor host execution|
+    0x40000326::PERF_COUNT_HW_CACHE_BPU:cpu=0  |CPU to program|
+    0x40000327::PERF_COUNT_HW_CACHE_BPU:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BRANCH-LOADS	0x40000328
+ |Branch  load accesses|
+    0x40000329::BRANCH-LOADS:u=0  |monitor at user level|
+    0x4000032a::BRANCH-LOADS:k=0  |monitor at kernel level|
+    0x4000032b::BRANCH-LOADS:period=0  |sampling period|
+    0x4000032c::BRANCH-LOADS:freq=0  |sampling frequency (Hz)|
+    0x4000032d::BRANCH-LOADS:precise=0  |precise event sampling|
+    0x4000032e::BRANCH-LOADS:excl=0  |exclusive access|
+    0x4000032f::BRANCH-LOADS:mg=0  |monitor guest execution|
+    0x40000330::BRANCH-LOADS:mh=0  |monitor host execution|
+    0x40000331::BRANCH-LOADS:cpu=0  |CPU to program|
+    0x40000332::BRANCH-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::BRANCH-LOAD-MISSES	0x40000333
+ |Branch  load misses|
+    0x40000334::BRANCH-LOAD-MISSES:u=0  |monitor at user level|
+    0x40000335::BRANCH-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x40000336::BRANCH-LOAD-MISSES:period=0  |sampling period|
+    0x40000337::BRANCH-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000338::BRANCH-LOAD-MISSES:precise=0  |precise event sampling|
+    0x40000339::BRANCH-LOAD-MISSES:excl=0  |exclusive access|
+    0x4000033a::BRANCH-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x4000033b::BRANCH-LOAD-MISSES:mh=0  |monitor host execution|
+    0x4000033c::BRANCH-LOAD-MISSES:cpu=0  |CPU to program|
+    0x4000033d::BRANCH-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::PERF_COUNT_HW_CACHE_NODE	0x4000033e
+ |Node memory access|
+    0x4000033f::PERF_COUNT_HW_CACHE_NODE:READ  |read access|
+    0x40000340::PERF_COUNT_HW_CACHE_NODE:WRITE  |write access|
+    0x40000341::PERF_COUNT_HW_CACHE_NODE:PREFETCH  |prefetch access|
+    0x40000342::PERF_COUNT_HW_CACHE_NODE:ACCESS  |hit access|
+    0x40000343::PERF_COUNT_HW_CACHE_NODE:MISS  |miss access|
+    0x40000344::PERF_COUNT_HW_CACHE_NODE:u=0  |monitor at user level|
+    0x40000345::PERF_COUNT_HW_CACHE_NODE:k=0  |monitor at kernel level|
+    0x40000346::PERF_COUNT_HW_CACHE_NODE:period=0  |sampling period|
+    0x40000347::PERF_COUNT_HW_CACHE_NODE:freq=0  |sampling frequency (Hz)|
+    0x40000348::PERF_COUNT_HW_CACHE_NODE:precise=0  |precise event sampling|
+    0x40000349::PERF_COUNT_HW_CACHE_NODE:excl=0  |exclusive access|
+    0x4000034a::PERF_COUNT_HW_CACHE_NODE:mg=0  |monitor guest execution|
+    0x4000034b::PERF_COUNT_HW_CACHE_NODE:mh=0  |monitor host execution|
+    0x4000034c::PERF_COUNT_HW_CACHE_NODE:cpu=0  |CPU to program|
+    0x4000034d::PERF_COUNT_HW_CACHE_NODE:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::NODE-LOADS	0x4000034e
+ |Node  load accesses|
+    0x4000034f::NODE-LOADS:u=0  |monitor at user level|
+    0x40000350::NODE-LOADS:k=0  |monitor at kernel level|
+    0x40000351::NODE-LOADS:period=0  |sampling period|
+    0x40000352::NODE-LOADS:freq=0  |sampling frequency (Hz)|
+    0x40000353::NODE-LOADS:precise=0  |precise event sampling|
+    0x40000354::NODE-LOADS:excl=0  |exclusive access|
+    0x40000355::NODE-LOADS:mg=0  |monitor guest execution|
+    0x40000356::NODE-LOADS:mh=0  |monitor host execution|
+    0x40000357::NODE-LOADS:cpu=0  |CPU to program|
+    0x40000358::NODE-LOADS:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::NODE-LOAD-MISSES	0x40000359
+ |Node  load misses|
+    0x4000035a::NODE-LOAD-MISSES:u=0  |monitor at user level|
+    0x4000035b::NODE-LOAD-MISSES:k=0  |monitor at kernel level|
+    0x4000035c::NODE-LOAD-MISSES:period=0  |sampling period|
+    0x4000035d::NODE-LOAD-MISSES:freq=0  |sampling frequency (Hz)|
+    0x4000035e::NODE-LOAD-MISSES:precise=0  |precise event sampling|
+    0x4000035f::NODE-LOAD-MISSES:excl=0  |exclusive access|
+    0x40000360::NODE-LOAD-MISSES:mg=0  |monitor guest execution|
+    0x40000361::NODE-LOAD-MISSES:mh=0  |monitor host execution|
+    0x40000362::NODE-LOAD-MISSES:cpu=0  |CPU to program|
+    0x40000363::NODE-LOAD-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::NODE-STORES	0x40000364
+ |Node  store accesses|
+    0x40000365::NODE-STORES:u=0  |monitor at user level|
+    0x40000366::NODE-STORES:k=0  |monitor at kernel level|
+    0x40000367::NODE-STORES:period=0  |sampling period|
+    0x40000368::NODE-STORES:freq=0  |sampling frequency (Hz)|
+    0x40000369::NODE-STORES:precise=0  |precise event sampling|
+    0x4000036a::NODE-STORES:excl=0  |exclusive access|
+    0x4000036b::NODE-STORES:mg=0  |monitor guest execution|
+    0x4000036c::NODE-STORES:mh=0  |monitor host execution|
+    0x4000036d::NODE-STORES:cpu=0  |CPU to program|
+    0x4000036e::NODE-STORES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf::NODE-STORE-MISSES	0x4000036f
+ |Node  store misses|
+    0x40000370::NODE-STORE-MISSES:u=0  |monitor at user level|
+    0x40000371::NODE-STORE-MISSES:k=0  |monitor at kernel level|
+    0x40000372::NODE-STORE-MISSES:period=0  |sampling period|
+    0x40000373::NODE-STORE-MISSES:freq=0  |sampling frequency (Hz)|
+    0x40000374::NODE-STORE-MISSES:precise=0  |precise event sampling|
+    0x40000375::NODE-STORE-MISSES:excl=0  |exclusive access|
+    0x40000376::NODE-STORE-MISSES:mg=0  |monitor guest execution|
+    0x40000377::NODE-STORE-MISSES:mh=0  |monitor host execution|
+    0x40000378::NODE-STORE-MISSES:cpu=0  |CPU to program|
+    0x40000379::NODE-STORE-MISSES:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+perf_raw::r0000	0x4000037e
+ |perf_events raw event syntax: r[0-9a-fA-F]+|
+    0x4000037f::r0000:u=0  | r[0-9a-fA-F]+, masks:monitor at user level|
+    0x40000380::r0000:k=0  | r[0-9a-fA-F]+, masks:monitor at kernel level|
+    0x40000381::r0000:h=0  | r[0-9a-fA-F]+, masks:monitor at hypervisor level|
+    0x40000382::r0000:period=0  | r[0-9a-fA-F]+, masks:sampling period|
+    0x40000383::r0000:freq=0  | r[0-9a-fA-F]+, masks:sampling frequency (Hz)|
+    0x40000384::r0000:precise=0  | r[0-9a-fA-F]+, masks:precise event sampling|
+    0x40000385::r0000:excl=0  | r[0-9a-fA-F]+, masks:exclusive access|
+    0x40000386::r0000:mg=0  | r[0-9a-fA-F]+, masks:monitor guest execution|
+    0x40000387::r0000:mh=0  | r[0-9a-fA-F]+, masks:monitor host execution|
+    0x40000388::r0000:cpu=0  | r[0-9a-fA-F]+, masks:CPU to program|
+    0x40000389::r0000:pinned=0  | r[0-9a-fA-F]+, masks:pin event to counters|
+    0x4000038a::r0000:hw_smpl=0  | r[0-9a-fA-F]+, masks:enable hardware sampling|
+-------------------------------------------------------------------------
+UNHALTED_CORE_CYCLES	0x4000038b
+ |Count core clock cycles whenever the clock signal on the specific core is running (not halted)|
+    0x4000038c:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000038d:i=0  |invert|
+    0x4000038e:c=0  |counter-mask in range [0-255]|
+    0x4000038f:t=0  |measure any thread|
+    0x40000390:intx=0  |monitor only inside transactional memory region|
+    0x40000391:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000392:u=0  |monitor at user level|
+    0x40000393:k=0  |monitor at kernel level|
+    0x40000394:period=0  |sampling period|
+    0x40000395:freq=0  |sampling frequency (Hz)|
+    0x40000396:excl=0  |exclusive access|
+    0x40000397:mg=0  |monitor guest execution|
+    0x40000398:mh=0  |monitor host execution|
+    0x40000399:cpu=0  |CPU to program|
+    0x4000039a:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UNHALTED_REFERENCE_CYCLES	0x4000039b
+ |Unhalted reference cycles|
+    0x4000039c:t=0  |measure any thread|
+    0x4000039d:u=0  |monitor at user level|
+    0x4000039e:k=0  |monitor at kernel level|
+    0x4000039f:period=0  |sampling period|
+    0x400003a0:freq=0  |sampling frequency (Hz)|
+    0x400003a1:excl=0  |exclusive access|
+    0x400003a2:mg=0  |monitor guest execution|
+    0x400003a3:mh=0  |monitor host execution|
+    0x400003a4:cpu=0  |CPU to program|
+    0x400003a5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+INSTRUCTION_RETIRED	0x400003a6
+ |Number of instructions at retirement|
+    0x400003a7:e=0  |edge level (may require counter-mask >= 1)|
+    0x400003a8:i=0  |invert|
+    0x400003a9:c=0  |counter-mask in range [0-255]|
+    0x400003aa:t=0  |measure any thread|
+    0x400003ab:intx=0  |monitor only inside transactional memory region|
+    0x400003ac:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400003ad:u=0  |monitor at user level|
+    0x400003ae:k=0  |monitor at kernel level|
+    0x400003af:period=0  |sampling period|
+    0x400003b0:freq=0  |sampling frequency (Hz)|
+    0x400003b1:excl=0  |exclusive access|
+    0x400003b2:mg=0  |monitor guest execution|
+    0x400003b3:mh=0  |monitor host execution|
+    0x400003b4:cpu=0  |CPU to program|
+    0x400003b5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+INSTRUCTIONS_RETIRED	0x400003b6
+ |This is an alias for INSTRUCTION_RETIRED|
+    0x400003b7:e=0  |edge level (may require counter-mask >= 1)|
+    0x400003b8:i=0  |invert|
+    0x400003b9:c=0  |counter-mask in range [0-255]|
+    0x400003ba:t=0  |measure any thread|
+    0x400003bb:intx=0  |monitor only inside transactional memory region|
+    0x400003bc:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400003bd:u=0  |monitor at user level|
+    0x400003be:k=0  |monitor at kernel level|
+    0x400003bf:period=0  |sampling period|
+    0x400003c0:freq=0  |sampling frequency (Hz)|
+    0x400003c1:excl=0  |exclusive access|
+    0x400003c2:mg=0  |monitor guest execution|
+    0x400003c3:mh=0  |monitor host execution|
+    0x400003c4:cpu=0  |CPU to program|
+    0x400003c5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+BRANCH_INSTRUCTIONS_RETIRED	0x400003c6
+ |Count branch instructions at retirement. Specifically, this event counts the retirement of the last micro-op of a branch instruction|
+    0x400003c7:e=0  |edge level (may require counter-mask >= 1)|
+    0x400003c8:i=0  |invert|
+    0x400003c9:c=0  |counter-mask in range [0-255]|
+    0x400003ca:t=0  |measure any thread|
+    0x400003cb:intx=0  |monitor only inside transactional memory region|
+    0x400003cc:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400003cd:u=0  |monitor at user level|
+    0x400003ce:k=0  |monitor at kernel level|
+    0x400003cf:period=0  |sampling period|
+    0x400003d0:freq=0  |sampling frequency (Hz)|
+    0x400003d1:excl=0  |exclusive access|
+    0x400003d2:mg=0  |monitor guest execution|
+    0x400003d3:mh=0  |monitor host execution|
+    0x400003d4:cpu=0  |CPU to program|
+    0x400003d5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MISPREDICTED_BRANCH_RETIRED	0x400003d6
+ |Count mispredicted branch instructions at retirement. Specifically, this event counts at retirement of the last micro-op of a branch instruction in the architectural path of the execution and experienced misprediction in the branch prediction hardware|
+    0x400003d7:e=0  |edge level (may require counter-mask >= 1)|
+    0x400003d8:i=0  |invert|
+    0x400003d9:c=0  |counter-mask in range [0-255]|
+    0x400003da:t=0  |measure any thread|
+    0x400003db:intx=0  |monitor only inside transactional memory region|
+    0x400003dc:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400003dd:u=0  |monitor at user level|
+    0x400003de:k=0  |monitor at kernel level|
+    0x400003df:period=0  |sampling period|
+    0x400003e0:freq=0  |sampling frequency (Hz)|
+    0x400003e1:excl=0  |exclusive access|
+    0x400003e2:mg=0  |monitor guest execution|
+    0x400003e3:mh=0  |monitor host execution|
+    0x400003e4:cpu=0  |CPU to program|
+    0x400003e5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+BACLEARS	0x400003e6
+ |Branch re-steered|
+    0x400003e7:ANY  |Number of front-end re-steers due to BPU misprediction|
+    0x400003e8:e=0  |edge level (may require counter-mask >= 1)|
+    0x400003e9:i=0  |invert|
+    0x400003ea:c=0  |counter-mask in range [0-255]|
+    0x400003eb:t=0  |measure any thread|
+    0x400003ec:intx=0  |monitor only inside transactional memory region|
+    0x400003ed:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400003ee:u=0  |monitor at user level|
+    0x400003ef:k=0  |monitor at kernel level|
+    0x400003f0:period=0  |sampling period|
+    0x400003f1:freq=0  |sampling frequency (Hz)|
+    0x400003f2:excl=0  |exclusive access|
+    0x400003f3:mg=0  |monitor guest execution|
+    0x400003f4:mh=0  |monitor host execution|
+    0x400003f5:cpu=0  |CPU to program|
+    0x400003f6:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+BR_INST_RETIRED	0x400003f7
+ |Branch instructions retired (Precise Event)|
+    0x400003f8:CONDITIONAL  |Counts all taken and not taken macro conditional branch instructions|
+    0x400003f9:COND  |Counts all taken and not taken macro conditional branch instructions|
+    0x400003fa:NEAR_CALL  |Counts all macro direct and indirect near calls|
+    0x400003fb:ALL_BRANCHES  |Counts all taken and not taken macro branches including far branches (architectural event)|
+    0x400003fc:NEAR_RETURN  |Counts the number of near ret instructions retired|
+    0x400003fd:NOT_TAKEN  |Counts all not taken macro branch instructions retired|
+    0x400003fe:NEAR_TAKEN  |Counts the number of near branch taken instructions retired|
+    0x400003ff:FAR_BRANCH  |Counts the number of far branch instructions retired|
+    0x40000400:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000401:i=0  |invert|
+    0x40000402:c=0  |counter-mask in range [0-255]|
+    0x40000403:t=0  |measure any thread|
+    0x40000404:intx=0  |monitor only inside transactional memory region|
+    0x40000405:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000406:u=0  |monitor at user level|
+    0x40000407:k=0  |monitor at kernel level|
+    0x40000408:period=0  |sampling period|
+    0x40000409:freq=0  |sampling frequency (Hz)|
+    0x4000040a:precise=0  |precise event sampling|
+    0x4000040b:excl=0  |exclusive access|
+    0x4000040c:mg=0  |monitor guest execution|
+    0x4000040d:mh=0  |monitor host execution|
+    0x4000040e:cpu=0  |CPU to program|
+    0x4000040f:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+BR_MISP_RETIRED	0x40000410
+ |Mispredicted retired branches (Precise Event)|
+    0x40000411:CONDITIONAL  |All mispredicted macro conditional branch instructions|
+    0x40000412:COND  |All mispredicted macro conditional branch instructions|
+    0x40000413:ALL_BRANCHES  |All mispredicted macro branches (architectural event)|
+    0x40000414:NEAR_TAKEN  |Number of near branch instructions retired that were mispredicted and taken|
+    0x40000415:NEAR_CALL  |Counts both taken and not taken retired mispredicted direct and indirect near calls, including both register and memory indirect.|
+    0x40000416:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000417:i=0  |invert|
+    0x40000418:c=0  |counter-mask in range [0-255]|
+    0x40000419:t=0  |measure any thread|
+    0x4000041a:intx=0  |monitor only inside transactional memory region|
+    0x4000041b:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000041c:u=0  |monitor at user level|
+    0x4000041d:k=0  |monitor at kernel level|
+    0x4000041e:period=0  |sampling period|
+    0x4000041f:freq=0  |sampling frequency (Hz)|
+    0x40000420:precise=0  |precise event sampling|
+    0x40000421:excl=0  |exclusive access|
+    0x40000422:mg=0  |monitor guest execution|
+    0x40000423:mh=0  |monitor host execution|
+    0x40000424:cpu=0  |CPU to program|
+    0x40000425:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+CPU_CLK_THREAD_UNHALTED	0x40000426
+ |Count core clock cycles whenever the clock signal on the specific core is running (not halted)|
+    0x40000427:REF_XCLK  |Count Xclk pulses (100Mhz) when the core is unhalted|
+    0x40000428:REF_XCLK_ANY  |Count Xclk pulses (100Mhz) when the at least one thread on the physical core is unhalted|
+    0x40000429:REF_P  |Cycles when the core is unhalted (count at 100 Mhz)|
+    0x4000042a:THREAD_P  |Cycles when thread is not halted|
+    0x4000042b:ONE_THREAD_ACTIVE  |Counts Xclk (100Mhz) pulses when this thread is unhalted and the other thread is halted|
+    0x4000042c:RING0_TRANS  |Counts when the current privilege level transitions from ring 1, 2 or 3 to ring 0 (kernel)|
+    0x4000042d:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000042e:i=0  |invert|
+    0x4000042f:c=0  |counter-mask in range [0-255]|
+    0x40000430:t=0  |measure any thread|
+    0x40000431:intx=0  |monitor only inside transactional memory region|
+    0x40000432:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000433:u=0  |monitor at user level|
+    0x40000434:k=0  |monitor at kernel level|
+    0x40000435:period=0  |sampling period|
+    0x40000436:freq=0  |sampling frequency (Hz)|
+    0x40000437:excl=0  |exclusive access|
+    0x40000438:mg=0  |monitor guest execution|
+    0x40000439:mh=0  |monitor host execution|
+    0x4000043a:cpu=0  |CPU to program|
+    0x4000043b:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+CPU_CLK_UNHALTED	0x4000043c
+ |Count core clock cycles whenever the clock signal on the specific core is running (not halted)|
+    0x4000043d:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000043e:i=0  |invert|
+    0x4000043f:c=0  |counter-mask in range [0-255]|
+    0x40000440:t=0  |measure any thread|
+    0x40000441:intx=0  |monitor only inside transactional memory region|
+    0x40000442:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000443:u=0  |monitor at user level|
+    0x40000444:k=0  |monitor at kernel level|
+    0x40000445:period=0  |sampling period|
+    0x40000446:freq=0  |sampling frequency (Hz)|
+    0x40000447:excl=0  |exclusive access|
+    0x40000448:mg=0  |monitor guest execution|
+    0x40000449:mh=0  |monitor host execution|
+    0x4000044a:cpu=0  |CPU to program|
+    0x4000044b:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+CYCLE_ACTIVITY	0x4000044c
+ |Stalled cycles|
+    0x4000044d:CYCLES_L2_MISS  |Cycles with pending L2 miss demand loads outstanding|
+    0x4000044e:CYCLES_L2_PENDING  |Cycles with pending L2 miss demand loads outstanding|
+    0x4000044f:CYCLES_L3_MISS  |Cycles with L3 cache miss demand loads outstanding|
+    0x40000450:CYCLES_LDM_PENDING  |Cycles with L3 cache miss demand loads outstanding|
+    0x40000451:CYCLES_L1D_MISS  |Cycles with pending L1D load cache misses|
+    0x40000452:CYCLES_L1D_PENDING  |Cycles with pending L1D load cache misses|
+    0x40000453:CYCLES_MEM_ANY  |Cycles when memory subsystem has at least one outstanding load|
+    0x40000454:STALLS_L1D_MISS  |Execution stalls while at least one L1D demand load cache miss is outstanding|
+    0x40000455:STALLS_L2_MISS  |Execution stalls while at least one L2 demand load is outstanding|
+    0x40000456:STALLS_L3_MISS  |Execution stalls while at least one L3 demand load is outstanding|
+    0x40000457:STALLS_MEM_ANY  |Execution stalls while at least one demand load is outstanding in the memory subsystem|
+    0x40000458:STALLS_TOTAL  |Total execution stalls in cycles|
+    0x40000459:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000045a:i=0  |invert|
+    0x4000045b:c=0  |counter-mask in range [0-255]|
+    0x4000045c:t=0  |measure any thread|
+    0x4000045d:intx=0  |monitor only inside transactional memory region|
+    0x4000045e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000045f:u=0  |monitor at user level|
+    0x40000460:k=0  |monitor at kernel level|
+    0x40000461:period=0  |sampling period|
+    0x40000462:freq=0  |sampling frequency (Hz)|
+    0x40000463:excl=0  |exclusive access|
+    0x40000464:mg=0  |monitor guest execution|
+    0x40000465:mh=0  |monitor host execution|
+    0x40000466:cpu=0  |CPU to program|
+    0x40000467:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+DTLB_LOAD_MISSES	0x40000468
+ |Data TLB load misses|
+    0x40000469:MISS_CAUSES_A_WALK  |Misses in all DTLB levels that cause page walks|
+    0x4000046a:WALK_COMPLETED  |Number of misses in all TLB levels causing a page walk of any page size that completes|
+    0x4000046b:WALK_COMPLETED_4K  |Number of misses in all TLB levels causing a page walk of 4KB page size that completes|
+    0x4000046c:WALK_COMPLETED_2M_4M  |Number of misses in all TLB levels causing a page walk of 2MB/4MB page size that completes|
+    0x4000046d:WALK_COMPLETED_1G  |Number of misses in all TLB levels causing a page walk of 1GB page size that completes|
+    0x4000046e:WALK_ACTIVE  |Cycles with at least one hardware walker active for a load|
+    0x4000046f:WALK_DURATION  |Cycles when hardware page walker is busy with page walks|
+    0x40000470:WALK_PENDING  |Cycles when hardware page walker is busy with page walks|
+    0x40000471:STLB_HIT  |Number of cache load STLB hits. No page walk|
+    0x40000472:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000473:i=0  |invert|
+    0x40000474:c=0  |counter-mask in range [0-255]|
+    0x40000475:t=0  |measure any thread|
+    0x40000476:intx=0  |monitor only inside transactional memory region|
+    0x40000477:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000478:u=0  |monitor at user level|
+    0x40000479:k=0  |monitor at kernel level|
+    0x4000047a:period=0  |sampling period|
+    0x4000047b:freq=0  |sampling frequency (Hz)|
+    0x4000047c:excl=0  |exclusive access|
+    0x4000047d:mg=0  |monitor guest execution|
+    0x4000047e:mh=0  |monitor host execution|
+    0x4000047f:cpu=0  |CPU to program|
+    0x40000480:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+DTLB_STORE_MISSES	0x40000481
+ |Data TLB store misses|
+    0x40000482:MISS_CAUSES_A_WALK  |Misses in all DTLB levels that cause page walks|
+    0x40000483:WALK_COMPLETED  |Number of misses in all TLB levels causing a page walk of any page size that completes|
+    0x40000484:WALK_COMPLETED_4K  |Number of misses in all TLB levels causing a page walk of 4KB page size that completes|
+    0x40000485:WALK_COMPLETED_2M_4M  |Number of misses in all TLB levels causing a page walk of 2MB/4MB page size that completes|
+    0x40000486:WALK_COMPLETED_1G  |Number of misses in all TLB levels causing a page walk of 1GB page size that completes|
+    0x40000487:WALK_ACTIVE  |Cycles with at least one hardware walker active for a load|
+    0x40000488:WALK_DURATION  |Cycles when hardware page walker is busy with page walks|
+    0x40000489:WALK_PENDING  |Cycles when hardware page walker is busy with page walks|
+    0x4000048a:STLB_HIT  |Number of cache load STLB hits. No page walk|
+    0x4000048b:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000048c:i=0  |invert|
+    0x4000048d:c=0  |counter-mask in range [0-255]|
+    0x4000048e:t=0  |measure any thread|
+    0x4000048f:intx=0  |monitor only inside transactional memory region|
+    0x40000490:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000491:u=0  |monitor at user level|
+    0x40000492:k=0  |monitor at kernel level|
+    0x40000493:period=0  |sampling period|
+    0x40000494:freq=0  |sampling frequency (Hz)|
+    0x40000495:excl=0  |exclusive access|
+    0x40000496:mg=0  |monitor guest execution|
+    0x40000497:mh=0  |monitor host execution|
+    0x40000498:cpu=0  |CPU to program|
+    0x40000499:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+FP_ASSIST	0x4000049a
+ |X87 floating-point assists|
+    0x4000049b:ANY  |Cycles with any input/output SEE or FP assists|
+    0x4000049c:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000049d:i=0  |invert|
+    0x4000049e:c=0  |counter-mask in range [0-255]|
+    0x4000049f:t=0  |measure any thread|
+    0x400004a0:intx=0  |monitor only inside transactional memory region|
+    0x400004a1:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400004a2:u=0  |monitor at user level|
+    0x400004a3:k=0  |monitor at kernel level|
+    0x400004a4:period=0  |sampling period|
+    0x400004a5:freq=0  |sampling frequency (Hz)|
+    0x400004a6:excl=0  |exclusive access|
+    0x400004a7:mg=0  |monitor guest execution|
+    0x400004a8:mh=0  |monitor host execution|
+    0x400004a9:cpu=0  |CPU to program|
+    0x400004aa:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+HLE_RETIRED	0x400004ab
+ |HLE execution (Precise Event)|
+    0x400004ac:START  |Number of times an HLE execution started|
+    0x400004ad:COMMIT  |Number of times an HLE execution successfully committed|
+    0x400004ae:ABORTED  |Number of times an HLE execution aborted due to any reasons (multiple categories may count as one) (Precise Event)|
+    0x400004af:ABORTED_MEM  |Number of times an HLE execution aborted due to various memory events|
+    0x400004b0:ABORTED_TMR  |Number of times an HLE execution aborted due to hardware timer expiration|
+    0x400004b1:ABORTED_UNFRIENDLY  |Number of times an HLE execution aborted due to HLE-unfriendly instructions and certain events such as AD-assists|
+    0x400004b2:ABORTED_MEMTYPE  |Number of times an HLE execution aborted due to incompatible memory type|
+    0x400004b3:ABORTED_EVENTS  |Number of times an HLE execution aborted due to none of the other 4 reasons (e.g., interrupt)|
+    0x400004b4:e=0  |edge level (may require counter-mask >= 1)|
+    0x400004b5:i=0  |invert|
+    0x400004b6:c=0  |counter-mask in range [0-255]|
+    0x400004b7:t=0  |measure any thread|
+    0x400004b8:intx=0  |monitor only inside transactional memory region|
+    0x400004b9:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400004ba:u=0  |monitor at user level|
+    0x400004bb:k=0  |monitor at kernel level|
+    0x400004bc:period=0  |sampling period|
+    0x400004bd:freq=0  |sampling frequency (Hz)|
+    0x400004be:precise=0  |precise event sampling|
+    0x400004bf:excl=0  |exclusive access|
+    0x400004c0:mg=0  |monitor guest execution|
+    0x400004c1:mh=0  |monitor host execution|
+    0x400004c2:cpu=0  |CPU to program|
+    0x400004c3:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ICACHE_16B	0x400004c4
+ |Instruction Cache|
+    0x400004c5:IFDATA_STALL  |Cycles where a code fetch is stalled due to L1 instruction cache miss|
+    0x400004c6:e=0  |edge level (may require counter-mask >= 1)|
+    0x400004c7:i=0  |invert|
+    0x400004c8:c=0  |counter-mask in range [0-255]|
+    0x400004c9:t=0  |measure any thread|
+    0x400004ca:intx=0  |monitor only inside transactional memory region|
+    0x400004cb:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400004cc:u=0  |monitor at user level|
+    0x400004cd:k=0  |monitor at kernel level|
+    0x400004ce:period=0  |sampling period|
+    0x400004cf:freq=0  |sampling frequency (Hz)|
+    0x400004d0:excl=0  |exclusive access|
+    0x400004d1:mg=0  |monitor guest execution|
+    0x400004d2:mh=0  |monitor host execution|
+    0x400004d3:cpu=0  |CPU to program|
+    0x400004d4:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ICACHE_64B	0x400004d5
+ |Instruction Cache|
+    0x400004d6:IFTAG_HIT  |Number of instruction fetch tag lookups that hit in the instruction cache (L1I). Counts at 64-byte cache-line granularity|
+    0x400004d7:IFTAG_MISS  |Number of instruction fetch tag lookups that miss in the instruction cache (L1I). Counts at 64-byte cache-line granularity|
+    0x400004d8:IFTAG_STALL  |Cycles where a code fetch is stalled due to L1 instruction cache tag miss|
+    0x400004d9:e=0  |edge level (may require counter-mask >= 1)|
+    0x400004da:i=0  |invert|
+    0x400004db:c=0  |counter-mask in range [0-255]|
+    0x400004dc:t=0  |measure any thread|
+    0x400004dd:intx=0  |monitor only inside transactional memory region|
+    0x400004de:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400004df:u=0  |monitor at user level|
+    0x400004e0:k=0  |monitor at kernel level|
+    0x400004e1:period=0  |sampling period|
+    0x400004e2:freq=0  |sampling frequency (Hz)|
+    0x400004e3:excl=0  |exclusive access|
+    0x400004e4:mg=0  |monitor guest execution|
+    0x400004e5:mh=0  |monitor host execution|
+    0x400004e6:cpu=0  |CPU to program|
+    0x400004e7:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+IDQ	0x400004e8
+ |IDQ operations|
+    0x400004e9:MITE_UOPS  |Number of uops delivered to Instruction Decode Queue (IDQ) from MITE path|
+    0x400004ea:DSB_UOPS  |Number of uops delivered to Instruction Decode Queue (IDQ) from Decode Stream Buffer (DSB) path|
+    0x400004eb:MS_DSB_UOPS  |Uops initiated by Decode Stream Buffer (DSB) that are being delivered to Instruction Decode Queue (IDQ) while Microcode Sequencer (MS) is busy|
+    0x400004ec:MS_MITE_UOPS  |Uops initiated by MITE and delivered to Instruction Decode Queue (IDQ) while Microcode Sequencer (MS) is busy|
+    0x400004ed:MS_UOPS  |Number of Uops were delivered into Instruction Decode Queue (IDQ) from MS, initiated by Decode Stream Buffer (DSB) or MITE|
+    0x400004ee:MS_UOPS_CYCLES  |Number of cycles that Uops were delivered into Instruction Decode Queue (IDQ) when MS_Busy, initiated by Decode Stream Buffer (DSB) or MITE|
+    0x400004ef:MS_SWITCHES  |Number of switches from DSB (Decode Stream Buffer) or MITE (legacy decode pipeline) to the Microcode Sequencer|
+    0x400004f0:MITE_UOPS_CYCLES  |Cycles when uops are being delivered to Instruction Decode Queue (IDQ) from MITE path|
+    0x400004f1:DSB_UOPS_CYCLES  |Cycles when uops are being delivered to Instruction Decode Queue (IDQ) from Decode Stream Buffer (DSB) path|
+    0x400004f2:MS_DSB_UOPS_CYCLES  |Cycles when uops initiated by Decode Stream Buffer (DSB) are being delivered to Instruction Decode Queue (IDQ) while Microcode Sequencer (MS) is busy|
+    0x400004f3:MS_DSB_OCCUR  |Deliveries to Instruction Decode Queue (IDQ) initiated by Decode Stream Buffer (DSB) while Microcode Sequencer (MS) is busy|
+    0x400004f4:ALL_DSB_CYCLES_4_UOPS  |Cycles Decode Stream Buffer (DSB) is delivering 4 Uops|
+    0x400004f5:ALL_DSB_CYCLES_ANY_UOPS  |Cycles Decode Stream Buffer (DSB) is delivering any Uop|
+    0x400004f6:ALL_MITE_CYCLES_4_UOPS  |Cycles MITE is delivering 4 Uops|
+    0x400004f7:ALL_MITE_CYCLES_ANY_UOPS  |Cycles MITE is delivering any Uop|
+    0x400004f8:ALL_MITE_UOPS  |Number of uops delivered to Instruction Decode Queue (IDQ) from any path|
+    0x400004f9:e=0  |edge level (may require counter-mask >= 1)|
+    0x400004fa:i=0  |invert|
+    0x400004fb:c=0  |counter-mask in range [0-255]|
+    0x400004fc:t=0  |measure any thread|
+    0x400004fd:intx=0  |monitor only inside transactional memory region|
+    0x400004fe:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400004ff:u=0  |monitor at user level|
+    0x40000500:k=0  |monitor at kernel level|
+    0x40000501:period=0  |sampling period|
+    0x40000502:freq=0  |sampling frequency (Hz)|
+    0x40000503:excl=0  |exclusive access|
+    0x40000504:mg=0  |monitor guest execution|
+    0x40000505:mh=0  |monitor host execution|
+    0x40000506:cpu=0  |CPU to program|
+    0x40000507:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+IDQ_UOPS_NOT_DELIVERED	0x40000508
+ |Uops not delivered|
+    0x40000509:CORE  |Count number of non-delivered uops to Resource Allocation Table (RAT)|
+    0x4000050a:CYCLES_0_UOPS_DELIV_CORE  |Number of uops not delivered to Resource Allocation Table (RAT) per thread when backend is not stalled|
+    0x4000050b:CYCLES_FE_WAS_OK  |Count cycles front-end (FE) delivered 4 uops or Resource Allocation Table (RAT) was stalling front-end|
+    0x4000050c:CYCLES_LE_1_UOPS_DELIV_CORE  |Count cycles per thread when 3 or more uops are not delivered to Resource Allocation Table (RAT) when backend is not stalled|
+    0x4000050d:CYCLES_LE_2_UOPS_DELIV_CORE  |Count cycles with less than 2 uops delivered by the front-end|
+    0x4000050e:CYCLES_LE_3_UOPS_DELIV_CORE  |Count cycles with less then 3 uops delivered by the front-end|
+    0x4000050f:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000510:i=0  |invert|
+    0x40000511:c=0  |counter-mask in range [0-255]|
+    0x40000512:t=0  |measure any thread|
+    0x40000513:intx=0  |monitor only inside transactional memory region|
+    0x40000514:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000515:u=0  |monitor at user level|
+    0x40000516:k=0  |monitor at kernel level|
+    0x40000517:period=0  |sampling period|
+    0x40000518:freq=0  |sampling frequency (Hz)|
+    0x40000519:excl=0  |exclusive access|
+    0x4000051a:mg=0  |monitor guest execution|
+    0x4000051b:mh=0  |monitor host execution|
+    0x4000051c:cpu=0  |CPU to program|
+    0x4000051d:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+INST_RETIRED	0x4000051e
+ |Number of instructions retired (Precise Event)|
+    0x4000051f:ANY_P  |Number of instructions retired. General Counter - architectural event|
+    0x40000520:ALL  |Precise instruction retired event with HW to reduce effect of PEBS shadow in IP distribution (Precise Event)|
+    0x40000521:TOTAL_CYCLES  |Number of cycles using always true condition|
+    0x40000522:PREC_DIST  |Precise instruction retired event with HW to reduce effect of PEBS shadow in IP distribution (Precise event)|
+    0x40000523:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000524:i=0  |invert|
+    0x40000525:c=0  |counter-mask in range [0-255]|
+    0x40000526:t=0  |measure any thread|
+    0x40000527:intx=0  |monitor only inside transactional memory region|
+    0x40000528:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000529:u=0  |monitor at user level|
+    0x4000052a:k=0  |monitor at kernel level|
+    0x4000052b:period=0  |sampling period|
+    0x4000052c:freq=0  |sampling frequency (Hz)|
+    0x4000052d:precise=0  |precise event sampling|
+    0x4000052e:excl=0  |exclusive access|
+    0x4000052f:mg=0  |monitor guest execution|
+    0x40000530:mh=0  |monitor host execution|
+    0x40000531:cpu=0  |CPU to program|
+    0x40000532:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+INT_MISC	0x40000533
+ |Miscellaneous interruptions|
+    0x40000534:RECOVERY_CYCLES  |Cycles waiting for the checkpoints in Resource Allocation Table (RAT) to be recovered after Nuke due to all other cases except JEClear (e.g. whenever a ucode assist is needed like SSE exception, memory disambiguation, etc...)|
+    0x40000535:RECOVERY_CYCLES_ANY  |Core cycles the allocator was stalled due to recovery from earlier clear event for any thread running on the physical core (e.g. misprediction or memory nuke)|
+    0x40000536:RECOVERY_STALLS_COUNT  |Number of occurrences waiting for Machine Clears|
+    0x40000537:CLEAR_RESTEER_CYCLES  |Number of cycles the issue-stage is waiting for front-end to fetch from resteered path following branch misprediction or machine clear events|
+    0x40000538:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000539:i=0  |invert|
+    0x4000053a:c=0  |counter-mask in range [0-255]|
+    0x4000053b:t=0  |measure any thread|
+    0x4000053c:intx=0  |monitor only inside transactional memory region|
+    0x4000053d:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000053e:u=0  |monitor at user level|
+    0x4000053f:k=0  |monitor at kernel level|
+    0x40000540:period=0  |sampling period|
+    0x40000541:freq=0  |sampling frequency (Hz)|
+    0x40000542:excl=0  |exclusive access|
+    0x40000543:mg=0  |monitor guest execution|
+    0x40000544:mh=0  |monitor host execution|
+    0x40000545:cpu=0  |CPU to program|
+    0x40000546:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ITLB	0x40000547
+ |Instruction TLB|
+    0x40000548:ITLB_FLUSH  |Flushing of the Instruction TLB (ITLB) pages independent of page size|
+    0x40000549:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000054a:i=0  |invert|
+    0x4000054b:c=0  |counter-mask in range [0-255]|
+    0x4000054c:t=0  |measure any thread|
+    0x4000054d:intx=0  |monitor only inside transactional memory region|
+    0x4000054e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000054f:u=0  |monitor at user level|
+    0x40000550:k=0  |monitor at kernel level|
+    0x40000551:period=0  |sampling period|
+    0x40000552:freq=0  |sampling frequency (Hz)|
+    0x40000553:excl=0  |exclusive access|
+    0x40000554:mg=0  |monitor guest execution|
+    0x40000555:mh=0  |monitor host execution|
+    0x40000556:cpu=0  |CPU to program|
+    0x40000557:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ITLB_MISSES	0x40000558
+ |Instruction TLB misses|
+    0x40000559:MISS_CAUSES_A_WALK  |Misses in all DTLB levels that cause page walks|
+    0x4000055a:WALK_COMPLETED  |Number of misses in all TLB levels causing a page walk of any page size that completes|
+    0x4000055b:WALK_COMPLETED_4K  |Number of misses in all TLB levels causing a page walk of 4KB page size that completes|
+    0x4000055c:WALK_COMPLETED_2M_4M  |Number of misses in all TLB levels causing a page walk of 2MB/4MB page size that completes|
+    0x4000055d:WALK_COMPLETED_1G  |Number of misses in all TLB levels causing a page walk of 1GB page size that completes|
+    0x4000055e:WALK_DURATION  |Cycles when PMH is busy with page walks|
+    0x4000055f:WALK_PENDING  |Cycles when PMH is busy with page walks|
+    0x40000560:WALK_ACTIVE  |Cycles when at least one page walker is busy with a page walk request. EPT page walks are excluded|
+    0x40000561:STLB_HIT  |Number of cache load STLB hits. No page walk|
+    0x40000562:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000563:i=0  |invert|
+    0x40000564:c=0  |counter-mask in range [0-255]|
+    0x40000565:t=0  |measure any thread|
+    0x40000566:intx=0  |monitor only inside transactional memory region|
+    0x40000567:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000568:u=0  |monitor at user level|
+    0x40000569:k=0  |monitor at kernel level|
+    0x4000056a:period=0  |sampling period|
+    0x4000056b:freq=0  |sampling frequency (Hz)|
+    0x4000056c:excl=0  |exclusive access|
+    0x4000056d:mg=0  |monitor guest execution|
+    0x4000056e:mh=0  |monitor host execution|
+    0x4000056f:cpu=0  |CPU to program|
+    0x40000570:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L1D	0x40000571
+ |L1D cache|
+    0x40000572:REPLACEMENT  |L1D Data line replacements|
+    0x40000573:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000574:i=0  |invert|
+    0x40000575:c=0  |counter-mask in range [0-255]|
+    0x40000576:t=0  |measure any thread|
+    0x40000577:intx=0  |monitor only inside transactional memory region|
+    0x40000578:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000579:u=0  |monitor at user level|
+    0x4000057a:k=0  |monitor at kernel level|
+    0x4000057b:period=0  |sampling period|
+    0x4000057c:freq=0  |sampling frequency (Hz)|
+    0x4000057d:excl=0  |exclusive access|
+    0x4000057e:mg=0  |monitor guest execution|
+    0x4000057f:mh=0  |monitor host execution|
+    0x40000580:cpu=0  |CPU to program|
+    0x40000581:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L1D_PEND_MISS	0x40000582
+ |L1D pending misses|
+    0x40000583:PENDING  |Cycles with L1D load misses outstanding|
+    0x40000584:FB_FULL  |Number of times a request needed a fill buffer (FB) entry but there was no entry available for it. That is the FB unavailability was dominant reason for blocking the request. A request includes cacheable/uncacheable demands load, store or SW prefetch|
+    0x40000585:PENDING_CYCLES  |Cycles with L1D load misses outstanding|
+    0x40000586:PENDING_CYCLES_ANY  |Cycles with L1D load misses outstanding from any thread|
+    0x40000587:OCCURRENCES  |Number L1D miss outstanding|
+    0x40000588:EDGE  |Number L1D miss outstanding|
+    0x40000589:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000058a:i=0  |invert|
+    0x4000058b:c=0  |counter-mask in range [0-255]|
+    0x4000058c:t=0  |measure any thread|
+    0x4000058d:intx=0  |monitor only inside transactional memory region|
+    0x4000058e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000058f:u=0  |monitor at user level|
+    0x40000590:k=0  |monitor at kernel level|
+    0x40000591:period=0  |sampling period|
+    0x40000592:freq=0  |sampling frequency (Hz)|
+    0x40000593:excl=0  |exclusive access|
+    0x40000594:mg=0  |monitor guest execution|
+    0x40000595:mh=0  |monitor host execution|
+    0x40000596:cpu=0  |CPU to program|
+    0x40000597:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L2_LINES_IN	0x40000598
+ |L2 lines allocated|
+    0x40000599:ALL  |L2 cache lines filling L2|
+    0x4000059a:ANY  |L2 cache lines filling L2|
+    0x4000059b:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000059c:i=0  |invert|
+    0x4000059d:c=0  |counter-mask in range [0-255]|
+    0x4000059e:t=0  |measure any thread|
+    0x4000059f:intx=0  |monitor only inside transactional memory region|
+    0x400005a0:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400005a1:u=0  |monitor at user level|
+    0x400005a2:k=0  |monitor at kernel level|
+    0x400005a3:period=0  |sampling period|
+    0x400005a4:freq=0  |sampling frequency (Hz)|
+    0x400005a5:excl=0  |exclusive access|
+    0x400005a6:mg=0  |monitor guest execution|
+    0x400005a7:mh=0  |monitor host execution|
+    0x400005a8:cpu=0  |CPU to program|
+    0x400005a9:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L2_LINES_OUT	0x400005aa
+ |L2 lines evicted|
+    0x400005ab:NON_SILENT  |Counts the number of lines that are evicted by L2 cache when triggered by an L2 cache fill. Those lines can be either in modified state or clean state. Modified lines may either be written back to L3 or directly written to memory and not allocated in L3.  Clean lines may either be allocated in L3 or dropped |
+    0x400005ac:USELESS_HWPREF  |Counts the number of lines that have been hardware prefetched but not used and now evicted by L2 cache|
+    0x400005ad:USELESS_HWPF  |Counts the number of lines that have been hardware prefetched but not used and now evicted by L2 cache|
+    0x400005ae:SILENT  |Counts the number of lines that are silently dropped by L2 cache when triggered by an L2 cache fill. These lines are typically in Shared state. This is a per-core event.|
+    0x400005af:e=0  |edge level (may require counter-mask >= 1)|
+    0x400005b0:i=0  |invert|
+    0x400005b1:c=0  |counter-mask in range [0-255]|
+    0x400005b2:t=0  |measure any thread|
+    0x400005b3:intx=0  |monitor only inside transactional memory region|
+    0x400005b4:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400005b5:u=0  |monitor at user level|
+    0x400005b6:k=0  |monitor at kernel level|
+    0x400005b7:period=0  |sampling period|
+    0x400005b8:freq=0  |sampling frequency (Hz)|
+    0x400005b9:excl=0  |exclusive access|
+    0x400005ba:mg=0  |monitor guest execution|
+    0x400005bb:mh=0  |monitor host execution|
+    0x400005bc:cpu=0  |CPU to program|
+    0x400005bd:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L2_RQSTS	0x400005be
+ |L2 requests|
+    0x400005bf:DEMAND_DATA_RD_MISS  |Demand Data Read requests that miss L2 cache|
+    0x400005c0:DEMAND_DATA_RD_HIT  |Demand Data Read requests, initiated by load instructions, that hit L2 cache|
+    0x400005c1:DEMAND_RFO_MISS  |RFO requests that miss L2 cache|
+    0x400005c2:RFO_MISS  |RFO requests that miss L2 cache|
+    0x400005c3:DEMAND_RFO_HIT  |RFO requests that hit L2 cache|
+    0x400005c4:RFO_HIT  |RFO requests that hit L2 cache|
+    0x400005c5:CODE_RD_MISS  |L2 cache misses when fetching instructions|
+    0x400005c6:ALL_DEMAND_MISS  |All demand requests that miss the L2 cache|
+    0x400005c7:CODE_RD_HIT  |L2 cache hits when fetching instructions, code reads|
+    0x400005c8:MISS  |All requests that miss the L2 cache|
+    0x400005c9:PF_MISS  |Requests from the L1/L2/L3 hardware prefetchers or Load software prefetches that miss L2 cache|
+    0x400005ca:PF_HIT  |Requests from the L1/L2/L3 hardware prefetchers or Load software prefetches that hit L2 cache|
+    0x400005cb:ALL_DEMAND_DATA_RD  |Any data read request to L2 cache|
+    0x400005cc:ALL_RFO  |Any data RFO request to L2 cache|
+    0x400005cd:ALL_CODE_RD  |Any code read request to L2 cache|
+    0x400005ce:ALL_DEMAND_REFERENCES  |All demand requests to L2 cache |
+    0x400005cf:ALL_PF  |Any L2 HW prefetch request to L2 cache|
+    0x400005d0:REFERENCES  |All requests to L2 cache|
+    0x400005d1:e=0  |edge level (may require counter-mask >= 1)|
+    0x400005d2:i=0  |invert|
+    0x400005d3:c=0  |counter-mask in range [0-255]|
+    0x400005d4:t=0  |measure any thread|
+    0x400005d5:intx=0  |monitor only inside transactional memory region|
+    0x400005d6:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400005d7:u=0  |monitor at user level|
+    0x400005d8:k=0  |monitor at kernel level|
+    0x400005d9:period=0  |sampling period|
+    0x400005da:freq=0  |sampling frequency (Hz)|
+    0x400005db:excl=0  |exclusive access|
+    0x400005dc:mg=0  |monitor guest execution|
+    0x400005dd:mh=0  |monitor host execution|
+    0x400005de:cpu=0  |CPU to program|
+    0x400005df:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+L2_TRANS	0x400005e0
+ |L2 transactions|
+    0x400005e1:L2_WB  |L2 writebacks that access L2 cache|
+    0x400005e2:e=0  |edge level (may require counter-mask >= 1)|
+    0x400005e3:i=0  |invert|
+    0x400005e4:c=0  |counter-mask in range [0-255]|
+    0x400005e5:t=0  |measure any thread|
+    0x400005e6:intx=0  |monitor only inside transactional memory region|
+    0x400005e7:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400005e8:u=0  |monitor at user level|
+    0x400005e9:k=0  |monitor at kernel level|
+    0x400005ea:period=0  |sampling period|
+    0x400005eb:freq=0  |sampling frequency (Hz)|
+    0x400005ec:excl=0  |exclusive access|
+    0x400005ed:mg=0  |monitor guest execution|
+    0x400005ee:mh=0  |monitor host execution|
+    0x400005ef:cpu=0  |CPU to program|
+    0x400005f0:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LD_BLOCKS	0x400005f1
+ |Blocking loads|
+    0x400005f2:STORE_FORWARD  |Counts the number of loads blocked by overlapping with store buffer entries that cannot be forwarded|
+    0x400005f3:NO_SR  |number of times that split load operations are temporarily blocked because all resources for handling the split accesses are in use|
+    0x400005f4:e=0  |edge level (may require counter-mask >= 1)|
+    0x400005f5:i=0  |invert|
+    0x400005f6:c=0  |counter-mask in range [0-255]|
+    0x400005f7:t=0  |measure any thread|
+    0x400005f8:intx=0  |monitor only inside transactional memory region|
+    0x400005f9:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400005fa:u=0  |monitor at user level|
+    0x400005fb:k=0  |monitor at kernel level|
+    0x400005fc:period=0  |sampling period|
+    0x400005fd:freq=0  |sampling frequency (Hz)|
+    0x400005fe:excl=0  |exclusive access|
+    0x400005ff:mg=0  |monitor guest execution|
+    0x40000600:mh=0  |monitor host execution|
+    0x40000601:cpu=0  |CPU to program|
+    0x40000602:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LD_BLOCKS_PARTIAL	0x40000603
+ |Partial load blocks|
+    0x40000604:ADDRESS_ALIAS  |False dependencies in MOB due to partial compare on address|
+    0x40000605:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000606:i=0  |invert|
+    0x40000607:c=0  |counter-mask in range [0-255]|
+    0x40000608:t=0  |measure any thread|
+    0x40000609:intx=0  |monitor only inside transactional memory region|
+    0x4000060a:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000060b:u=0  |monitor at user level|
+    0x4000060c:k=0  |monitor at kernel level|
+    0x4000060d:period=0  |sampling period|
+    0x4000060e:freq=0  |sampling frequency (Hz)|
+    0x4000060f:excl=0  |exclusive access|
+    0x40000610:mg=0  |monitor guest execution|
+    0x40000611:mh=0  |monitor host execution|
+    0x40000612:cpu=0  |CPU to program|
+    0x40000613:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LOAD_HIT_PRE	0x40000614
+ |Load dispatches|
+    0x40000615:SW_PF  |Demand load dispatches that hit L1D fill buffer (FB) allocated for software prefetch|
+    0x40000616:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000617:i=0  |invert|
+    0x40000618:c=0  |counter-mask in range [0-255]|
+    0x40000619:t=0  |measure any thread|
+    0x4000061a:intx=0  |monitor only inside transactional memory region|
+    0x4000061b:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000061c:u=0  |monitor at user level|
+    0x4000061d:k=0  |monitor at kernel level|
+    0x4000061e:period=0  |sampling period|
+    0x4000061f:freq=0  |sampling frequency (Hz)|
+    0x40000620:excl=0  |exclusive access|
+    0x40000621:mg=0  |monitor guest execution|
+    0x40000622:mh=0  |monitor host execution|
+    0x40000623:cpu=0  |CPU to program|
+    0x40000624:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LOCK_CYCLES	0x40000625
+ |Locked cycles in L1D and L2|
+    0x40000626:CACHE_LOCK_DURATION  |cycles that the L1D is locked|
+    0x40000627:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000628:i=0  |invert|
+    0x40000629:c=0  |counter-mask in range [0-255]|
+    0x4000062a:t=0  |measure any thread|
+    0x4000062b:intx=0  |monitor only inside transactional memory region|
+    0x4000062c:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000062d:u=0  |monitor at user level|
+    0x4000062e:k=0  |monitor at kernel level|
+    0x4000062f:period=0  |sampling period|
+    0x40000630:freq=0  |sampling frequency (Hz)|
+    0x40000631:excl=0  |exclusive access|
+    0x40000632:mg=0  |monitor guest execution|
+    0x40000633:mh=0  |monitor host execution|
+    0x40000634:cpu=0  |CPU to program|
+    0x40000635:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LONGEST_LAT_CACHE	0x40000636
+ |L3 cache|
+    0x40000637:MISS  |Core-originated cacheable demand requests missed LLC - architectural event|
+    0x40000638:REFERENCE  |Core-originated cacheable demand requests that refer to LLC - architectural event|
+    0x40000639:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000063a:i=0  |invert|
+    0x4000063b:c=0  |counter-mask in range [0-255]|
+    0x4000063c:t=0  |measure any thread|
+    0x4000063d:intx=0  |monitor only inside transactional memory region|
+    0x4000063e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000063f:u=0  |monitor at user level|
+    0x40000640:k=0  |monitor at kernel level|
+    0x40000641:period=0  |sampling period|
+    0x40000642:freq=0  |sampling frequency (Hz)|
+    0x40000643:excl=0  |exclusive access|
+    0x40000644:mg=0  |monitor guest execution|
+    0x40000645:mh=0  |monitor host execution|
+    0x40000646:cpu=0  |CPU to program|
+    0x40000647:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MACHINE_CLEARS	0x40000648
+ |Machine clear asserted|
+    0x40000649:COUNT  |Number of machine clears (Nukes) of any type|
+    0x4000064a:MEMORY_ORDERING  |Number of Memory Ordering Machine Clears detected|
+    0x4000064b:SMC  |Number of Self-modifying code (SMC) Machine Clears detected|
+    0x4000064c:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000064d:i=0  |invert|
+    0x4000064e:c=0  |counter-mask in range [0-255]|
+    0x4000064f:t=0  |measure any thread|
+    0x40000650:intx=0  |monitor only inside transactional memory region|
+    0x40000651:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000652:u=0  |monitor at user level|
+    0x40000653:k=0  |monitor at kernel level|
+    0x40000654:period=0  |sampling period|
+    0x40000655:freq=0  |sampling frequency (Hz)|
+    0x40000656:excl=0  |exclusive access|
+    0x40000657:mg=0  |monitor guest execution|
+    0x40000658:mh=0  |monitor host execution|
+    0x40000659:cpu=0  |CPU to program|
+    0x4000065a:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_L3_HIT_RETIRED	0x4000065b
+ |L3 hit load uops retired (Precise Event)|
+    0x4000065c:XSNP_MISS  |Retired load uops which data sources were L3 hit and cross-core snoop missed in on-pkg core cache|
+    0x4000065d:XSNP_HIT  |Retired load uops which data sources were L3 and cross-core snoop hits in on-pkg core cache|
+    0x4000065e:XSNP_HITM  |Load had HitM Response from a core on same socket (shared L3). (Non PEBS|
+    0x4000065f:XSNP_NONE  |Retired load uops which data sources were hits in L3 without snoops required|
+    0x40000660:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000661:i=0  |invert|
+    0x40000662:c=0  |counter-mask in range [0-255]|
+    0x40000663:t=0  |measure any thread|
+    0x40000664:intx=0  |monitor only inside transactional memory region|
+    0x40000665:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000666:u=0  |monitor at user level|
+    0x40000667:k=0  |monitor at kernel level|
+    0x40000668:period=0  |sampling period|
+    0x40000669:freq=0  |sampling frequency (Hz)|
+    0x4000066a:precise=0  |precise event sampling|
+    0x4000066b:excl=0  |exclusive access|
+    0x4000066c:mg=0  |monitor guest execution|
+    0x4000066d:mh=0  |monitor host execution|
+    0x4000066e:cpu=0  |CPU to program|
+    0x4000066f:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_UOPS_L3_HIT_RETIRED	0x40000670
+ |L3 hit load uops retired (Precise Event)|
+    0x40000671:XSNP_MISS  |Retired load uops which data sources were L3 hit and cross-core snoop missed in on-pkg core cache|
+    0x40000672:XSNP_HIT  |Retired load uops which data sources were L3 and cross-core snoop hits in on-pkg core cache|
+    0x40000673:XSNP_HITM  |Load had HitM Response from a core on same socket (shared L3). (Non PEBS|
+    0x40000674:XSNP_NONE  |Retired load uops which data sources were hits in L3 without snoops required|
+    0x40000675:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000676:i=0  |invert|
+    0x40000677:c=0  |counter-mask in range [0-255]|
+    0x40000678:t=0  |measure any thread|
+    0x40000679:intx=0  |monitor only inside transactional memory region|
+    0x4000067a:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000067b:u=0  |monitor at user level|
+    0x4000067c:k=0  |monitor at kernel level|
+    0x4000067d:period=0  |sampling period|
+    0x4000067e:freq=0  |sampling frequency (Hz)|
+    0x4000067f:precise=0  |precise event sampling|
+    0x40000680:excl=0  |exclusive access|
+    0x40000681:mg=0  |monitor guest execution|
+    0x40000682:mh=0  |monitor host execution|
+    0x40000683:cpu=0  |CPU to program|
+    0x40000684:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_UOPS_LLC_HIT_RETIRED	0x40000685
+ |L3 hit load uops retired (Precise Event)|
+    0x40000686:XSNP_MISS  |Retired load uops which data sources were L3 hit and cross-core snoop missed in on-pkg core cache|
+    0x40000687:XSNP_HIT  |Retired load uops which data sources were L3 and cross-core snoop hits in on-pkg core cache|
+    0x40000688:XSNP_HITM  |Load had HitM Response from a core on same socket (shared L3). (Non PEBS|
+    0x40000689:XSNP_NONE  |Retired load uops which data sources were hits in L3 without snoops required|
+    0x4000068a:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000068b:i=0  |invert|
+    0x4000068c:c=0  |counter-mask in range [0-255]|
+    0x4000068d:t=0  |measure any thread|
+    0x4000068e:intx=0  |monitor only inside transactional memory region|
+    0x4000068f:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000690:u=0  |monitor at user level|
+    0x40000691:k=0  |monitor at kernel level|
+    0x40000692:period=0  |sampling period|
+    0x40000693:freq=0  |sampling frequency (Hz)|
+    0x40000694:precise=0  |precise event sampling|
+    0x40000695:excl=0  |exclusive access|
+    0x40000696:mg=0  |monitor guest execution|
+    0x40000697:mh=0  |monitor host execution|
+    0x40000698:cpu=0  |CPU to program|
+    0x40000699:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_L3_MISS_RETIRED	0x4000069a
+ |L3 miss load uops retired (Precise Event)|
+    0x4000069b:LOCAL_DRAM  |Retired load instructions which data sources missed L3 but serviced from local dram|
+    0x4000069c:REMOTE_DRAM  |Retired load instructions which data sources missed L3 but serviced from remote dram|
+    0x4000069d:REMOTE_HITM  |Retired load instructions whose data sources was remote HITM|
+    0x4000069e:REMOTE_FWD  |Retired load instructions whose data sources was forwarded from a remote cache|
+    0x4000069f:REMOTE_PMM  |Retired load instructions with remote persistent memory as the data source which missed all caches|
+    0x400006a0:e=0  |edge level (may require counter-mask >= 1)|
+    0x400006a1:i=0  |invert|
+    0x400006a2:c=0  |counter-mask in range [0-255]|
+    0x400006a3:t=0  |measure any thread|
+    0x400006a4:intx=0  |monitor only inside transactional memory region|
+    0x400006a5:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400006a6:u=0  |monitor at user level|
+    0x400006a7:k=0  |monitor at kernel level|
+    0x400006a8:period=0  |sampling period|
+    0x400006a9:freq=0  |sampling frequency (Hz)|
+    0x400006aa:precise=0  |precise event sampling|
+    0x400006ab:excl=0  |exclusive access|
+    0x400006ac:mg=0  |monitor guest execution|
+    0x400006ad:mh=0  |monitor host execution|
+    0x400006ae:cpu=0  |CPU to program|
+    0x400006af:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_UOPS_L3_MISS_RETIRED	0x400006b0
+ |L3 miss load uops retired (Precise Event)|
+    0x400006b1:LOCAL_DRAM  |Retired load instructions which data sources missed L3 but serviced from local dram|
+    0x400006b2:REMOTE_DRAM  |Retired load instructions which data sources missed L3 but serviced from remote dram|
+    0x400006b3:REMOTE_HITM  |Retired load instructions whose data sources was remote HITM|
+    0x400006b4:REMOTE_FWD  |Retired load instructions whose data sources was forwarded from a remote cache|
+    0x400006b5:REMOTE_PMM  |Retired load instructions with remote persistent memory as the data source which missed all caches|
+    0x400006b6:e=0  |edge level (may require counter-mask >= 1)|
+    0x400006b7:i=0  |invert|
+    0x400006b8:c=0  |counter-mask in range [0-255]|
+    0x400006b9:t=0  |measure any thread|
+    0x400006ba:intx=0  |monitor only inside transactional memory region|
+    0x400006bb:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400006bc:u=0  |monitor at user level|
+    0x400006bd:k=0  |monitor at kernel level|
+    0x400006be:period=0  |sampling period|
+    0x400006bf:freq=0  |sampling frequency (Hz)|
+    0x400006c0:precise=0  |precise event sampling|
+    0x400006c1:excl=0  |exclusive access|
+    0x400006c2:mg=0  |monitor guest execution|
+    0x400006c3:mh=0  |monitor host execution|
+    0x400006c4:cpu=0  |CPU to program|
+    0x400006c5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_UOPS_LLC_MISS_RETIRED	0x400006c6
+ |L3 miss load uops retired (Precise Event)|
+    0x400006c7:LOCAL_DRAM  |Retired load instructions which data sources missed L3 but serviced from local dram|
+    0x400006c8:REMOTE_DRAM  |Retired load instructions which data sources missed L3 but serviced from remote dram|
+    0x400006c9:REMOTE_HITM  |Retired load instructions whose data sources was remote HITM|
+    0x400006ca:REMOTE_FWD  |Retired load instructions whose data sources was forwarded from a remote cache|
+    0x400006cb:REMOTE_PMM  |Retired load instructions with remote persistent memory as the data source which missed all caches|
+    0x400006cc:e=0  |edge level (may require counter-mask >= 1)|
+    0x400006cd:i=0  |invert|
+    0x400006ce:c=0  |counter-mask in range [0-255]|
+    0x400006cf:t=0  |measure any thread|
+    0x400006d0:intx=0  |monitor only inside transactional memory region|
+    0x400006d1:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400006d2:u=0  |monitor at user level|
+    0x400006d3:k=0  |monitor at kernel level|
+    0x400006d4:period=0  |sampling period|
+    0x400006d5:freq=0  |sampling frequency (Hz)|
+    0x400006d6:precise=0  |precise event sampling|
+    0x400006d7:excl=0  |exclusive access|
+    0x400006d8:mg=0  |monitor guest execution|
+    0x400006d9:mh=0  |monitor host execution|
+    0x400006da:cpu=0  |CPU to program|
+    0x400006db:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_RETIRED	0x400006dc
+ |Retired load uops (Precise Event)|
+    0x400006dd:L1_HIT  |Retired load uops with L1 cache hits as data source|
+    0x400006de:L2_HIT  |Retired load uops with L2 cache hits as data source|
+    0x400006df:L3_HIT  |Retired load uops with L3 cache hits as data source|
+    0x400006e0:L1_MISS  |Retired load uops which missed the L1D|
+    0x400006e1:L2_MISS  |Retired load uops which missed the L2. Unknown data source excluded|
+    0x400006e2:L3_MISS  |Retired load uops which missed the L3|
+    0x400006e3:HIT_LFB  |Retired load uops which missed L1 but hit line fill buffer (LFB)|
+    0x400006e4:FB_HIT  |Retired load uops which missed L1 but hit line fill buffer (LFB)|
+    0x400006e5:LOCAL_PMM  |Retired load instructions with local persistent memory as the data source where the request missed all the caches|
+    0x400006e6:e=0  |edge level (may require counter-mask >= 1)|
+    0x400006e7:i=0  |invert|
+    0x400006e8:c=0  |counter-mask in range [0-255]|
+    0x400006e9:t=0  |measure any thread|
+    0x400006ea:intx=0  |monitor only inside transactional memory region|
+    0x400006eb:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400006ec:u=0  |monitor at user level|
+    0x400006ed:k=0  |monitor at kernel level|
+    0x400006ee:period=0  |sampling period|
+    0x400006ef:freq=0  |sampling frequency (Hz)|
+    0x400006f0:precise=0  |precise event sampling|
+    0x400006f1:excl=0  |exclusive access|
+    0x400006f2:mg=0  |monitor guest execution|
+    0x400006f3:mh=0  |monitor host execution|
+    0x400006f4:cpu=0  |CPU to program|
+    0x400006f5:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_UOPS_RETIRED	0x400006f6
+ |Retired load uops (Precise Event)|
+    0x400006f7:L1_HIT  |Retired load uops with L1 cache hits as data source|
+    0x400006f8:L2_HIT  |Retired load uops with L2 cache hits as data source|
+    0x400006f9:L3_HIT  |Retired load uops with L3 cache hits as data source|
+    0x400006fa:L1_MISS  |Retired load uops which missed the L1D|
+    0x400006fb:L2_MISS  |Retired load uops which missed the L2. Unknown data source excluded|
+    0x400006fc:L3_MISS  |Retired load uops which missed the L3|
+    0x400006fd:HIT_LFB  |Retired load uops which missed L1 but hit line fill buffer (LFB)|
+    0x400006fe:FB_HIT  |Retired load uops which missed L1 but hit line fill buffer (LFB)|
+    0x400006ff:LOCAL_PMM  |Retired load instructions with local persistent memory as the data source where the request missed all the caches|
+    0x40000700:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000701:i=0  |invert|
+    0x40000702:c=0  |counter-mask in range [0-255]|
+    0x40000703:t=0  |measure any thread|
+    0x40000704:intx=0  |monitor only inside transactional memory region|
+    0x40000705:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000706:u=0  |monitor at user level|
+    0x40000707:k=0  |monitor at kernel level|
+    0x40000708:period=0  |sampling period|
+    0x40000709:freq=0  |sampling frequency (Hz)|
+    0x4000070a:precise=0  |precise event sampling|
+    0x4000070b:excl=0  |exclusive access|
+    0x4000070c:mg=0  |monitor guest execution|
+    0x4000070d:mh=0  |monitor host execution|
+    0x4000070e:cpu=0  |CPU to program|
+    0x4000070f:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_TRANS_RETIRED	0x40000710
+ |Memory transactions retired (Precise Event)|
+    0x40000711:LOAD_LATENCY  |Memory load instructions retired above programmed clocks, minimum threshold value is 3 (Precise Event and ldlat required)|
+    0x40000712:LATENCY_ABOVE_THRESHOLD  |Memory load instructions retired above programmed clocks, minimum threshold value is 3 (Precise Event and ldlat required)|
+    0x40000713:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000714:i=0  |invert|
+    0x40000715:c=0  |counter-mask in range [0-255]|
+    0x40000716:t=0  |measure any thread|
+    0x40000717:ldlat=0  |load latency threshold (cycles, [3-65535])|
+    0x40000718:intx=0  |monitor only inside transactional memory region|
+    0x40000719:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000071a:u=0  |monitor at user level|
+    0x4000071b:k=0  |monitor at kernel level|
+    0x4000071c:period=0  |sampling period|
+    0x4000071d:freq=0  |sampling frequency (Hz)|
+    0x4000071e:precise=0  |precise event sampling|
+    0x4000071f:excl=0  |exclusive access|
+    0x40000720:mg=0  |monitor guest execution|
+    0x40000721:mh=0  |monitor host execution|
+    0x40000722:cpu=0  |CPU to program|
+    0x40000723:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_INST_RETIRED	0x40000724
+ |Memory instructions retired (Precise Event)|
+    0x40000725:STLB_MISS_LOADS  |Load uops with true STLB miss retired to architected path|
+    0x40000726:STLB_MISS_STORES  |Store uops with true STLB miss retired to architected path|
+    0x40000727:LOCK_LOADS  |Load uops with locked access retired|
+    0x40000728:SPLIT_LOADS  |Line-splitted load uops retired|
+    0x40000729:SPLIT_STORES  |Line-splitted store uops retired|
+    0x4000072a:ALL_LOADS  |All load uops retired|
+    0x4000072b:ALL_STORES  |All store uops retired|
+    0x4000072c:ANY  |All retired memory instructions|
+    0x4000072d:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000072e:i=0  |invert|
+    0x4000072f:c=0  |counter-mask in range [0-255]|
+    0x40000730:t=0  |measure any thread|
+    0x40000731:intx=0  |monitor only inside transactional memory region|
+    0x40000732:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000733:u=0  |monitor at user level|
+    0x40000734:k=0  |monitor at kernel level|
+    0x40000735:period=0  |sampling period|
+    0x40000736:freq=0  |sampling frequency (Hz)|
+    0x40000737:precise=0  |precise event sampling|
+    0x40000738:excl=0  |exclusive access|
+    0x40000739:mg=0  |monitor guest execution|
+    0x4000073a:mh=0  |monitor host execution|
+    0x4000073b:cpu=0  |CPU to program|
+    0x4000073c:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_UOPS_RETIRED	0x4000073d
+ |Memory instructions retired (Precise Event)|
+    0x4000073e:STLB_MISS_LOADS  |Load uops with true STLB miss retired to architected path|
+    0x4000073f:STLB_MISS_STORES  |Store uops with true STLB miss retired to architected path|
+    0x40000740:LOCK_LOADS  |Load uops with locked access retired|
+    0x40000741:SPLIT_LOADS  |Line-splitted load uops retired|
+    0x40000742:SPLIT_STORES  |Line-splitted store uops retired|
+    0x40000743:ALL_LOADS  |All load uops retired|
+    0x40000744:ALL_STORES  |All store uops retired|
+    0x40000745:ANY  |All retired memory instructions|
+    0x40000746:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000747:i=0  |invert|
+    0x40000748:c=0  |counter-mask in range [0-255]|
+    0x40000749:t=0  |measure any thread|
+    0x4000074a:intx=0  |monitor only inside transactional memory region|
+    0x4000074b:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000074c:u=0  |monitor at user level|
+    0x4000074d:k=0  |monitor at kernel level|
+    0x4000074e:period=0  |sampling period|
+    0x4000074f:freq=0  |sampling frequency (Hz)|
+    0x40000750:precise=0  |precise event sampling|
+    0x40000751:excl=0  |exclusive access|
+    0x40000752:mg=0  |monitor guest execution|
+    0x40000753:mh=0  |monitor host execution|
+    0x40000754:cpu=0  |CPU to program|
+    0x40000755:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MISALIGN_MEM_REF	0x40000756
+ |Misaligned memory references|
+    0x40000757:LOADS  |Speculative cache-line split load uops dispatched to the L1D|
+    0x40000758:STORES  |Speculative cache-line split store-address uops dispatched to L1D|
+    0x40000759:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000075a:i=0  |invert|
+    0x4000075b:c=0  |counter-mask in range [0-255]|
+    0x4000075c:t=0  |measure any thread|
+    0x4000075d:intx=0  |monitor only inside transactional memory region|
+    0x4000075e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000075f:u=0  |monitor at user level|
+    0x40000760:k=0  |monitor at kernel level|
+    0x40000761:period=0  |sampling period|
+    0x40000762:freq=0  |sampling frequency (Hz)|
+    0x40000763:excl=0  |exclusive access|
+    0x40000764:mg=0  |monitor guest execution|
+    0x40000765:mh=0  |monitor host execution|
+    0x40000766:cpu=0  |CPU to program|
+    0x40000767:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MOVE_ELIMINATION	0x40000768
+ |Move Elimination|
+    0x40000769:INT_ELIMINATED  |Number of integer Move Elimination candidate uops that were eliminated|
+    0x4000076a:SIMD_ELIMINATED  |Number of SIMD Move Elimination candidate uops that were eliminated|
+    0x4000076b:INT_NOT_ELIMINATED  |Number of integer Move Elimination candidate uops that were not eliminated|
+    0x4000076c:SIMD_NOT_ELIMINATED  |Number of SIMD Move Elimination candidate uops that were not eliminated|
+    0x4000076d:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000076e:i=0  |invert|
+    0x4000076f:c=0  |counter-mask in range [0-255]|
+    0x40000770:t=0  |measure any thread|
+    0x40000771:intx=0  |monitor only inside transactional memory region|
+    0x40000772:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000773:u=0  |monitor at user level|
+    0x40000774:k=0  |monitor at kernel level|
+    0x40000775:period=0  |sampling period|
+    0x40000776:freq=0  |sampling frequency (Hz)|
+    0x40000777:excl=0  |exclusive access|
+    0x40000778:mg=0  |monitor guest execution|
+    0x40000779:mh=0  |monitor host execution|
+    0x4000077a:cpu=0  |CPU to program|
+    0x4000077b:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OFFCORE_REQUESTS	0x4000077c
+ |Demand Data Read requests sent to uncore|
+    0x4000077d:DEMAND_DATA_RD  |Demand data read requests sent to uncore (use with HT off only)|
+    0x4000077e:DEMAND_CODE_RD  |Demand code read requests sent to uncore (use with HT off only)|
+    0x4000077f:DEMAND_RFO  |Demand RFOs requests sent to uncore (use with HT off only)|
+    0x40000780:ALL_DATA_RD  |Data read requests sent to uncore (use with HT off only)|
+    0x40000781:ALL_REQUESTS  |Number of memory transactions that reached the superqueue (SQ)|
+    0x40000782:L3_MISS_DEMAND_DATA_RD  |Number of demand data read requests which missed the L3 cache|
+    0x40000783:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000784:i=0  |invert|
+    0x40000785:c=0  |counter-mask in range [0-255]|
+    0x40000786:t=0  |measure any thread|
+    0x40000787:intx=0  |monitor only inside transactional memory region|
+    0x40000788:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000789:u=0  |monitor at user level|
+    0x4000078a:k=0  |monitor at kernel level|
+    0x4000078b:period=0  |sampling period|
+    0x4000078c:freq=0  |sampling frequency (Hz)|
+    0x4000078d:excl=0  |exclusive access|
+    0x4000078e:mg=0  |monitor guest execution|
+    0x4000078f:mh=0  |monitor host execution|
+    0x40000790:cpu=0  |CPU to program|
+    0x40000791:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OTHER_ASSISTS	0x40000792
+ |Software assist|
+    0x40000793:ANY  |Number of times a microcode assist is invoked by HW other than FP-assist. Examples include AD (page Access Dirty) and AVX* related assists|
+    0x40000794:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000795:i=0  |invert|
+    0x40000796:c=0  |counter-mask in range [0-255]|
+    0x40000797:t=0  |measure any thread|
+    0x40000798:intx=0  |monitor only inside transactional memory region|
+    0x40000799:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000079a:u=0  |monitor at user level|
+    0x4000079b:k=0  |monitor at kernel level|
+    0x4000079c:period=0  |sampling period|
+    0x4000079d:freq=0  |sampling frequency (Hz)|
+    0x4000079e:excl=0  |exclusive access|
+    0x4000079f:mg=0  |monitor guest execution|
+    0x400007a0:mh=0  |monitor host execution|
+    0x400007a1:cpu=0  |CPU to program|
+    0x400007a2:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+RESOURCE_STALLS	0x400007a3
+ |Cycles Allocation is stalled due to Resource Related reason|
+    0x400007a4:ANY  |Cycles Allocation is stalled due to Resource Related reason|
+    0x400007a5:ALL  |Cycles Allocation is stalled due to Resource Related reason|
+    0x400007a6:RS  |Stall cycles caused by absence of eligible entries in Reservation Station (RS)|
+    0x400007a7:SB  |Cycles Allocator is stalled due to Store Buffer full (not including draining from synch)|
+    0x400007a8:ROB  |ROB full stall cycles|
+    0x400007a9:e=0  |edge level (may require counter-mask >= 1)|
+    0x400007aa:i=0  |invert|
+    0x400007ab:c=0  |counter-mask in range [0-255]|
+    0x400007ac:t=0  |measure any thread|
+    0x400007ad:intx=0  |monitor only inside transactional memory region|
+    0x400007ae:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400007af:u=0  |monitor at user level|
+    0x400007b0:k=0  |monitor at kernel level|
+    0x400007b1:period=0  |sampling period|
+    0x400007b2:freq=0  |sampling frequency (Hz)|
+    0x400007b3:excl=0  |exclusive access|
+    0x400007b4:mg=0  |monitor guest execution|
+    0x400007b5:mh=0  |monitor host execution|
+    0x400007b6:cpu=0  |CPU to program|
+    0x400007b7:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ROB_MISC_EVENTS	0x400007b8
+ |ROB miscellaneous events|
+    0x400007b9:LBR_INSERTS  |Count each time an new Last Branch Record (LBR) is inserted|
+    0x400007ba:PAUSE_INST  |Count number of retired PAUSE instructions (that do not end up with a VMEXIT to the VMM; TSX aborted instructions may be counted). This event is not supported on first SKL and KBL processors|
+    0x400007bb:e=0  |edge level (may require counter-mask >= 1)|
+    0x400007bc:i=0  |invert|
+    0x400007bd:c=0  |counter-mask in range [0-255]|
+    0x400007be:t=0  |measure any thread|
+    0x400007bf:intx=0  |monitor only inside transactional memory region|
+    0x400007c0:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400007c1:u=0  |monitor at user level|
+    0x400007c2:k=0  |monitor at kernel level|
+    0x400007c3:period=0  |sampling period|
+    0x400007c4:freq=0  |sampling frequency (Hz)|
+    0x400007c5:excl=0  |exclusive access|
+    0x400007c6:mg=0  |monitor guest execution|
+    0x400007c7:mh=0  |monitor host execution|
+    0x400007c8:cpu=0  |CPU to program|
+    0x400007c9:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+RS_EVENTS	0x400007ca
+ |Reservation Station|
+    0x400007cb:EMPTY_CYCLES  |Cycles the Reservation Station (RS) is empty for this thread|
+    0x400007cc:EMPTY_END  |Number of times the reservation station (RS) was empty|
+    0x400007cd:e=0  |edge level (may require counter-mask >= 1)|
+    0x400007ce:i=0  |invert|
+    0x400007cf:c=0  |counter-mask in range [0-255]|
+    0x400007d0:t=0  |measure any thread|
+    0x400007d1:intx=0  |monitor only inside transactional memory region|
+    0x400007d2:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400007d3:u=0  |monitor at user level|
+    0x400007d4:k=0  |monitor at kernel level|
+    0x400007d5:period=0  |sampling period|
+    0x400007d6:freq=0  |sampling frequency (Hz)|
+    0x400007d7:excl=0  |exclusive access|
+    0x400007d8:mg=0  |monitor guest execution|
+    0x400007d9:mh=0  |monitor host execution|
+    0x400007da:cpu=0  |CPU to program|
+    0x400007db:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+RTM_RETIRED	0x400007dc
+ |Restricted Transaction Memory execution (Precise Event)|
+    0x400007dd:START  |Number of times an RTM execution started|
+    0x400007de:COMMIT  |Number of times an RTM execution successfully committed|
+    0x400007df:ABORTED  |Number of times an RTM execution aborted due to any reasons (multiple categories may count as one) (Precise Event)|
+    0x400007e0:ABORTED_MEM  |Number of times an RTM execution aborted due to various memory events|
+    0x400007e1:ABORTED_TMR  |Number of times an RTM execution aborted due to uncommon conditions|
+    0x400007e2:ABORTED_UNFRIENDLY  |Number of times an RTM execution aborted due to RTM-unfriendly instructions|
+    0x400007e3:ABORTED_MEMTYPE  |Number of times an RTM execution aborted due to incompatible memory type|
+    0x400007e4:ABORTED_EVENTS  |Number of times an RTM execution aborted due to none of the other 4 reasons (e.g., interrupt)|
+    0x400007e5:e=0  |edge level (may require counter-mask >= 1)|
+    0x400007e6:i=0  |invert|
+    0x400007e7:c=0  |counter-mask in range [0-255]|
+    0x400007e8:t=0  |measure any thread|
+    0x400007e9:intx=0  |monitor only inside transactional memory region|
+    0x400007ea:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400007eb:u=0  |monitor at user level|
+    0x400007ec:k=0  |monitor at kernel level|
+    0x400007ed:period=0  |sampling period|
+    0x400007ee:freq=0  |sampling frequency (Hz)|
+    0x400007ef:precise=0  |precise event sampling|
+    0x400007f0:excl=0  |exclusive access|
+    0x400007f1:mg=0  |monitor guest execution|
+    0x400007f2:mh=0  |monitor host execution|
+    0x400007f3:cpu=0  |CPU to program|
+    0x400007f4:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+TLB_FLUSH	0x400007f5
+ |TLB flushes|
+    0x400007f6:DTLB_THREAD  |Count number of DTLB flushes of thread-specific entries|
+    0x400007f7:STLB_ANY  |Count number of any STLB flushes|
+    0x400007f8:e=0  |edge level (may require counter-mask >= 1)|
+    0x400007f9:i=0  |invert|
+    0x400007fa:c=0  |counter-mask in range [0-255]|
+    0x400007fb:t=0  |measure any thread|
+    0x400007fc:intx=0  |monitor only inside transactional memory region|
+    0x400007fd:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400007fe:u=0  |monitor at user level|
+    0x400007ff:k=0  |monitor at kernel level|
+    0x40000800:period=0  |sampling period|
+    0x40000801:freq=0  |sampling frequency (Hz)|
+    0x40000802:excl=0  |exclusive access|
+    0x40000803:mg=0  |monitor guest execution|
+    0x40000804:mh=0  |monitor host execution|
+    0x40000805:cpu=0  |CPU to program|
+    0x40000806:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UOPS_EXECUTED	0x40000807
+ |Uops executed|
+    0x40000808:THREAD  |Number of uops executed per thread in each cycle|
+    0x40000809:THREAD_CYCLES_GE_1  |Number of cycles with at least 1 uop is executed per thread|
+    0x4000080a:THREAD_CYCLES_GE_2  |Number of cycles with at least 2 uops are executed per thread|
+    0x4000080b:THREAD_CYCLES_GE_3  |Number of cycles with at least 3 uops are executed per thread|
+    0x4000080c:THREAD_CYCLES_GE_4  |Number of cycles with at least 4 uops are executed per thread|
+    0x4000080d:CORE  |Number of uops executed from any thread in each cycle|
+    0x4000080e:CORE_CYCLES_GE_1  |Number of cycles with at least 1 uop is executed for any thread|
+    0x4000080f:CORE_CYCLES_GE_2  |Number of cycles with at least 2 uops are executed for any thread|
+    0x40000810:CORE_CYCLES_GE_3  |Number of cycles with at least 3 uops are executed for any thread|
+    0x40000811:CORE_CYCLES_GE_4  |Number of cycles with at least 4 uops are executed for any thread|
+    0x40000812:STALL_CYCLES  |Number of cycles with no uops executed by thread|
+    0x40000813:CORE_CYCLES_NONE  |Number of cycles with no uops executed from any thread|
+    0x40000814:X87  |Number of x87 uops executed per thread|
+    0x40000815:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000816:i=0  |invert|
+    0x40000817:c=0  |counter-mask in range [0-255]|
+    0x40000818:t=0  |measure any thread|
+    0x40000819:intx=0  |monitor only inside transactional memory region|
+    0x4000081a:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000081b:u=0  |monitor at user level|
+    0x4000081c:k=0  |monitor at kernel level|
+    0x4000081d:period=0  |sampling period|
+    0x4000081e:freq=0  |sampling frequency (Hz)|
+    0x4000081f:excl=0  |exclusive access|
+    0x40000820:mg=0  |monitor guest execution|
+    0x40000821:mh=0  |monitor host execution|
+    0x40000822:cpu=0  |CPU to program|
+    0x40000823:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+LSD	0x40000824
+ |Loop stream detector|
+    0x40000825:UOPS  |Number of uops delivered by the Loop Stream Detector (LSD)|
+    0x40000826:CYCLES_4_UOPS  |Number of cycles the LSD delivered 4 uops which did not come from the decoder|
+    0x40000827:CYCLES_ACTIVE  |Number of cycles the LSD delivered uops which did not come from the decoder|
+    0x40000828:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000829:i=0  |invert|
+    0x4000082a:c=0  |counter-mask in range [0-255]|
+    0x4000082b:t=0  |measure any thread|
+    0x4000082c:intx=0  |monitor only inside transactional memory region|
+    0x4000082d:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000082e:u=0  |monitor at user level|
+    0x4000082f:k=0  |monitor at kernel level|
+    0x40000830:period=0  |sampling period|
+    0x40000831:freq=0  |sampling frequency (Hz)|
+    0x40000832:excl=0  |exclusive access|
+    0x40000833:mg=0  |monitor guest execution|
+    0x40000834:mh=0  |monitor host execution|
+    0x40000835:cpu=0  |CPU to program|
+    0x40000836:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UOPS_DISPATCHED_PORT	0x40000837
+ |Uops dispatched to specific ports|
+    0x40000838:PORT_0  |Cycles which a Uop is executed on port 0|
+    0x40000839:PORT_1  |Cycles which a Uop is executed on port 1|
+    0x4000083a:PORT_2  |Cycles which a Uop is executed on port 2|
+    0x4000083b:PORT_3  |Cycles which a Uop is executed on port 3|
+    0x4000083c:PORT_4  |Cycles which a Uop is executed on port 4|
+    0x4000083d:PORT_5  |Cycles which a Uop is executed on port 5|
+    0x4000083e:PORT_6  |Cycles which a Uop is executed on port 6|
+    0x4000083f:PORT_7  |Cycles which a Uop is executed on port 7|
+    0x40000840:PORT_0_CORE  |tbd|
+    0x40000841:PORT_1_CORE  |tbd|
+    0x40000842:PORT_2_CORE  |tbd|
+    0x40000843:PORT_3_CORE  |tbd|
+    0x40000844:PORT_4_CORE  |tbd|
+    0x40000845:PORT_5_CORE  |tbd|
+    0x40000846:PORT_6_CORE  |tbd|
+    0x40000847:PORT_7_CORE  |tbd|
+    0x40000848:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000849:i=0  |invert|
+    0x4000084a:c=0  |counter-mask in range [0-255]|
+    0x4000084b:t=0  |measure any thread|
+    0x4000084c:intx=0  |monitor only inside transactional memory region|
+    0x4000084d:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000084e:u=0  |monitor at user level|
+    0x4000084f:k=0  |monitor at kernel level|
+    0x40000850:period=0  |sampling period|
+    0x40000851:freq=0  |sampling frequency (Hz)|
+    0x40000852:excl=0  |exclusive access|
+    0x40000853:mg=0  |monitor guest execution|
+    0x40000854:mh=0  |monitor host execution|
+    0x40000855:cpu=0  |CPU to program|
+    0x40000856:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UOPS_DISPATCHED	0x40000857
+ |Uops dispatched to specific ports|
+    0x40000858:PORT_0  |Cycles which a Uop is executed on port 0|
+    0x40000859:PORT_1  |Cycles which a Uop is executed on port 1|
+    0x4000085a:PORT_2  |Cycles which a Uop is executed on port 2|
+    0x4000085b:PORT_3  |Cycles which a Uop is executed on port 3|
+    0x4000085c:PORT_4  |Cycles which a Uop is executed on port 4|
+    0x4000085d:PORT_5  |Cycles which a Uop is executed on port 5|
+    0x4000085e:PORT_6  |Cycles which a Uop is executed on port 6|
+    0x4000085f:PORT_7  |Cycles which a Uop is executed on port 7|
+    0x40000860:PORT_0_CORE  |tbd|
+    0x40000861:PORT_1_CORE  |tbd|
+    0x40000862:PORT_2_CORE  |tbd|
+    0x40000863:PORT_3_CORE  |tbd|
+    0x40000864:PORT_4_CORE  |tbd|
+    0x40000865:PORT_5_CORE  |tbd|
+    0x40000866:PORT_6_CORE  |tbd|
+    0x40000867:PORT_7_CORE  |tbd|
+    0x40000868:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000869:i=0  |invert|
+    0x4000086a:c=0  |counter-mask in range [0-255]|
+    0x4000086b:t=0  |measure any thread|
+    0x4000086c:intx=0  |monitor only inside transactional memory region|
+    0x4000086d:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000086e:u=0  |monitor at user level|
+    0x4000086f:k=0  |monitor at kernel level|
+    0x40000870:period=0  |sampling period|
+    0x40000871:freq=0  |sampling frequency (Hz)|
+    0x40000872:excl=0  |exclusive access|
+    0x40000873:mg=0  |monitor guest execution|
+    0x40000874:mh=0  |monitor host execution|
+    0x40000875:cpu=0  |CPU to program|
+    0x40000876:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UOPS_ISSUED	0x40000877
+ |Uops issued|
+    0x40000878:ANY  |Number of Uops issued by the Resource Allocation Table (RAT) to the Reservation Station (RS)|
+    0x40000879:ALL  |Number of Uops issued by the Resource Allocation Table (RAT) to the Reservation Station (RS)|
+    0x4000087a:VECTOR_WIDTH_MISMATCH  |Number of blend uops issued by the Resource Allocation table (RAT) to the Reservation Station (RS) in order to preserve upper bits of vector registers|
+    0x4000087b:FLAGS_MERGE  |Number of flags-merge uops being allocated. Such uops adds delay|
+    0x4000087c:SLOW_LEA  |Number of slow LEA or similar uops allocated. Such uop has 3 sources regardless if result of LEA instruction or not|
+    0x4000087d:SINGLE_MUL  |Number of Multiply packed/scalar single precision uops allocated|
+    0x4000087e:STALL_CYCLES  |Counts the number of cycles no uops issued by this thread|
+    0x4000087f:CORE_STALL_CYCLES  |Counts the number of cycles no uops issued on this core|
+    0x40000880:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000881:i=0  |invert|
+    0x40000882:c=0  |counter-mask in range [0-255]|
+    0x40000883:t=0  |measure any thread|
+    0x40000884:intx=0  |monitor only inside transactional memory region|
+    0x40000885:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000886:u=0  |monitor at user level|
+    0x40000887:k=0  |monitor at kernel level|
+    0x40000888:period=0  |sampling period|
+    0x40000889:freq=0  |sampling frequency (Hz)|
+    0x4000088a:excl=0  |exclusive access|
+    0x4000088b:mg=0  |monitor guest execution|
+    0x4000088c:mh=0  |monitor host execution|
+    0x4000088d:cpu=0  |CPU to program|
+    0x4000088e:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ARITH	0x4000088f
+ |Arithmetic uop|
+    0x40000890:DIVIDER_ACTIVE  |Cycles when divider is busy executing divide or square root operations on integers or floating-points|
+    0x40000891:FPU_DIV_ACTIVE  |Cycles when divider is busy executing divide or square root operations on integers or floating-points|
+    0x40000892:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000893:i=0  |invert|
+    0x40000894:c=0  |counter-mask in range [0-255]|
+    0x40000895:t=0  |measure any thread|
+    0x40000896:intx=0  |monitor only inside transactional memory region|
+    0x40000897:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000898:u=0  |monitor at user level|
+    0x40000899:k=0  |monitor at kernel level|
+    0x4000089a:period=0  |sampling period|
+    0x4000089b:freq=0  |sampling frequency (Hz)|
+    0x4000089c:excl=0  |exclusive access|
+    0x4000089d:mg=0  |monitor guest execution|
+    0x4000089e:mh=0  |monitor host execution|
+    0x4000089f:cpu=0  |CPU to program|
+    0x400008a0:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+UOPS_RETIRED	0x400008a1
+ |Uops retired (Precise Event)|
+    0x400008a2:ALL  |All uops that actually retired|
+    0x400008a3:ANY  |All uops that actually retired|
+    0x400008a4:RETIRE_SLOTS  |number of retirement slots used non PEBS|
+    0x400008a5:STALL_CYCLES  |Cycles no executable uops retired (Precise Event)|
+    0x400008a6:TOTAL_CYCLES  |Number of cycles using always true condition applied to PEBS uops retired event|
+    0x400008a7:CORE_STALL_CYCLES  |Cycles no executable uops retired on core (Precise Event)|
+    0x400008a8:STALL_OCCURRENCES  |Number of transitions from stalled to unstalled execution (Precise Event)|
+    0x400008a9:e=0  |edge level (may require counter-mask >= 1)|
+    0x400008aa:i=0  |invert|
+    0x400008ab:c=0  |counter-mask in range [0-255]|
+    0x400008ac:t=0  |measure any thread|
+    0x400008ad:intx=0  |monitor only inside transactional memory region|
+    0x400008ae:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400008af:u=0  |monitor at user level|
+    0x400008b0:k=0  |monitor at kernel level|
+    0x400008b1:period=0  |sampling period|
+    0x400008b2:freq=0  |sampling frequency (Hz)|
+    0x400008b3:precise=0  |precise event sampling|
+    0x400008b4:excl=0  |exclusive access|
+    0x400008b5:mg=0  |monitor guest execution|
+    0x400008b6:mh=0  |monitor host execution|
+    0x400008b7:cpu=0  |CPU to program|
+    0x400008b8:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+TX_MEM	0x400008b9
+ |Transactional memory aborts|
+    0x400008ba:ABORT_CONFLICT  |Number of times a transactional abort was signaled due to data conflict on a transactionally accessed address|
+    0x400008bb:ABORT_CAPACITY  |Number of times a transactional abort was signaled due to data capacity limitation|
+    0x400008bc:ABORT_HLE_STORE_TO_ELIDED_LOCK  |Number of times a HLE transactional execution aborted due to a non xrelease prefixed instruction writing to an elided lock in the elision buffer|
+    0x400008bd:ABORT_HLE_ELISION_BUFFER_NOT_EMPTY  |Number of times a HLE transactional execution aborted due to NoAllocatedElisionBuffer being non-zero|
+    0x400008be:ABORT_HLE_ELISION_BUFFER_MISMATCH  |Number of times a HLE transaction execution aborted due to xrelease lock not satisfying the address and value requirements in the elision buffer|
+    0x400008bf:ABORT_HLE_ELISION_BUFFER_UNSUPPORTED_ALIGNMENT  |Number of times a HLE transaction execution aborted due to an unsupported read alignment from the elision buffer|
+    0x400008c0:ABORT_HLE_ELISION_BUFFER_FULL  |Number of times a HLE clock could not be elided due to ElisionBufferAvailable being zero|
+    0x400008c1:e=0  |edge level (may require counter-mask >= 1)|
+    0x400008c2:i=0  |invert|
+    0x400008c3:c=0  |counter-mask in range [0-255]|
+    0x400008c4:t=0  |measure any thread|
+    0x400008c5:intx=0  |monitor only inside transactional memory region|
+    0x400008c6:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400008c7:u=0  |monitor at user level|
+    0x400008c8:k=0  |monitor at kernel level|
+    0x400008c9:period=0  |sampling period|
+    0x400008ca:freq=0  |sampling frequency (Hz)|
+    0x400008cb:excl=0  |exclusive access|
+    0x400008cc:mg=0  |monitor guest execution|
+    0x400008cd:mh=0  |monitor host execution|
+    0x400008ce:cpu=0  |CPU to program|
+    0x400008cf:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+TX_EXEC	0x400008d0
+ |Transactional execution|
+    0x400008d1:MISC1  |Number of times a class of instructions that may cause a transactional abort was executed. Since this is the count of execution, it may not always cause a transactional abort|
+    0x400008d2:MISC2  |Number of times a class of instructions that may cause a transactional abort was executed inside a transactional region|
+    0x400008d3:MISC3  |Number of times an instruction execution caused the supported nest count to be exceeded|
+    0x400008d4:MISC4  |Number of times an instruction a xbegin instruction was executed inside HLE transactional region|
+    0x400008d5:MISC5  |Number of times an instruction with HLE xacquire prefix was executed inside a RTM transactional region|
+    0x400008d6:e=0  |edge level (may require counter-mask >= 1)|
+    0x400008d7:i=0  |invert|
+    0x400008d8:c=0  |counter-mask in range [0-255]|
+    0x400008d9:t=0  |measure any thread|
+    0x400008da:intx=0  |monitor only inside transactional memory region|
+    0x400008db:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400008dc:u=0  |monitor at user level|
+    0x400008dd:k=0  |monitor at kernel level|
+    0x400008de:period=0  |sampling period|
+    0x400008df:freq=0  |sampling frequency (Hz)|
+    0x400008e0:excl=0  |exclusive access|
+    0x400008e1:mg=0  |monitor guest execution|
+    0x400008e2:mh=0  |monitor host execution|
+    0x400008e3:cpu=0  |CPU to program|
+    0x400008e4:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OFFCORE_REQUESTS_OUTSTANDING	0x400008e5
+ |Outstanding offcore requests|
+    0x400008e6:ALL_DATA_RD_CYCLES  |Cycles with cacheable data read transactions in the superQ (use with HT off only)|
+    0x400008e7:DEMAND_CODE_RD_CYCLES  |Cycles with demand code reads transactions in the superQ (use with HT off only)|
+    0x400008e8:CYCLES_WITH_DEMAND_CODE_RD  |Cycles with demand code reads transactions in the superQ (use with HT off only)|
+    0x400008e9:DEMAND_DATA_RD_CYCLES  |Cycles with demand data read transactions in the superQ (use with HT off only)|
+    0x400008ea:CYCLES_WITH_DEMAND_DATA_RD  |Cycles with demand data read transactions in the superQ (use with HT off only)|
+    0x400008eb:ALL_DATA_RD  |Cacheable data read transactions in the superQ every cycle (use with HT off only)|
+    0x400008ec:DEMAND_CODE_RD  |Code read transactions in the superQ every cycle (use with HT off only)|
+    0x400008ed:DEMAND_DATA_RD  |Demand data read transactions in the superQ every cycle (use with HT off only)|
+    0x400008ee:DEMAND_DATA_RD_GE_6  |Cycles with at lesat 6 offcore outstanding demand data read requests in the uncore queue|
+    0x400008ef:DEMAND_RFO  |Outstanding RFO (store) transactions in the superQ every cycle (use with HT off only)|
+    0x400008f0:DEMAND_RFO_CYCLES  |Cycles with outstanding RFO (store) transactions in the superQ (use with HT off only)|
+    0x400008f1:CYCLES_WITH_DEMAND_RFO  |Cycles with outstanding RFO (store) transactions in the superQ (use with HT off only)|
+    0x400008f2:L3_MISS_DEMAND_DATA_RD  |Number of offcore outstanding demand data read requests missing the L3 cache every cycle|
+    0x400008f3:L3_MISS_DEMAND_DATA_RD_GE_6  |Number of cycles in which at least 6 demand data read requests missing the L3|
+    0x400008f4:CYCLES_WITH_L3_MISS_DEMAND_DATA_RD  |Cycles with at least 1 Demand Data Read requests who miss L3 cache in the superQ|
+    0x400008f5:e=0  |edge level (may require counter-mask >= 1)|
+    0x400008f6:i=0  |invert|
+    0x400008f7:c=0  |counter-mask in range [0-255]|
+    0x400008f8:t=0  |measure any thread|
+    0x400008f9:intx=0  |monitor only inside transactional memory region|
+    0x400008fa:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400008fb:u=0  |monitor at user level|
+    0x400008fc:k=0  |monitor at kernel level|
+    0x400008fd:period=0  |sampling period|
+    0x400008fe:freq=0  |sampling frequency (Hz)|
+    0x400008ff:excl=0  |exclusive access|
+    0x40000900:mg=0  |monitor guest execution|
+    0x40000901:mh=0  |monitor host execution|
+    0x40000902:cpu=0  |CPU to program|
+    0x40000903:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+ILD_STALL	0x40000904
+ |Instruction Length Decoder stalls|
+    0x40000905:LCP  |Stall caused by changing prefix length of the instruction|
+    0x40000906:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000907:i=0  |invert|
+    0x40000908:c=0  |counter-mask in range [0-255]|
+    0x40000909:t=0  |measure any thread|
+    0x4000090a:intx=0  |monitor only inside transactional memory region|
+    0x4000090b:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000090c:u=0  |monitor at user level|
+    0x4000090d:k=0  |monitor at kernel level|
+    0x4000090e:period=0  |sampling period|
+    0x4000090f:freq=0  |sampling frequency (Hz)|
+    0x40000910:excl=0  |exclusive access|
+    0x40000911:mg=0  |monitor guest execution|
+    0x40000912:mh=0  |monitor host execution|
+    0x40000913:cpu=0  |CPU to program|
+    0x40000914:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+DSB2MITE_SWITCHES	0x40000915
+ |Number of DSB to MITE switches|
+    0x40000916:PENALTY_CYCLES  |Number of DSB to MITE switch true penalty cycles|
+    0x40000917:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000918:i=0  |invert|
+    0x40000919:c=0  |counter-mask in range [0-255]|
+    0x4000091a:t=0  |measure any thread|
+    0x4000091b:intx=0  |monitor only inside transactional memory region|
+    0x4000091c:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000091d:u=0  |monitor at user level|
+    0x4000091e:k=0  |monitor at kernel level|
+    0x4000091f:period=0  |sampling period|
+    0x40000920:freq=0  |sampling frequency (Hz)|
+    0x40000921:excl=0  |exclusive access|
+    0x40000922:mg=0  |monitor guest execution|
+    0x40000923:mh=0  |monitor host execution|
+    0x40000924:cpu=0  |CPU to program|
+    0x40000925:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+EPT	0x40000926
+ |Extended page table|
+    0x40000927:WALK_DURATION  |Cycles for an extended page table walk of any type|
+    0x40000928:WALK_PENDING  |Cycles for an extended page table walk of any type|
+    0x40000929:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000092a:i=0  |invert|
+    0x4000092b:c=0  |counter-mask in range [0-255]|
+    0x4000092c:t=0  |measure any thread|
+    0x4000092d:intx=0  |monitor only inside transactional memory region|
+    0x4000092e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000092f:u=0  |monitor at user level|
+    0x40000930:k=0  |monitor at kernel level|
+    0x40000931:period=0  |sampling period|
+    0x40000932:freq=0  |sampling frequency (Hz)|
+    0x40000933:excl=0  |exclusive access|
+    0x40000934:mg=0  |monitor guest execution|
+    0x40000935:mh=0  |monitor host execution|
+    0x40000936:cpu=0  |CPU to program|
+    0x40000937:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+FP_ARITH	0x40000938
+ |Floating-point instructions retired|
+    0x40000939:SCALAR_DOUBLE  |Number of scalar double precision floating-point arithmetic instructions (multiply by 1 to get flops)|
+    0x4000093a:SCALAR_SINGLE  |Number of scalar single precision floating-point arithmetic instructions (multiply by 1 to get flops)|
+    0x4000093b:128B_PACKED_DOUBLE  |Number of scalar 128-bit packed double precision floating-point arithmetic instructions (multiply by 2 to get flops)|
+    0x4000093c:128B_PACKED_SINGLE  |Number of scalar 128-bit packed single precision floating-point arithmetic instructions (multiply by 4 to get flops)|
+    0x4000093d:256B_PACKED_DOUBLE  |Number of scalar 256-bit packed double precision floating-point arithmetic instructions (multiply by 4 to get flops)|
+    0x4000093e:256B_PACKED_SINGLE  |Number of scalar 256-bit packed single precision floating-point arithmetic instructions (multiply by 8 to get flops)|
+    0x4000093f:512B_PACKED_DOUBLE  |Number of scalar 512-bit packed double precision floating-point arithmetic instructions (multiply by 8 to get flops)|
+    0x40000940:512B_PACKED_SINGLE  |Number of scalar 512-bit packed single precision floating-point arithmetic instructions (multiply by 16 to get flops)|
+    0x40000941:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000942:i=0  |invert|
+    0x40000943:c=0  |counter-mask in range [0-255]|
+    0x40000944:t=0  |measure any thread|
+    0x40000945:intx=0  |monitor only inside transactional memory region|
+    0x40000946:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000947:u=0  |monitor at user level|
+    0x40000948:k=0  |monitor at kernel level|
+    0x40000949:period=0  |sampling period|
+    0x4000094a:freq=0  |sampling frequency (Hz)|
+    0x4000094b:excl=0  |exclusive access|
+    0x4000094c:mg=0  |monitor guest execution|
+    0x4000094d:mh=0  |monitor host execution|
+    0x4000094e:cpu=0  |CPU to program|
+    0x4000094f:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+FP_ARITH_INST_RETIRED	0x40000950
+ |Floating-point instructions retired|
+    0x40000951:SCALAR_DOUBLE  |Number of scalar double precision floating-point arithmetic instructions (multiply by 1 to get flops)|
+    0x40000952:SCALAR_SINGLE  |Number of scalar single precision floating-point arithmetic instructions (multiply by 1 to get flops)|
+    0x40000953:128B_PACKED_DOUBLE  |Number of scalar 128-bit packed double precision floating-point arithmetic instructions (multiply by 2 to get flops)|
+    0x40000954:128B_PACKED_SINGLE  |Number of scalar 128-bit packed single precision floating-point arithmetic instructions (multiply by 4 to get flops)|
+    0x40000955:256B_PACKED_DOUBLE  |Number of scalar 256-bit packed double precision floating-point arithmetic instructions (multiply by 4 to get flops)|
+    0x40000956:256B_PACKED_SINGLE  |Number of scalar 256-bit packed single precision floating-point arithmetic instructions (multiply by 8 to get flops)|
+    0x40000957:512B_PACKED_DOUBLE  |Number of scalar 512-bit packed double precision floating-point arithmetic instructions (multiply by 8 to get flops)|
+    0x40000958:512B_PACKED_SINGLE  |Number of scalar 512-bit packed single precision floating-point arithmetic instructions (multiply by 16 to get flops)|
+    0x40000959:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000095a:i=0  |invert|
+    0x4000095b:c=0  |counter-mask in range [0-255]|
+    0x4000095c:t=0  |measure any thread|
+    0x4000095d:intx=0  |monitor only inside transactional memory region|
+    0x4000095e:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000095f:u=0  |monitor at user level|
+    0x40000960:k=0  |monitor at kernel level|
+    0x40000961:period=0  |sampling period|
+    0x40000962:freq=0  |sampling frequency (Hz)|
+    0x40000963:excl=0  |exclusive access|
+    0x40000964:mg=0  |monitor guest execution|
+    0x40000965:mh=0  |monitor host execution|
+    0x40000966:cpu=0  |CPU to program|
+    0x40000967:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+EXE_ACTIVITY	0x40000968
+ |Execution activity|
+    0x40000969:1_PORTS_UTIL  |Cycles with 1 uop executing across all ports and Reservation Station is not empty|
+    0x4000096a:2_PORTS_UTIL  |Cycles with 2 uops executing across all ports and Reservation Station is not empty|
+    0x4000096b:3_PORTS_UTIL  |Cycles with 3 uops executing across all ports and Reservation Station is not empty|
+    0x4000096c:4_PORTS_UTIL  |Cycles with 4 uops executing across all ports and Reservation Station is not empty|
+    0x4000096d:BOUND_ON_STORES  |Cycles where the store buffer is full and no outstanding load|
+    0x4000096e:EXE_BOUND_0_PORTS  |Cycles where no uop is executed and the Reservation Station was not empty|
+    0x4000096f:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000970:i=0  |invert|
+    0x40000971:c=0  |counter-mask in range [0-255]|
+    0x40000972:t=0  |measure any thread|
+    0x40000973:intx=0  |monitor only inside transactional memory region|
+    0x40000974:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000975:u=0  |monitor at user level|
+    0x40000976:k=0  |monitor at kernel level|
+    0x40000977:period=0  |sampling period|
+    0x40000978:freq=0  |sampling frequency (Hz)|
+    0x40000979:excl=0  |exclusive access|
+    0x4000097a:mg=0  |monitor guest execution|
+    0x4000097b:mh=0  |monitor host execution|
+    0x4000097c:cpu=0  |CPU to program|
+    0x4000097d:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+FRONTEND_RETIRED	0x4000097e
+ |Precise Front-End activity|
+    0x4000097f:DSB_MISS  |Retired instructions experiencing a critical decode stream buffer (DSB) miss. A critical DSB miss can cause stalls in the backend|
+    0x40000980:ANY_DSB_MISS  |Retired Instructions experiencing a decode stream buffer (DSB) miss.|
+    0x40000981:ITLB_MISS  |Retired instructions experiencing ITLB true miss|
+    0x40000982:L1I_MISS  |Retired instructions experiencing L1I cache true miss|
+    0x40000983:L2_MISS  |Retired instructions experiencing instruction L2 cache true miss|
+    0x40000984:STLB_MISS  |Retired instructions experiencing STLB (2nd level TLB) true miss|
+    0x40000985:IDQ_4_BUBBLES  |Retired instructions after an interval where the front-end did not deliver any uops (4 bubbles) for a period determined by the fe_thres modifier and which was not interrupted by a back-end stall|
+    0x40000986:IDQ_3_BUBBLES  |Counts instructions retired after an interval where the front-end did not deliver more than 1 uop (3 bubbles) for a period determined by the fe_thres modifier and which was not interrupted by a back-end stall|
+    0x40000987:IDQ_2_BUBBLES  |Counts instructions retired after an interval where the front-end did not deliver more than 2 uops (2 bubbles) for a period determined by the fe_thres modifier and which was not interrupted by a back-end stall|
+    0x40000988:IDQ_1_BUBBLE  |Counts instructions retired after an interval where the front-end did not deliver more than 3 uops (1 bubble) for a period determined by the fe_thres modifier and which was not interrupted by a back-end stall|
+    0x40000989:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000098a:i=0  |invert|
+    0x4000098b:c=0  |counter-mask in range [0-255]|
+    0x4000098c:intx=0  |monitor only inside transactional memory region|
+    0x4000098d:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x4000098e:fe_thres=0  |frontend bubble latency threshold in cycles ([1-4095]|
+    0x4000098f:u=0  |monitor at user level|
+    0x40000990:k=0  |monitor at kernel level|
+    0x40000991:period=0  |sampling period|
+    0x40000992:freq=0  |sampling frequency (Hz)|
+    0x40000993:precise=0  |precise event sampling|
+    0x40000994:excl=0  |exclusive access|
+    0x40000995:mg=0  |monitor guest execution|
+    0x40000996:mh=0  |monitor host execution|
+    0x40000997:cpu=0  |CPU to program|
+    0x40000998:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+HW_INTERRUPTS	0x40000999
+ |Number of hardware interrupts received by the processor|
+    0x4000099a:RECEIVED  |Number of hardware interrupts received by the processor|
+    0x4000099b:e=0  |edge level (may require counter-mask >= 1)|
+    0x4000099c:i=0  |invert|
+    0x4000099d:c=0  |counter-mask in range [0-255]|
+    0x4000099e:t=0  |measure any thread|
+    0x4000099f:intx=0  |monitor only inside transactional memory region|
+    0x400009a0:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009a1:u=0  |monitor at user level|
+    0x400009a2:k=0  |monitor at kernel level|
+    0x400009a3:period=0  |sampling period|
+    0x400009a4:freq=0  |sampling frequency (Hz)|
+    0x400009a5:excl=0  |exclusive access|
+    0x400009a6:mg=0  |monitor guest execution|
+    0x400009a7:mh=0  |monitor host execution|
+    0x400009a8:cpu=0  |CPU to program|
+    0x400009a9:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+SQ_MISC	0x400009aa
+ |SuperQueue miscellaneous|
+    0x400009ab:SPLIT_LOCK  |Number of split locks in the super queue (SQ)|
+    0x400009ac:e=0  |edge level (may require counter-mask >= 1)|
+    0x400009ad:i=0  |invert|
+    0x400009ae:c=0  |counter-mask in range [0-255]|
+    0x400009af:t=0  |measure any thread|
+    0x400009b0:intx=0  |monitor only inside transactional memory region|
+    0x400009b1:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009b2:u=0  |monitor at user level|
+    0x400009b3:k=0  |monitor at kernel level|
+    0x400009b4:period=0  |sampling period|
+    0x400009b5:freq=0  |sampling frequency (Hz)|
+    0x400009b6:excl=0  |exclusive access|
+    0x400009b7:mg=0  |monitor guest execution|
+    0x400009b8:mh=0  |monitor host execution|
+    0x400009b9:cpu=0  |CPU to program|
+    0x400009ba:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+MEM_LOAD_MISC_RETIRED	0x400009bb
+ |Load retired miscellaneous|
+    0x400009bc:UC  |Number of uncached load retired|
+    0x400009bd:e=0  |edge level (may require counter-mask >= 1)|
+    0x400009be:i=0  |invert|
+    0x400009bf:c=0  |counter-mask in range [0-255]|
+    0x400009c0:t=0  |measure any thread|
+    0x400009c1:intx=0  |monitor only inside transactional memory region|
+    0x400009c2:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009c3:u=0  |monitor at user level|
+    0x400009c4:k=0  |monitor at kernel level|
+    0x400009c5:period=0  |sampling period|
+    0x400009c6:freq=0  |sampling frequency (Hz)|
+    0x400009c7:precise=0  |precise event sampling|
+    0x400009c8:excl=0  |exclusive access|
+    0x400009c9:mg=0  |monitor guest execution|
+    0x400009ca:mh=0  |monitor host execution|
+    0x400009cb:cpu=0  |CPU to program|
+    0x400009cc:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+IDI_MISC	0x400009cd
+ |Miscellaneous|
+    0x400009ce:WB_UPGRADE  |Counts number of cache lines that are allocated and written back to L3 with the intention that they are more likely to be reused shortly|
+    0x400009cf:WB_DOWNGRADE  |Counts number of cache lines that are dropped and not written back to L3 as they are deemed to be less likely to be reused shortly|
+    0x400009d0:e=0  |edge level (may require counter-mask >= 1)|
+    0x400009d1:i=0  |invert|
+    0x400009d2:c=0  |counter-mask in range [0-255]|
+    0x400009d3:t=0  |measure any thread|
+    0x400009d4:intx=0  |monitor only inside transactional memory region|
+    0x400009d5:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009d6:u=0  |monitor at user level|
+    0x400009d7:k=0  |monitor at kernel level|
+    0x400009d8:period=0  |sampling period|
+    0x400009d9:freq=0  |sampling frequency (Hz)|
+    0x400009da:excl=0  |exclusive access|
+    0x400009db:mg=0  |monitor guest execution|
+    0x400009dc:mh=0  |monitor host execution|
+    0x400009dd:cpu=0  |CPU to program|
+    0x400009de:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+CORE_POWER	0x400009df
+ |Power power cycles|
+    0x400009e0:LVL0_TURBO_LICENSE  |Number of core cycles where the core was running in a manner where Turbo may be clipped to the Non-AVX turbo schedule.|
+    0x400009e1:LVL1_TURBO_LICENSE  |Number of core cycles where the core was running in a manner where Turbo may be clipped to the AVX2 turbo schedule.|
+    0x400009e2:LVL2_TURBO_LICENSE  |Number of core cycles where the core was running in a manner where Turbo may be clipped to the AVX512 turbo schedule.|
+    0x400009e3:THROTTLE  |Number of core cycles where the core was throttled due to a pending power level request.|
+    0x400009e4:e=0  |edge level (may require counter-mask >= 1)|
+    0x400009e5:i=0  |invert|
+    0x400009e6:c=0  |counter-mask in range [0-255]|
+    0x400009e7:t=0  |measure any thread|
+    0x400009e8:intx=0  |monitor only inside transactional memory region|
+    0x400009e9:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009ea:u=0  |monitor at user level|
+    0x400009eb:k=0  |monitor at kernel level|
+    0x400009ec:period=0  |sampling period|
+    0x400009ed:freq=0  |sampling frequency (Hz)|
+    0x400009ee:excl=0  |exclusive access|
+    0x400009ef:mg=0  |monitor guest execution|
+    0x400009f0:mh=0  |monitor host execution|
+    0x400009f1:cpu=0  |CPU to program|
+    0x400009f2:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+SW_PREFETCH	0x400009f3
+ |Software prefetches|
+    0x400009f4:NTA  |Number of prefetch.nta instructions executed|
+    0x400009f5:T0  |Number of prefetch.t0 instructions executed|
+    0x400009f6:T1_T2  |Number prefetch.t1 or prefetch.t2 instructions executed|
+    0x400009f7:PREFETCHW  |Number prefetch.w instructions executed|
+    0x400009f8:e=0  |edge level (may require counter-mask >= 1)|
+    0x400009f9:i=0  |invert|
+    0x400009fa:c=0  |counter-mask in range [0-255]|
+    0x400009fb:t=0  |measure any thread|
+    0x400009fc:intx=0  |monitor only inside transactional memory region|
+    0x400009fd:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x400009fe:u=0  |monitor at user level|
+    0x400009ff:k=0  |monitor at kernel level|
+    0x40000a00:period=0  |sampling period|
+    0x40000a01:freq=0  |sampling frequency (Hz)|
+    0x40000a02:excl=0  |exclusive access|
+    0x40000a03:mg=0  |monitor guest execution|
+    0x40000a04:mh=0  |monitor host execution|
+    0x40000a05:cpu=0  |CPU to program|
+    0x40000a06:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+SW_PREFETCH_ACCESS	0x40000a07
+ |Software prefetches|
+    0x40000a08:NTA  |Number of prefetch.nta instructions executed|
+    0x40000a09:T0  |Number of prefetch.t0 instructions executed|
+    0x40000a0a:T1_T2  |Number prefetch.t1 or prefetch.t2 instructions executed|
+    0x40000a0b:PREFETCHW  |Number prefetch.w instructions executed|
+    0x40000a0c:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000a0d:i=0  |invert|
+    0x40000a0e:c=0  |counter-mask in range [0-255]|
+    0x40000a0f:t=0  |measure any thread|
+    0x40000a10:intx=0  |monitor only inside transactional memory region|
+    0x40000a11:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000a12:u=0  |monitor at user level|
+    0x40000a13:k=0  |monitor at kernel level|
+    0x40000a14:period=0  |sampling period|
+    0x40000a15:freq=0  |sampling frequency (Hz)|
+    0x40000a16:excl=0  |exclusive access|
+    0x40000a17:mg=0  |monitor guest execution|
+    0x40000a18:mh=0  |monitor host execution|
+    0x40000a19:cpu=0  |CPU to program|
+    0x40000a1a:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+CORE_SNOOP_RESPONSE	0x40000a1b
+ |Aggregated core snoops|
+    0x40000a1c:RSP_IHITI  |TBD|
+    0x40000a1d:RSP_IHITFSE  |TBD|
+    0x40000a1e:RSP_SHITFSE  |TBD|
+    0x40000a1f:RSP_SFWDM  |TBD|
+    0x40000a20:RSP_IFWDM  |TBD|
+    0x40000a21:RSP_IFWDFE  |TBD|
+    0x40000a22:RSP_SFWDFE  |TBD|
+    0x40000a23:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000a24:i=0  |invert|
+    0x40000a25:c=0  |counter-mask in range [0-255]|
+    0x40000a26:t=0  |measure any thread|
+    0x40000a27:intx=0  |monitor only inside transactional memory region|
+    0x40000a28:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000a29:u=0  |monitor at user level|
+    0x40000a2a:k=0  |monitor at kernel level|
+    0x40000a2b:period=0  |sampling period|
+    0x40000a2c:freq=0  |sampling frequency (Hz)|
+    0x40000a2d:excl=0  |exclusive access|
+    0x40000a2e:mg=0  |monitor guest execution|
+    0x40000a2f:mh=0  |monitor host execution|
+    0x40000a30:cpu=0  |CPU to program|
+    0x40000a31:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+PARTIAL_RAT_STALLS	0x40000a32
+ |RAT stalls|
+    0x40000a33:SCOREBOARD  |Count core cycles where the pipeline is stalled due to serialization operations|
+    0x40000a34:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000a35:i=0  |invert|
+    0x40000a36:c=0  |counter-mask in range [0-255]|
+    0x40000a37:t=0  |measure any thread|
+    0x40000a38:intx=0  |monitor only inside transactional memory region|
+    0x40000a39:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000a3a:u=0  |monitor at user level|
+    0x40000a3b:k=0  |monitor at kernel level|
+    0x40000a3c:period=0  |sampling period|
+    0x40000a3d:freq=0  |sampling frequency (Hz)|
+    0x40000a3e:excl=0  |exclusive access|
+    0x40000a3f:mg=0  |monitor guest execution|
+    0x40000a40:mh=0  |monitor host execution|
+    0x40000a41:cpu=0  |CPU to program|
+    0x40000a42:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OFFCORE_REQUESTS_BUFFER	0x40000a43
+ |Offcore requests buffer|
+    0x40000a44:SQ_FULL  |Number of requests for which the offcore buffer (SQ) is full|
+    0x40000a45:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000a46:i=0  |invert|
+    0x40000a47:c=0  |counter-mask in range [0-255]|
+    0x40000a48:t=0  |measure any thread|
+    0x40000a49:intx=0  |monitor only inside transactional memory region|
+    0x40000a4a:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000a4b:u=0  |monitor at user level|
+    0x40000a4c:k=0  |monitor at kernel level|
+    0x40000a4d:period=0  |sampling period|
+    0x40000a4e:freq=0  |sampling frequency (Hz)|
+    0x40000a4f:excl=0  |exclusive access|
+    0x40000a50:mg=0  |monitor guest execution|
+    0x40000a51:mh=0  |monitor host execution|
+    0x40000a52:cpu=0  |CPU to program|
+    0x40000a53:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OFFCORE_RESPONSE_0	0x40000a54
+ |Offcore response event (must provide at least one request type and either any_response or any combination of supplier + snoop)|
+    0x40000a55:DMND_DATA_RD  |Request: number of demand and DCU prefetch data reads of full and partial cachelines as well as demand data page table entry cacheline reads. Does not count L2 data read prefetches or instruction fetches|
+    0x40000a56:DMND_RFO  |Request: number of demand and DCU prefetch reads for ownership (RFO) requests generated by a write to data cacheline. Does not count L2 RFO prefetches|
+    0x40000a57:DMND_CODE_RD  |Request: number of demand and DCU prefetch instruction cacheline reads. Does not count L2 code read prefetches|
+    0x40000a58:PF_L2_DATA_RD  |Request: number of data prefetch requests to L2|
+    0x40000a59:PF_L2_RFO  |Request: number of RFO prefetch requests to L2|
+    0x40000a5a:PF_L3_DATA_RD  |Request: number of data prefetch requests for loads that end up in L3|
+    0x40000a5b:PF_L3_RFO  |Request: number of RFO prefetch requests that end up in L3|
+    0x40000a5c:PF_L1D_AND_SW  |Request: number of L1 data cache hardware prefetch requests and software prefetch requests|
+    0x40000a5d:OTHER  |Request: counts one of the following transaction types, including L3 invalidate, I/O, full or partial writes, WC or non-temporal stores, CLFLUSH, Fences, lock, unlock, split lock|
+    0x40000a5e:ANY_REQUEST  |Request: combination of all request umasks|
+    0x40000a5f:ANY_DATA_RD  |Request: combination of DMND_DATA_RD | PF_L2_DATA_RD | PF_L3_DATA_RD | PF_L1D_AND_SW|
+    0x40000a60:ANY_DATA  |Request: combination of ANY_DATA_RD | PF_L2_RFO | PF_L3_RFO | DMND_RFO|
+    0x40000a61:ANY_DATA_PF  |Request: combination of PF_L2_DATA_RD | PF_L3_DATA_RD | PF_L1D_AND_SW|
+    0x40000a62:ANY_RFO  |Request: combination of DMND_RFO | PF_L2_RFO | PF_L3_RFO|
+    0x40000a63:ANY_RESPONSE  |Response: count any response type|
+    0x40000a64:SUPPLIER_NONE  |Supplier: counts number of times supplier information is not available|
+    0x40000a65:NO_SUPP  |Supplier: counts number of times supplier information is not available|
+    0x40000a66:L3_HITM  |Supplier: counts L3 hits in M-state (initial lookup)|
+    0x40000a67:L3_HITE  |Supplier: counts L3 hits in E-state|
+    0x40000a68:L3_HITS  |Supplier: counts L3 hits in S-state|
+    0x40000a69:L3_HITF  |Supplier: counts L3 hits in F-state|
+    0x40000a6a:L3_HITMESF  |Supplier: counts L3 hits in any state (M, E, S, F)|
+    0x40000a6b:L3_HIT  |Alias for L3_HITMES|
+    0x40000a6c:L3_MISS_LOCAL  |Supplier: counts L3 misses to local DRAM|
+    0x40000a6d:L3_MISS_REMOTE_HOP1_DRAM  |Supplier: counts L3 misses to remote DRAM with 1 hop|
+    0x40000a6e:L3_MISS  |Supplier: counts L3 misses (local or remote)|
+    0x40000a6f:SNP_NONE  |Snoop: counts number of times no snoop-related information is available|
+    0x40000a70:SNP_NOT_NEEDED  |Snoop: counts the number of times no snoop was needed to satisfy the request|
+    0x40000a71:SNP_MISS  |Snoop: counts number of times a snoop was needed and it missed all snooped caches|
+    0x40000a72:SNP_HIT_NO_FWD  |Snoop: counts number of times a snoop was needed and it hit in at leas one snooped cache|
+    0x40000a73:SNP_HIT_WITH_FWD  |Snoop: counts number of times a snoop was needed and data was forwarded from a remote socket|
+    0x40000a74:SNP_HITM  |Snoop: counts number of times a snoop was needed and it hitM-ed in local or remote cache|
+    0x40000a75:SNP_NON_DRAM  |Snoop:  counts number of times target was a non-DRAM system address. This includes MMIO transactions|
+    0x40000a76:SNP_ANY  |Snoop: any snoop reason|
+    0x40000a77:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000a78:i=0  |invert|
+    0x40000a79:c=0  |counter-mask in range [0-255]|
+    0x40000a7a:t=0  |measure any thread|
+    0x40000a7b:intx=0  |monitor only inside transactional memory region|
+    0x40000a7c:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000a7d:u=0  |monitor at user level|
+    0x40000a7e:k=0  |monitor at kernel level|
+    0x40000a7f:period=0  |sampling period|
+    0x40000a80:freq=0  |sampling frequency (Hz)|
+    0x40000a81:excl=0  |exclusive access|
+    0x40000a82:mg=0  |monitor guest execution|
+    0x40000a83:mh=0  |monitor host execution|
+    0x40000a84:cpu=0  |CPU to program|
+    0x40000a85:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+OFFCORE_RESPONSE_1	0x40000a86
+ |Offcore response event (must provide at least one request type and either any_response or any combination of supplier + snoop)|
+    0x40000a87:DMND_DATA_RD  |Request: number of demand and DCU prefetch data reads of full and partial cachelines as well as demand data page table entry cacheline reads. Does not count L2 data read prefetches or instruction fetches|
+    0x40000a88:DMND_RFO  |Request: number of demand and DCU prefetch reads for ownership (RFO) requests generated by a write to data cacheline. Does not count L2 RFO prefetches|
+    0x40000a89:DMND_CODE_RD  |Request: number of demand and DCU prefetch instruction cacheline reads. Does not count L2 code read prefetches|
+    0x40000a8a:PF_L2_DATA_RD  |Request: number of data prefetch requests to L2|
+    0x40000a8b:PF_L2_RFO  |Request: number of RFO prefetch requests to L2|
+    0x40000a8c:PF_L3_DATA_RD  |Request: number of data prefetch requests for loads that end up in L3|
+    0x40000a8d:PF_L3_RFO  |Request: number of RFO prefetch requests that end up in L3|
+    0x40000a8e:PF_L1D_AND_SW  |Request: number of L1 data cache hardware prefetch requests and software prefetch requests|
+    0x40000a8f:OTHER  |Request: counts one of the following transaction types, including L3 invalidate, I/O, full or partial writes, WC or non-temporal stores, CLFLUSH, Fences, lock, unlock, split lock|
+    0x40000a90:ANY_REQUEST  |Request: combination of all request umasks|
+    0x40000a91:ANY_DATA_RD  |Request: combination of DMND_DATA_RD | PF_L2_DATA_RD | PF_L3_DATA_RD | PF_L1D_AND_SW|
+    0x40000a92:ANY_DATA  |Request: combination of ANY_DATA_RD | PF_L2_RFO | PF_L3_RFO | DMND_RFO|
+    0x40000a93:ANY_DATA_PF  |Request: combination of PF_L2_DATA_RD | PF_L3_DATA_RD | PF_L1D_AND_SW|
+    0x40000a94:ANY_RFO  |Request: combination of DMND_RFO | PF_L2_RFO | PF_L3_RFO|
+    0x40000a95:ANY_RESPONSE  |Response: count any response type|
+    0x40000a96:SUPPLIER_NONE  |Supplier: counts number of times supplier information is not available|
+    0x40000a97:NO_SUPP  |Supplier: counts number of times supplier information is not available|
+    0x40000a98:L3_HITM  |Supplier: counts L3 hits in M-state (initial lookup)|
+    0x40000a99:L3_HITE  |Supplier: counts L3 hits in E-state|
+    0x40000a9a:L3_HITS  |Supplier: counts L3 hits in S-state|
+    0x40000a9b:L3_HITF  |Supplier: counts L3 hits in F-state|
+    0x40000a9c:L3_HITMESF  |Supplier: counts L3 hits in any state (M, E, S, F)|
+    0x40000a9d:L3_HIT  |Alias for L3_HITMES|
+    0x40000a9e:L3_MISS_LOCAL  |Supplier: counts L3 misses to local DRAM|
+    0x40000a9f:L3_MISS_REMOTE_HOP1_DRAM  |Supplier: counts L3 misses to remote DRAM with 1 hop|
+    0x40000aa0:L3_MISS  |Supplier: counts L3 misses (local or remote)|
+    0x40000aa1:SNP_NONE  |Snoop: counts number of times no snoop-related information is available|
+    0x40000aa2:SNP_NOT_NEEDED  |Snoop: counts the number of times no snoop was needed to satisfy the request|
+    0x40000aa3:SNP_MISS  |Snoop: counts number of times a snoop was needed and it missed all snooped caches|
+    0x40000aa4:SNP_HIT_NO_FWD  |Snoop: counts number of times a snoop was needed and it hit in at leas one snooped cache|
+    0x40000aa5:SNP_HIT_WITH_FWD  |Snoop: counts number of times a snoop was needed and data was forwarded from a remote socket|
+    0x40000aa6:SNP_HITM  |Snoop: counts number of times a snoop was needed and it hitM-ed in local or remote cache|
+    0x40000aa7:SNP_NON_DRAM  |Snoop:  counts number of times target was a non-DRAM system address. This includes MMIO transactions|
+    0x40000aa8:SNP_ANY  |Snoop: any snoop reason|
+    0x40000aa9:e=0  |edge level (may require counter-mask >= 1)|
+    0x40000aaa:i=0  |invert|
+    0x40000aab:c=0  |counter-mask in range [0-255]|
+    0x40000aac:t=0  |measure any thread|
+    0x40000aad:intx=0  |monitor only inside transactional memory region|
+    0x40000aae:intxcp=0  |do not count occurrences inside aborted transactional memory region|
+    0x40000aaf:u=0  |monitor at user level|
+    0x40000ab0:k=0  |monitor at kernel level|
+    0x40000ab1:period=0  |sampling period|
+    0x40000ab2:freq=0  |sampling frequency (Hz)|
+    0x40000ab3:excl=0  |exclusive access|
+    0x40000ab4:mg=0  |monitor guest execution|
+    0x40000ab5:mh=0  |monitor host execution|
+    0x40000ab6:cpu=0  |CPU to program|
+    0x40000ab7:pinned=0  |pin event to counters|
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+Total events reported: 155
