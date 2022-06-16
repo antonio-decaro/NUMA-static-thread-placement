@@ -161,6 +161,23 @@ int main(int argc, char* argv[]) {
     initData(loopData[i], i, len);
   }
 
+  const char* WITH_PAPI = getenv("WITH_PAPI");
+  struct eventset* evset;
+  if (WITH_PAPI) {
+    counting_set_output(getenv("RESULT_DIR"));
+
+    const char* event[] = {
+        "PAPI_L2_DCM",
+        "PAPI_BR_INS",
+        "PAPI_SR_INS",
+        "PAGE-FAULTS",
+    };
+    counting_set_events(event, 4);
+    counting_set_info_field("LCALS_energy_calc");
+    evset = counting_init(0);
+    counting_start(evset);
+  }
+
   Real_ptr x = loopData[0];
   Real_ptr y = loopData[1];
   Real_ptr z = loopData[2];
@@ -231,5 +248,10 @@ int main(int argc, char* argv[]) {
 
       vol[i] *= vnormq;
     }
+  }
+
+  if (WITH_PAPI) {
+    counting_stop(evset);
+    counting_fini(evset);
   }
 }

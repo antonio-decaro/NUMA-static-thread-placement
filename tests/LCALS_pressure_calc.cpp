@@ -6,10 +6,9 @@
 #include <iostream>
 #include <ratio>
 
+extern "C" {
 #include "../lib/counters/counting.h"
-
-#define EVSET "PAPI_TOT_CYC PAPI_LD_INS PAPI_SR_INS PAPI_BR_INS"
-#define EVSET1 "PAPI_L1_DCM PAPI_L2_DCM PAPI_L3_TCM"
+}
 
 using namespace std;
 
@@ -34,6 +33,23 @@ int main() {
   const double p_cut = loopScalar[1];
   const double pmin = loopScalar[2];
   const double eosvmax = loopScalar[3];
+
+  const char* WITH_PAPI = getenv("WITH_PAPI");
+  struct eventset* evset;
+  if (WITH_PAPI) {
+    counting_set_output(getenv("RESULT_DIR"));
+
+    const char* event[] = {
+        "PAPI_L2_DCM",
+        "PAPI_BR_INS",
+        "PAPI_SR_INS",
+        "PAGE-FAULTS",
+    };
+    counting_set_events(event, 4);
+    counting_set_info_field("LCALS_energy_calc");
+    evset = counting_init(0);
+    counting_start(evset);
+  }
 
 #pragma omp parallel firstprivate(cls, p_cut, pmin, eosvmax)
   {
@@ -74,5 +90,10 @@ int main() {
         if (p_new[i] < pmin) p_new[i] = pmin;
       }
     }
+  }
+
+  if (WITH_PAPI) {
+    counting_stop(evset);
+    counting_fini(evset);
   }
 }
