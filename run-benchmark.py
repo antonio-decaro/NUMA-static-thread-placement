@@ -64,6 +64,9 @@ HEADER = ['OMP_PLACES', 'OMP_PROC_BIND']
 
 parser = argparse.ArgumentParser(""" ./run-benchmark.py [OPTIONS]
 Benchmark suite tool, for testing NUMA architecture.
+This script wraps Perf to perform benchmark over a given input binary file.
+It is possible also to perform benchmarks with Papi and Pintool.
+
 HPC project 2021/2022 - UNISA
 Authors: Antonio De Caro, Salvatore Fasano, Gerardo Gullo
 """)
@@ -75,8 +78,10 @@ parser.add_argument('-o', '--out-folder', metavar='<path>', type=str,
                     help='the output folder', default='.')
 parser.add_argument('-c', '--flush-cache', action='store_true',
                     help='flush the cache before each benchmark')
-parser.add_argument('-p', '--with-papi', action='store_true',
-                    help='use Papi to make benchmark')
+parser.add_argument('-p', '--with-pintool', action='store_true',
+                    help='use Pintool to perform benchmark')
+parser.add_argument('-P', '--with-papi', action='store_true',
+                    help='use Papi to perform benchmark')
 
 args = parser.parse_args()
 
@@ -102,10 +107,10 @@ def run_perf_benchmark(bench_exec, bench_name):
             else:
                 val = key
 
-        return [vals[e] for e in PERF_EVENTS]
+        return [time] + [vals[e] for e in PERF_EVENTS]
     with open(f'{args.out_folder}/results/{bench_name}_perf.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(HEADER + PERF_EVENTS)
+        writer.writerow(HEADER + ['seconds'] + PERF_EVENTS)
 
         title = f"[*] Perf {bench_name}"
 
@@ -183,21 +188,21 @@ def run_pintool_benchmark(bench_exec, bench_name):
         writer.writerow(HEADER + PINTOOL_EVENTS)
 
         title = f"Pintool {bench_name}"
-        with alive_bar(args.iterations * (len(OMP_PLACES) * len(OMP_PROC_BIND))) as bar:
-            for _ in range(args.iterations):
-                writer.writerow(['x', 'x'])
+        with alive_bar(len(OMP_PLACES) * len(OMP_PROC_BIND)) as bar:
+            writer.writerow(['x', 'x'])
 
-                for (place, bind) in [(a, b) for a in OMP_PLACES for b in OMP_PROC_BIND]:
-                    bar.title(f'{title}:{place}, {bind}')
-                    os.environ['OMP_PROC_BIND'] = bind
-                    os.environ['OMP_PLACES'] = place
-                    flush_cache()
-                    subprocess.run(
-                        PINTOOL_EXEC + [bench_exec], cwd=f"{args.out_folder}/results/")
-                    with open(f'{args.out_folder}/results/{bench_name}/metrics.csv', 'r') as t:
-                        lines = t.readlines()[-2:]  # remove headers
-                        writer.writerow([place, bind] + lines[1].split())
-                    bar()
+            for (place, bind) in [(a, b) for a in OMP_PLACES for b in OMP_PROC_BIND]:
+                bar.title(f'{title}:{place}, {bind}')
+                os.environ['OMP_PROC_BIND'] = bind
+                os.environ['OMP_PLACES'] = place
+                flush_cache()
+                subprocess.run(
+                    PINTOOL_EXEC + [bench_exec], cwd=f"{args.out_folder}/results/",
+                    stdout=subprocess.DEVNULL)
+                with open(f'{args.out_folder}/results/{bench_name}/metrics.csv', 'r') as t:
+                    lines = t.readlines()[-2:]  # remove headers
+                    writer.writerow([place, bind] + lines[1].split())
+                bar()
 
     shutil.rmtree(f"{args.out_folder}/results/{bench_name}")
 
@@ -219,6 +224,7 @@ if __name__ == '__main__':
             run_perf_benchmark(bench_exec, bench_name)
             if args.with_papi:
                 run_papi_benchmark(bench_exec, bench_name)
-            run_pintool_benchmark(bench_exec, bench_name)
+            if args.with_pintool:
+                run_pintool_benchmark(bench_exec, bench_name)
     except KeyboardInterrupt:
         print("[!] Terminating")

@@ -3,3 +3,4 @@ lib/***
 tests/LCALS_energy_calc
 tests/LCALS_pressure_calc
 tests/LCALS_vol3d_calc
+*.log
