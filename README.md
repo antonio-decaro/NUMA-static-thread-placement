@@ -1,4 +1,4 @@
-# NUMA static thread placement
+# NUMA Static Thread Placement
 >**High Performance Computing** Project 2022 - Università degli Studi di Salerno
 
 This project aims to study the best static thread fitting policy on a NUMA machine.
