@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <chrono>
+
+using namespace std;
+using namespace chrono;
 
 extern "C" {
 #include "../lib/counters/counting.h"
@@ -157,9 +161,6 @@ int main(int argc, char* argv[]) {
   for (int i = 0; i < 4; i++) {
     loopData[i] = new double[len];
   }
-  for (int i = 0; i < 4; i++) {
-    initData(loopData[i], i, len);
-  }
 
   const char* WITH_PAPI = getenv("WITH_PAPI");
   struct eventset* evset;
@@ -168,90 +169,101 @@ int main(int argc, char* argv[]) {
 
     const char* event[] = {
         "PAPI_L2_DCM",
-        "PAPI_BR_INS",
         "PAPI_SR_INS",
+        "PAPI_LD_INS",
         "PAGE-FAULTS",
     };
     counting_set_events(event, 4);
-    counting_set_info_field("LCALS_energy_calc");
+    counting_set_info_field("LCALS_vol3d_calc");
     evset = counting_init(0);
     counting_start(evset);
   }
 
-  Real_ptr x = loopData[0];
-  Real_ptr y = loopData[1];
-  Real_ptr z = loopData[2];
-  Real_ptr vol = loopData[3];
-
-  ADomain domain(0, /* ndims = */ 3);
-
-  Real_ptr x0, x1, x2, x3, x4, x5, x6, x7;
-  Real_ptr y0, y1, y2, y3, y4, y5, y6, y7;
-  Real_ptr z0, z1, z2, z3, z4, z5, z6, z7;
-
-  NDPTRSET(x, x0, x1, x2, x3, x4, x5, x6, x7);
-  NDPTRSET(y, y0, y1, y2, y3, y4, y5, y6, y7);
-  NDPTRSET(z, z0, z1, z2, z3, z4, z5, z6, z7);
-
   const double vnormq = 0.083333333333333333; /* vnormq = 1/12 */
-  const int num_samples = 100;
-  for (int isamp = 0; isamp < num_samples; ++isamp) {
-#pragma omp parallel for schedule(static)
-    for (int i = domain.fpz; i <= domain.lpz; i++) {
-      double x71 = x7[i] - x1[i];
-      double x72 = x7[i] - x2[i];
-      double x74 = x7[i] - x4[i];
-      double x30 = x3[i] - x0[i];
-      double x50 = x5[i] - x0[i];
-      double x60 = x6[i] - x0[i];
+  auto t1 = high_resolution_clock::now();
+#pragma omp parallel
+  {
+    for (int i = 0; i < 4; i++) {
+      initData(loopData[i], i, len);
+    }
+    Real_ptr x = loopData[0];
+    Real_ptr y = loopData[1];
+    Real_ptr z = loopData[2];
+    Real_ptr vol = loopData[3];
 
-      double y71 = y7[i] - y1[i];
-      double y72 = y7[i] - y2[i];
-      double y74 = y7[i] - y4[i];
-      double y30 = y3[i] - y0[i];
-      double y50 = y5[i] - y0[i];
-      double y60 = y6[i] - y0[i];
+    ADomain domain(0, /* ndims = */ 3);
 
-      double z71 = z7[i] - z1[i];
-      double z72 = z7[i] - z2[i];
-      double z74 = z7[i] - z4[i];
-      double z30 = z3[i] - z0[i];
-      double z50 = z5[i] - z0[i];
-      double z60 = z6[i] - z0[i];
+    Real_ptr x0, x1, x2, x3, x4, x5, x6, x7;
+    Real_ptr y0, y1, y2, y3, y4, y5, y6, y7;
+    Real_ptr z0, z1, z2, z3, z4, z5, z6, z7;
 
-      double xps = x71 + x60;
-      double yps = y71 + y60;
-      double zps = z71 + z60;
+    NDPTRSET(x, x0, x1, x2, x3, x4, x5, x6, x7);
+    NDPTRSET(y, y0, y1, y2, y3, y4, y5, y6, y7);
+    NDPTRSET(z, z0, z1, z2, z3, z4, z5, z6, z7);
 
-      double cyz = y72 * z30 - z72 * y30;
-      double czx = z72 * x30 - x72 * z30;
-      double cxy = x72 * y30 - y72 * x30;
-      vol[i] = xps * cyz + yps * czx + zps * cxy;
+    const int num_samples = 100;
+    for (int isamp = 0; isamp < num_samples; ++isamp) {
+#pragma omp for schedule(static) firstprivate(vnormq)
+      for (int i = domain.fpz; i <= domain.lpz; i++) {
+        double x71 = x7[i] - x1[i];
+        double x72 = x7[i] - x2[i];
+        double x74 = x7[i] - x4[i];
+        double x30 = x3[i] - x0[i];
+        double x50 = x5[i] - x0[i];
+        double x60 = x6[i] - x0[i];
 
-      xps = x72 + x50;
-      yps = y72 + y50;
-      zps = z72 + z50;
+        double y71 = y7[i] - y1[i];
+        double y72 = y7[i] - y2[i];
+        double y74 = y7[i] - y4[i];
+        double y30 = y3[i] - y0[i];
+        double y50 = y5[i] - y0[i];
+        double y60 = y6[i] - y0[i];
 
-      cyz = y74 * z60 - z74 * y60;
-      czx = z74 * x60 - x74 * z60;
-      cxy = x74 * y60 - y74 * x60;
-      vol[i] += xps * cyz + yps * czx + zps * cxy;
+        double z71 = z7[i] - z1[i];
+        double z72 = z7[i] - z2[i];
+        double z74 = z7[i] - z4[i];
+        double z30 = z3[i] - z0[i];
+        double z50 = z5[i] - z0[i];
+        double z60 = z6[i] - z0[i];
 
-      xps = x74 + x30;
-      yps = y74 + y30;
-      zps = z74 + z30;
+        double xps = x71 + x60;
+        double yps = y71 + y60;
+        double zps = z71 + z60;
 
-      cyz = y71 * z50 - z71 * y50;
-      czx = z71 * x50 - x71 * z50;
-      cxy = x71 * y50 - y71 * x50;
-      vol[i] += xps * cyz + yps * czx + zps * cxy;
+        double cyz = y72 * z30 - z72 * y30;
+        double czx = z72 * x30 - x72 * z30;
+        double cxy = x72 * y30 - y72 * x30;
+        vol[i] = xps * cyz + yps * czx + zps * cxy;
 
-      vol[i] *= vnormq;
+        xps = x72 + x50;
+        yps = y72 + y50;
+        zps = z72 + z50;
+
+        cyz = y74 * z60 - z74 * y60;
+        czx = z74 * x60 - x74 * z60;
+        cxy = x74 * y60 - y74 * x60;
+        vol[i] += xps * cyz + yps * czx + zps * cxy;
+
+        xps = x74 + x30;
+        yps = y74 + y30;
+        zps = z74 + z30;
+
+        cyz = y71 * z50 - z71 * y50;
+        czx = z71 * x50 - x71 * z50;
+        cxy = x71 * y50 - y71 * x50;
+        vol[i] += xps * cyz + yps * czx + zps * cxy;
+
+        vol[i] *= vnormq;
+      }
     }
   }
+
+  auto t2 = high_resolution_clock::now();
 
   if (WITH_PAPI) {
     counting_stop(evset);
     counting_fini(evset);
   }
+
+  cout << (t2 - t1).count() << '\n';
 }

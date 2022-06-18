@@ -5,14 +5,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <chrono>
-
-using namespace std;
-using namespace chrono;
-
-extern "C" {
-#include "../lib/counters/counting.h"
-}
 
 void initData(double* data, int id, int len) {
   double factor = (id % 2 ? 0.1 : 0.2);
@@ -29,6 +21,26 @@ int main(int argc, char* argv[]) {
     loopData[i] = new double[len];
   }
 
+  for (int i = 0; i < 15; i++) {
+    initData(loopData[i], i, len);
+  }
+
+  double* e_new = loopData[0];
+  double* e_old = loopData[1];
+  double* delvc = loopData[2];
+  double* p_new = loopData[3];
+  double* p_old = loopData[4];
+  double* q_new = loopData[5];
+  double* q_old = loopData[6];
+  double* work = loopData[7];
+  double* compHalfStep = loopData[8];
+  double* pHalfStep = loopData[9];
+  double* bvc = loopData[10];
+  double* pbvc = loopData[11];
+  double* ql_old = loopData[12];
+  double* qq_old = loopData[13];
+  double* vnewc = loopData[14];
+
   double loopScalar[4];
   initData(loopScalar, 1, 4);
 
@@ -37,55 +49,18 @@ int main(int argc, char* argv[]) {
   const double emin = loopScalar[2];
   const double q_cut = loopScalar[3];
 
-  const char* WITH_PAPI = getenv("WITH_PAPI");
-  struct eventset* evset;
-  if (WITH_PAPI) {
-    counting_set_output(getenv("RESULT_DIR"));
+  const int num_samples = 10;
 
-    const char* event[] = {
-        "PAPI_L2_DCM",
-        "PAPI_SR_INS",
-        "PAPI_LD_INS",
-        "PAGE-FAULTS",
-    };
-    counting_set_events(event, 4);
-    counting_set_info_field("LCALS_energy_calc");
-    evset = counting_init(0);
-    counting_start(evset);
-  }
-
-  auto t1 = high_resolution_clock::now();
+  for (int isamp = 0; isamp < num_samples; ++isamp) {
 #pragma omp parallel
-  {
-    for (int i = 0; i < 15; i++) {
-      initData(loopData[i], i, len);
-    }
-    double* e_new = loopData[0];
-    double* e_old = loopData[1];
-    double* delvc = loopData[2];
-    double* p_new = loopData[3];
-    double* p_old = loopData[4];
-    double* q_new = loopData[5];
-    double* q_old = loopData[6];
-    double* work = loopData[7];
-    double* compHalfStep = loopData[8];
-    double* pHalfStep = loopData[9];
-    double* bvc = loopData[10];
-    double* pbvc = loopData[11];
-    double* ql_old = loopData[12];
-    double* qq_old = loopData[13];
-    double* vnewc = loopData[14];
-
-    const int num_samples = 10;
-
-    for (int isamp = 0; isamp < num_samples; ++isamp) {
+    {
 #pragma omp for nowait schedule(static)
       for (int i = 0; i < len; i++) {
         e_new[i] =
             e_old[i] - 0.5 * delvc[i] * (p_old[i] + q_old[i]) + 0.5 * work[i];
       }
 
-#pragma omp for nowait schedule(static) firstprivate(rho0)
+#pragma omp for nowait schedule(static)
       for (int i = 0; i < len; i++) {
         if (delvc[i] > 0.0) {
           q_new[i] = 0.0;
@@ -112,7 +87,7 @@ int main(int argc, char* argv[]) {
                                    4.0 * (pHalfStep[i] + q_new[i]));
       }
 
-#pragma omp for nowait schedule(static) firstprivate(e_cut, emin)
+#pragma omp for nowait schedule(static)
       for (int i = 0; i < len; i++) {
         e_new[i] += 0.5 * work[i];
 
@@ -125,7 +100,7 @@ int main(int argc, char* argv[]) {
         }
       }
 
-#pragma omp for nowait schedule(static) firstprivate(rho0, emin, e_cut)
+#pragma omp for nowait schedule(static)
       for (int i = 0; i < len; i++) {
         double q_tilde;
 
@@ -158,7 +133,7 @@ int main(int argc, char* argv[]) {
         }
       }
 
-#pragma omp for nowait schedule(static) firstprivate(rho0, q_cut)
+#pragma omp for nowait schedule(static)
       for (int i = 0; i < len; i++) {
         if (delvc[i] <= 0.0) {
           double ssc =
@@ -178,13 +153,4 @@ int main(int argc, char* argv[]) {
       }
     }  // omp parallel
   }
-
-  auto t2 = high_resolution_clock::now();
-
-  if (WITH_PAPI) {
-    counting_stop(evset);
-    counting_fini(evset);
-  }
-
-  cout << (t2 - t1).count() << '\n';
 }

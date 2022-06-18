@@ -21,9 +21,9 @@ PERF_EVENTS = [
     'node-loads-misses',
     'node-stores-misses',
 ]
-TIME_EXEC = ['time', '-f "%e"']
-PERF_EXEC = PERF_BENCH + [f'-e {event}' for event in PERF_EVENTS] + TIME_EXEC
-PAPI_EVENTS = ["PAPI_L2_DCM", "PAPI_BR_INS", "PAPI_SR_INS", "PAGE-FAULTS"]
+PERF_EXEC = PERF_BENCH + [f'-e {event}:u' for event in PERF_EVENTS]
+
+PAPI_EVENTS = ["PAPI_L2_DCM", "PAPI_SR_INS", "PAPI_LD_INS", "PAGE-FAULTS"]
 
 PINTOOL_EVENTS = [
     "touches_private",
@@ -95,10 +95,11 @@ def run_perf_benchmark(bench_exec, bench_name):
     def parse_row(out):
         res = [el for el in map(lambda s: s.strip(),
                                 out.stderr.decode('utf-8').split(',')) if el]
-        time, res[0] = res[0].replace('\n', ' ').replace('"', '').split(' ')
+        time = out.stdout.decode('utf-8').strip()
         vals = {}
         val = res[0]
         for key in res[1:]:
+            key = key.replace(':u', '')
             if key in PERF_EVENTS:
                 if val == '<not counted>':
                     vals[key] = ''
@@ -110,7 +111,7 @@ def run_perf_benchmark(bench_exec, bench_name):
         return [time] + [vals[e] for e in PERF_EVENTS]
     with open(f'{args.out_folder}/results/{bench_name}_perf.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(HEADER + ['seconds'] + PERF_EVENTS)
+        writer.writerow(HEADER + ['nanoseconds'] + PERF_EVENTS)
 
         title = f"[*] Perf {bench_name}"
 
@@ -146,7 +147,7 @@ def run_papi_benchmark(bench_exec, bench_name):
         writer = csv.writer(f)
         writer.writerow(HEADER + PAPI_EVENTS)
 
-        title = f"Papi {bench_name}"
+        title = f"[*] Papi {bench_name}"
         with alive_bar(args.iterations * (len(OMP_PLACES) * len(OMP_PROC_BIND) + 1), ) as bar:
 
             for _ in range(args.iterations):
@@ -155,7 +156,7 @@ def run_papi_benchmark(bench_exec, bench_name):
                 flush_cache()
                 os.environ['RESULT_DIR'] = os.path.abspath(
                     f'{args.out_folder}/results/temp/{bench_name}.csv')
-                subprocess.run([bench_exec])
+                subprocess.run([bench_exec], stdout=subprocess.DEVNULL)
                 del os.environ['OMP_NUM_THREADS']
                 bar()
 
@@ -164,7 +165,7 @@ def run_papi_benchmark(bench_exec, bench_name):
                     os.environ['OMP_PLACES'] = place
                     os.environ['OMP_PROC_BIND'] = bind
                     flush_cache()
-                    subprocess.run([bench_exec])
+                    subprocess.run([bench_exec], stdout=subprocess.DEVNULL)
                     bar()
 
         with open(f'{args.out_folder}/results/temp/{bench_name}.csv', 'r') as t:
@@ -212,15 +213,22 @@ if __name__ == '__main__':
         shutil.rmtree(f"{args.out_folder}/results/")
     os.mkdir(f"{args.out_folder}/results/")
 
+    conf = []
     with open(args.conf_path) as f:
-        lines = f.readlines()
+        line = f.readline()
+        while line:
+            line = line.split('#')[0]
+            if line.strip():
+                conf.append(line)
+            line = f.readline()
 
     try:
-        for line in lines:
+        for line in conf:
             bench_exec = line.strip()
             tokens = line.split(' ')
             bench_name = tokens[0].split('/')[-1].strip()
 
+            print(bench_exec, bench_name)
             run_perf_benchmark(bench_exec, bench_name)
             if args.with_papi:
                 run_papi_benchmark(bench_exec, bench_name)
